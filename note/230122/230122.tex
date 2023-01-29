@@ -1,0 +1,1592 @@
+
+
+\documentclass[11pt]{article}
+%\usepackage{amstex}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{enumerate}
+\usepackage{vmargin}
+\setpapersize{USletter}
+\usepackage{chemarrow}
+\usepackage{bbm}
+\usepackage{cancel}
+\usepackage{ulem}
+\newcommand{\stkout}[1]{\ifmmode\text{\sout{\ensuremath{#1}}}\else\sout{#1}\fi}
+
+\setmarginsrb{1in}{1in}{1in}{1in}{0pt}{0mm}{0pt}{36pt}
+%\usepackage{anysize}
+\font\twelvesmc=cmcsc10 scaled\magstep1 % text smc
+
+
+\renewcommand{\baselinestretch}{1.5}
+
+
+\begin{document}
+
+
+%\today
+
+Nov 05, 2022
+\begin{itemize}
+
+\item For IRF(1)/I(0)\\
+
+\item
+\begin{align*}
+Cov(X(P,t), X(Q,s)) &= \sum_{\ell=\kappa}^{\infty}  \sum_{m=-\ell}^{\ell} a_{\ell}(h) \biggl \{ Y_{\ell}^{m}(P) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(P) \biggl \} \biggl \{ Y_{\ell}^{m}(Q) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(Q) \biggl \}\\
+\\
+&= Y_{0}^{0}(P) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(Q) + Y_{0}^{0}(Q) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(\tau)\\
+&+ \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) {\color{red} + \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau) Y_{0}^{0}(P) Y_{0}^{0}(Q)}\\
+\\
+&= \frac{1}{2\sqrt{\pi}} \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(Q) + \frac{1}{2\sqrt{\pi}} \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(\tau)\\
+&+ \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) + {\color{red} \frac{1}{4\pi} \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)}\\
+\end{align*}
+
+\item In other words,\\
+\begin{align*}
+E(Z_{0,0}(t) Y_0^0(P), Z_{0,0}(s) Y_0^0(Q)) &= E(Z_{0,0}(t) , Z_{0,0}(s) )Y_0^0(P) Y_0^0(Q)\\
+&= \left\{ \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau) \right\} Y_{0}^{0}(P) Y_{0}^{0}(Q)\\
+\\
+\text{This means that } \quad b_0(h) &= \left\{ \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau) \right\}\\
+&= \phi_1(0,h)\\ 
+&= \frac{1-p_1^2 e^{-2p_2|h|}}{(1-2p_1e^{-p_2|h|} + p_1^2 e^{-2p_2|h|})^{3/2}}\\
+\end{align*}
+\\
+$Cov(X(P,t), X(Q,s))= \sum_{\ell=\kappa}^{\infty}  \sum_{m=-\ell}^{\ell} a_{\ell}(h) \biggl \{ Y_{\ell}^{m}(P) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(P) \biggl \} \biggl \{ Y_{\ell}^{m}(Q) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(Q) \biggl \}$ is positive semi definite.\\
+
+
+\pagebreak
+
+\item For IRF($\kappa$)/I(0)\\
+
+\begin{align*}
+Cov(X(P,t), X(Q,s)) &= \sum_{\ell_2=\kappa}^{\infty}  \sum_{m_2=-\ell_2}^{\ell_2} b_{\ell_2,m_2}(h)  Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(Q)\\
+&+\sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} b_{\ell_1,m_1}^{\ell_2,m_2}(h) Y_{\ell_2}^{m_2}(Q) Y_{\ell_1}^{m_1}(P)\\
+&+\sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} b_{\ell_2,m_2}^{\ell_1,m_1}(h) Y_{\ell_2}^{m_2}(P) Y_{\ell_1}^{m_1}(Q)\\
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1}  \sum_{{\ell_1}'=0}^{\kappa-1} \sum_{{m_1}'=-{\ell_1}'}^{{\ell_1}'}  b_{\ell_1,m_1}^{{\ell_1}',{m_1}'}(h)  Y_{\ell_1}^{m_1}(P) Y_{{\ell_1}'}^{{m_1}'}(Q)\\
+\end{align*}
+
+Let\\
+$$0 \le \ell_1, {\ell_1}' \le \kappa-1 \quad \quad \ell_2, {\ell_2}'  \ge \kappa$$ 
+\begin{align*}
+b_{\ell_1,m_1}^{{\ell_1}',{m_1}'}(h) &= \sum_{\ell_2=\kappa}^{\infty} a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(\tau)  \quad \text{where } \tau \in \mathbb{S}^2 \\
+b_{\ell_1, m_1}^{\ell_2,m_2}(h) &= b_{\ell_2,m_2}^{\ell_1,m_1}(h) = a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau)\\
+&\text{So, our $b_{\ell_1, m_1}^{\ell_2,m_2}(h)$ is not related to $\ell_1$ and $m_1$.}\\
+&\text{Reproducing Kernel uses $\tau$ related to $\ell_1$ and $m_1$, but our $\tau$ is arbitrary.}\\
+b_{\ell_2,m_2}(h) &= a_{\ell_2}(h) \quad \text{where } \quad a_\ell(h)=p_1^\ell e^{-p_2 \ell |h|}, \quad 0<p_1<1, \quad p_2>0, \quad \ell=0,1,2,\dots\\
+\end{align*}
+
+Then,\\
+
+{\footnotesize
+\begin{align*}
+Cov(X(P,t), X(Q,s)) &= \sum_{\ell_2=\kappa}^{\infty}  \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h) \biggl \{ Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(Q)\\ 
+&+ Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(Q) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) \quad + \quad Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(\tau) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q)\\
+&+ Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(\tau) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{{\ell_1}'=0}^{\kappa-1} \sum_{{m_1}'=-{\ell_1}'}^{{\ell_1}'} Y_{\ell_1}^{m_1}(P) Y_{{\ell_1}'}^{{m_1}'}(Q) \biggl \} \\
+\end{align*}
+
+\begin{align*}
+&\Rightarrow \sum_{\ell_2=\kappa}^{\infty}  \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h) \biggl \{ Y_{\ell_2}^{m_2}(P) +  Y_{\ell_2}^{m_2}(\tau) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) \biggl \} \biggl \{ Y_{\ell_2}^{m_2}(Q) +  Y_{\ell_2}^{m_2}(\tau) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q) \biggl \}\\
+\end{align*}
+{\color{red} \textbf{This is positive-semi definite.}}\\
+}
+
+\pagebreak
+
+\item 
+Back to IRF(1)/I(0)\\
+So far, we assumed that\\ 
+$Cov\biggl(Z_0(t)Y_0^0(P),\quad Z_0(s) Y_0^0(Q)\biggl)$, $Cov\biggl(\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)$,\\
+$Cov\biggl(Z_0(t)Y_0^0(P),\quad \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)$, and $Cov\biggl(\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad Z_{0}(s) Y_{0}^{0}(Q) \biggl)$\\
+are all have the same parameters for the decay rate and scale parameter through $a_\ell(h)=p_3 p_1^\ell e^{-p_2 \ell |h|}, \quad 0<p_1<1, \quad p_2,p_3>0, \quad \ell=0,1,2,\dots$\\
+
+
+\item This assumption is too strong and unrealistic. Can we alleviate this assumption by varying the parameters $p_1$, $p_2$ and $p_3$?\\
+
+\item Our covariance function for IRF(1)/I(0) is:\\
+\begin{align*}
+Cov\biggl(X(P,t), X(Q,s)\biggl) &= Cov\biggl(\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)\\
+&+ Cov\biggl(Z_0(t)Y_0^0(P),\quad Z_0(s) Y_0^0(Q)\biggl)\\
+&+ Cov\biggl(Z_0(t)Y_0^0(P),\quad \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)\\ 
+&+ Cov\biggl(\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad Z_{0}(s) Y_{0}^{0}(Q) \biggl)\\
+\\
+&= \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) + \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a'_\ell(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau) Y_{0}^{0}(P) Y_{0}^{0}(Q)\\
+&+ Y_{0}^{0}(P) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(Q) + Y_{0}^{0}(Q) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(\tau)\\
+\\
+&= \phi_1(\overrightarrow{PQ},h) + Y_0^0(\tau) Y_0^0(\tau) \phi'_1(0,h) +  Y_0^0(P) \phi''_1(\overrightarrow{Q\tau},h)  + Y_0^0(Q) \phi''_1(\overrightarrow{P\tau},h)
+\end{align*}
+
+
+\item
+{\tiny
+\begin{align*}
+&Cov\biggl(X(P,t), X(Q,s)\biggl) = \\
+&\begin{bmatrix}
+1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+Cov\biggl(Z_0(t)Y_0^0(P),\quad Z_0(s) Y_0^0(Q)\biggl) & Cov\biggl(Z_0(t)Y_0^0(P),\quad \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)\\ 
+Cov\biggl(\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad Z_{0}(s) Y_{0}^{0}(Q) \biggl) & Cov\biggl(\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)\end{bmatrix}
+\begin{bmatrix}
+1\\
+1 
+\end{bmatrix}\\
+\\
+&=\begin{bmatrix}
+1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+Y_0^0(P) Y_0^0(Q) \phi'_1(0,h) & Y_0^0(P) \phi''_1(\overrightarrow{Q\tau},h) \\\\
+Y_0^0(Q) \phi''_1(\overrightarrow{P\tau},h) & \phi_1(\overrightarrow{PQ},h)
+\end{bmatrix}
+\begin{bmatrix}
+1\\
+1 
+\end{bmatrix}
+\end{align*}
+}
+
+\item
+Therefore, showing the positive definiteness of $Cov\biggl(X(P,t), X(Q,s)\biggl)$ is equivalent to :\\
+\begin{align*}
+&\sum_{i=1}^n \sum_{j=1}^n 
+c_i\begin{bmatrix}
+1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+Y_0^0(y_i) Y_0^0(y_j) \phi'_1(0,h_{ij}) & Y_0^0(y_i) \phi''_1(\overrightarrow{y_j\tau},h_{ij}) \\\\
+Y_0^0(y_j) \phi''_1(\overrightarrow{y_i\tau},h_{ij}) & \phi_1(\overrightarrow{y_i y_j},h_{ij})
+\end{bmatrix}
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix}
+c_j
+\ge 0\\
+&\Rightarrow
+\sum_{i=1}^n \sum_{j=1}^n 
+\begin{bmatrix}
+c_i & c_i
+\end{bmatrix}
+\begin{bmatrix}
+Y_0^0(y_i) Y_0^0(y_j) \phi'_1(0,h_{ij}) & Y_0^0(y_i) \phi''_1(\overrightarrow{y_j\tau},h_{ij}) \\\\
+Y_0^0(y_j) \phi''_1(\overrightarrow{y_i\tau},h_{ij}) & \phi_1(\overrightarrow{y_i y_j},h_{ij})
+\end{bmatrix}
+\begin{bmatrix}
+c_j\\
+c_j
+\end{bmatrix}
+\ge 0\\
+\end{align*}
+
+\item \sout{This is true if:} {\color{red} wrong!}\\
+\begin{align*}
+&\xcancel{Y_0^0(y_i) Y_0^0(y_j) \phi'_1(0,h_{ij}) + \phi_1(\overrightarrow{y_i y_j},h_{ij}) \quad \ge \quad Y_0^0(y_i) \phi''_1(\overrightarrow{y_j\tau},h_{ij}) + Y_0^0(y_j) \phi''_1(\overrightarrow{y_i\tau},h_{ij})}\\
+\\
+&\xcancel{\Rightarrow Y_{0}^{0}(P) Y_{0}^{0}(Q) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a'_\ell(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau) + \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q)}\\
+&\xcancel{\quad \ge \quad Y_{0}^{0}(P) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(Q) + Y_{0}^{0}(Q) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(\tau)}\\
+\end{align*}
+
+
+\item
+This is true if $a_\ell(h) = a'_\ell(h) = a''_\ell(h)$\\
+($\because$ we already showed that $Cov\biggl(X(P,t), X(Q,s)\biggl)$ is positive definite in this case.)\\
+(This part may be not an iff condition and inaccurate.)
+
+\item
+Therefore, this inequality also holds if $a'_\ell(h) \ge a''_\ell(h)$ and $a_\ell(h) \ge a''_\ell(h)$.\\
+In other words, $p'_3 p_1'^{\ell} e^{-p'_2 \ell |h|} \ge p''_3 p_1''^\ell e^{-p''_2 \ell |h|}$ and $p_3 p_1^\ell e^{-p_2 \ell |h|} \ge p''_3 p_1''^\ell e^{-p_2'' \ell |h|}$.\\
+we can set $p'_1, p_1 \ge p''_1$, \quad $p'_2, p_2 \le p''_2$, \quad and \quad $p'_3, p_3 \ge p''_3$.
+%$\quad 0<p_1<1, \quad p_2,p_3>0, \quad \ell=0,1,2,\dots$
+
+\pagebreak
+
+\textbf{{\color{red} \item This one would be a better proof of positive semi definiteness.}}\\
+\begin{align*}
+\text{Let } &a_\ell(h) = p_1^\ell e^{-p_2 \ell |h|}\\
+&a'_\ell(h) = p_1'^{\ell} e^{-p'_2 \ell |h|}\\  
+&a''_\ell(h) = p_1''^\ell e^{-p''_2 \ell |h|}\\
+\\
+\text{By } &\text{introducing scale parameters, } p_3, p'_3, p''_3,\\
+& p_3 \phi_\kappa(\overrightarrow{PQ},h) = p_3 \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) = \frac{p_3(1-p_1^2 e^{-2p_2|h|})}{(1-2 \cos{\overrightarrow{PQ}} (p_1e^{-p_2|h|}) + p_1^2 e^{-2p_2|h|})^{3/2}}\\
+& p_3' \phi'_\kappa(\overrightarrow{PQ},h) = p'_3 \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell}  a'_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) = \frac{{p'}_3(1-p_1'^2 e^{-2p'_2|h|})}{(1-2 \cos{\overrightarrow{PQ}} (p_1'e^{-p_2'|h|}) + p_1'^2 e^{-2p_2'|h|})^{3/2}}\\
+&  p_3''\phi''_\kappa(\overrightarrow{PQ},h) = p''_3 \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) = \frac{p_3''(1-p_1''^2 e^{-2p_2''|h|})}{(1-2 \cos{\overrightarrow{PQ}} (p_1''e^{-p_2''|h|}) + p_1''^2 e^{-2p_2''|h|})^{3/2}}\\
+\\
+&\text{where } \quad 0<p_1,p'_1,p''_1<1, \quad p_2, p'_2, p'_2, p_3, p'_3, p''_3 > 0, \quad \ell=0,1,2,\dots\\
+\end{align*}
+
+
+\item Then our covariance function for IRF(1)/I(0) is:\\
+\begin{align*}
+Cov\biggl(X(P,t), X(Q,s)\biggl) &= Cov\biggl(\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)\\
+&+ Cov\biggl(Z_0(t)Y_0^0(P),\quad Z_0(s) Y_0^0(Q)\biggl)\\
+&+ Cov\biggl(Z_0(t)Y_0^0(P),\quad \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)\\ 
+&+ Cov\biggl(\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad Z_{0}(s) Y_{0}^{0}(Q) \biggl)\\
+\\
+&= \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) + \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a'_\ell(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau) Y_{0}^{0}(P) Y_{0}^{0}(Q)\\
+&+ Y_{0}^{0}(P) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(Q) + Y_{0}^{0}(Q) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(\tau)\\
+\\
+\text{By addition theorem, }\\
+&= \left\{ \sum_{\ell=0}^\infty \frac{2\ell+1}{4\pi} a_\ell(h) P_\ell(\cos{\psi(P, Q)}) - \frac{1}{4\pi} \right\} + \frac{1}{4\pi} \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a'_{\ell}(h) - \frac{1}{4\pi} \right\}\\
+&+ \frac{1}{2\sqrt{\pi}} \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a''_{\ell}(h)  P_\ell(\cos{\psi(\tau, Q)}) - \frac{1}{4\pi} \right\}\\ 
+&+ \frac{1}{2\sqrt{\pi}} \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a''_{\ell}(h)  P_\ell(\cos{\psi(P, \tau)}) - \frac{1}{4\pi} \right\}\\
+\\
+&= \phi_1(\overrightarrow{PQ},h) + Y_0^0(\tau) Y_0^0(\tau) \phi'_1(0,h) +  Y_0^0(P) \phi''_1(\overrightarrow{Q\tau},h)  + Y_0^0(Q) \phi''_1(\overrightarrow{P\tau},h)\\
+\\
+&\Rightarrow \frac{(1 - {p_1}^2 e^{-2 p_2 \lvert h \lvert})}{(1-2 \cos{\psi(P, Q)} (p_1 e^{-p_2 \lvert h \lvert}) + {p_1}^2 e^{-2p_2 \lvert h \lvert})^{3/2}}\\
+&+ \frac{1}{4\pi}\frac{(1 - {p_1'}^2 e^{-2 p_2' \lvert h \lvert})}{(1-2 p_1' e^{-p_2' \lvert h \lvert} + {p_1'}^2 e^{-2p_2' \lvert h \lvert})^{3/2}}\\ 
+&+ \frac{1}{2\sqrt{\pi}}\frac{(1 - {p_1''}^2 e^{-2 p_2'' \lvert h \lvert})}{(1-2 \cos{\psi(\tau, Q)} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}}\\
+& + \frac{1}{2\sqrt{\pi}} \frac{(1 - {p_1''}^2 e^{-2 p_2 \lvert h \lvert})}{(1-2 \cos{\psi(P, \tau)} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}} -  \frac{1}{4\pi} - \frac{1}{16\pi^2} - \frac{1}{4\pi^\frac{3}{2}}\\
+\end{align*}
+
+
+\pagebreak
+
+To prove the positive semi definiteness for this, need to show:\\
+\begin{align*}
+&\sum_{i=1}^n \sum_{j=1}^n c_i Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl) c_j \ge 0\\
+&\Rightarrow \sum_{i=1}^n \sum_{j=1}^n c_i \biggl\{  \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) + Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a'_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&\quad \quad + Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \biggl\} c_j \ge 0\\
+\\
+&\Rightarrow \sum_{i=1}^n \sum_{j=1}^n \biggl\{  \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  c_i a_{\ell}(h_{ij}) c_j Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) + Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} c_i a'_\ell(h_{ij}) c_j Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&\quad \quad + Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} c_i  a''_{\ell}(h_{ij}) c_j Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} c_i a''_{\ell}(h_{ij}) c_j Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \biggl\} \ge 0\\
+\end{align*}
+
+\item
+It is obvious that the desired inequality holds when $a_\ell(h) = a'_\ell(h) = a''_\ell(h)$ in that :\\
+\begin{align*}
+&\sum_{i=1}^n \sum_{j=1}^n c_i Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl) c_j \\
+&= \sum_{i=1}^n \sum_{j=1}^n c_i c_j \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&+ \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \ge 0\\
+&=\sum_{i=1}^n \sum_{j=1}^n \sum_{\ell=\kappa}^{\infty}  \sum_{m=-\ell}^{\ell} c_i  c_j a_{\ell}(h_{ij}) \biggl \{ Y_{\ell}^{m}(y_i) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(y_i) \biggl \} \biggl\{ Y_{\ell}^{m}(y_j) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(y_j) \biggl\} \ge 0\\
+\\
+&\text{How about when } a_\ell(h) \ne a'_\ell(h) \ne a''_\ell(h)?\\
+&\text{We want to show that}\\
+&\sum_{i=1}^n \sum_{j=1}^n c_i Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl) c_j \ge 0\\
+&\Rightarrow \sum_{i=1}^n \sum_{j=1}^n c_i \biggl\{  \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) + Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a'_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&\quad \quad + Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \biggl\} c_j \ge 0\\
+\\
+& \Rightarrow \sum_{i=1}^n \sum_{j=1}^n c_i c_j \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a'_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&+ \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \ge 0\\
+\end{align*}
+
+\item
+\textbf{{\color{red} Key part to check!!!!}}\\
+We know that the first term with $a_\ell(h_{ij})$ and the second term with $a'_\ell(h_{ij})$ are greater than or equal to 0 due to their positive semi definiteness. That is,\\
+$$ \sum_{i=1}^n \sum_{j=1}^n c_i c_j \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) \ge 0$$ 
+$$\sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a'_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau) \ge 0$$
+On the other hand,\\
+$$ \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) \text{ and } \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau)$$
+these two terms can be either positive or negative depending on values of $y_i, y_j, c_i,$ and $c_j$. Thus, to make the desired inequality valid for any $c_i, c_j \in \mathbb{R}$ (or $c_i, \bar{c}_j \in \mathbb{C}$), the first two positive semi definite terms of $a_\ell(h_{ij})$ and $a'_\ell(h_{ij})$ should dominate the other two terms containing $a''_\ell(h_{ij})$. In other words, we can say that :\\\\
+$Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl)$ is positive-semi definite. That is,\\
+\\
+\begin{align*}
+& \sum_{i=1}^n \sum_{j=1}^n c_i c_j \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a'_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&+ \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \ge 0\\
+\end{align*}
+$\Leftrightarrow$ {\color{red} (Necessary and Sufficient Condition???)}\\
+\begin{align*}
+& \sum_{i=1}^n \sum_{j=1}^n c_i c_j \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a'_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&\ge -\biggl(\sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \biggl)\\
+\end{align*}
+
+\item
+Let $a_\ell(h) = a'_\ell(h) = a''_\ell(h) =1$. Then, we already verify that\\
+\begin{align*}
+&\text{for } \forall c_i, c_j \in \mathbb{R} (\text{ or } c_i, \bar{c}_j \in \mathbb{C}), \quad \forall y_i, y_j \in \mathbb{S}^2,\\
+&= \sum_{i=1}^n \sum_{j=1}^n c_i c_j \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&+ \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \ge 0\\
+&\text{Hence, by the above assertion, we know that : {\color{red} (if it is necessary and sufficient condition)}}\\
+&\Rightarrow \sum_{i=1}^n \sum_{j=1}^n c_i c_j \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&\ge -\biggl(\sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \biggl)\\
+\\
+&\text{Now, let } \quad a_\ell(h), a'_\ell(h \ge a''_\ell(h) \ge 0. \quad \text{Then,}\\
+& \sum_{i=1}^n \sum_{j=1}^n c_i c_j \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a'_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&\ge -\biggl( \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \biggl)\\
+\\
+&\Rightarrow \sum_{i=1}^n \sum_{j=1}^n c_i c_j \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a'_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&+ \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i c_j Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \ge 0
+\end{align*}
+
+\item
+Therefore, $Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl)$ is positive-semi definite.\\
+
+\item
+In conclusion, the desired inequality (positive semi-definiteness) can be achieved if $a_\ell(h) \ge a''_\ell(h)$ and $a'_\ell(h) \ge a''_\ell(h)$ in that these conditions allow the first two positive semi definite terms relatively bigger than the other two terms. In other words, we can set  $p_1^\ell e^{-p_2 \ell |h|} \ge p_1''^\ell e^{-p_2'' \ell |h|}$ and $p_1'^{\ell} e^{-p'_2 \ell |h|} \ge p_1''^\ell e^{-p''_2 \ell |h|}$.\\
+For the sake of simplicity, we can satisfy these conditions by setting $p_1, p'_1 \ge p''_1$ and $p_2, p'_2 \le p''_2$.\\
+
+
+
+\item To sum up, after adding the scale parameters,\\ 
+our covariance function for IRF(1)/I(0) is: \\
+\begin{align*}
+Cov\biggl(X(P,t), X(Q,s)\biggl) &= \frac{p_3(1 - {p_1}^2 e^{-2 p_2 \lvert h \lvert})}{(1-2 \cos{\psi(P, Q)} (p_1 e^{-p_2 \lvert h \lvert}) + {p_1}^2 e^{-2p_2 \lvert h \lvert})^{3/2}}\\
+&+ \frac{1}{4\pi}\frac{p_3'(1 - {p_1'}^2 e^{-2 p_2' \lvert h \lvert})}{(1-2 p_1' e^{-p_2' \lvert h \lvert} + {p_1'}^2 e^{-2p_2' \lvert h \lvert})^{3/2}}\\ 
+&+ \frac{1}{2\sqrt{\pi}}\frac{p_3''(1 - {p_1''}^2 e^{-2 p_2'' \lvert h \lvert})}{(1-2 \cos{\psi(\tau, Q)} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}}\\
+& + \frac{1}{2\sqrt{\pi}} \frac{p_3''(1 - {p_1''}^2 e^{-2 p_2 \lvert h \lvert})}{(1-2 \cos{\psi(P, \tau)} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}} - \frac{p_3}{4\pi} - \frac{p_3'}{16\pi^2} - \frac{p_3''}{4\pi^\frac{3}{2}}\\
+\\
+&\text{ where } \quad p'_1, p_1 \ge p''_1, \quad p'_2, p_2 \le p''_2, \quad \text{ and } \quad p'_3, p_3 \ge p''_3,\\
+&\quad 0<p_1,p'_1,p''_1<1, \quad p_2, p'_2, p''_2, p_3, p'_3, p''_3 > 0, \quad \ell=0,1,2,\dots\\
+\end{align*}
+
+\item These conditions are probably more strict than it is necessary. However, otherwise, restrictions of the parameters would depend on P, Q, and h or too complicated. These properties are also very useful to satisfy the multivariate time series conditions.\\
+
+\item I numerically checked that $Cov\biggl(X(P,t), X(Q,s)\biggl)$ seems positive-semi definite.\\
+
+\pagebreak
+
+For IRF($\kappa$)/I(0),\\
+
+\item The covariance functions $b_0(h)$, $b_{\ell, m}(h)$, and $b_0^{\ell,m}(h)$ should be treated as multivariate random process (time series).\\
+
+\item Let's check such conditions are satisfied by the suggested covariance model above.\\
+
+\item Basic properties of multivariate covariance matrices $\Gamma(\cdot)$ (Brockwell, Davis, p234):\\
+\begin{enumerate}
+\item $\Gamma(h)=\Gamma'(-h)$
+\item $|\gamma_{ij}(h)| \le (\gamma_{ii}(0) \gamma_{jj}(0))^{\frac{1}{2}}, \quad i,j=1,2,\dots, m$
+\item $\gamma_{ii}(\cdot)$ is an autocovariance function, $i=1,2,\dots,m$.
+i.e. $\gamma_{ii}(\cdot)$ is semi-positive definite.
+\item $\sum_{j,k=1}^n a_j' \Gamma(j-k) a_k \ge 0$ for $\forall n \in \{1,2,\dots\}$ and $a_1,a_2,\dots,a_n \in \mathbb{R}^m$\\
+i.e. $E(\sum_{j,k=1}^n a_j '(X_j-\mu))^2 \ge 0$\\
+\end{enumerate}
+
+\item
+$B(h)= 
+\begin{bmatrix}
+b_0(h) & b_0^{\ell,m}(h) \\ 
+b_{\ell,m}^0(h) & b_{\ell,m}(h)) 
+\end{bmatrix}$
+\\\\
+In general case for IRF($\kappa$), {\color{red} Can we generalize like this???}\\
+$B(h)= 
+\begin{bmatrix}
+b_{\ell_1,m_1}^{\ell_1',m_1'}(h) & b_{\ell_1,m_1}^{\ell_2,m_2}(h) \\ 
+b_{\ell_2,m_2}^{\ell_1,m_1}(h) & b_{\ell_2,m_2}(h)) 
+\end{bmatrix}$
+
+\item
+\begin{align*}
+b_0(h) &= \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} a'_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)  \quad \text{where } \tau \in \mathbb{S}^2 \\
+b_{0}^{\ell,m}(h) &= b_{\ell,m}^{0}(h) = a''_{\ell}(h) Y_{\ell}^{m}(\tau)\\
+b_{\ell,m}(h) &= a_{\ell}(h)\\
+\text{where } \quad &a_\ell(h)=p_1^\ell e^{-p_2 \ell |h|}, \quad 0<p_1<1, \quad p_2>0, \quad \ell=0,1,2,\dots\\
+\end{align*}
+
+\begin{enumerate}
+\item
+$B(h)=B^t(-h)$ since $a_\ell(h)=p_1^\ell e^{-p_2 \ell |h|}$ and $b_{0}^{\ell,m}(h) = b_{\ell,m}^{0}(h)$\\
+
+\item
+\begin{align*}
+&|b_{0}^{\ell,m}(h)| \le \{b_{0}(0) b_{\ell,m}(0)\}^\frac{1}{2}\\
+&\Rightarrow |a''_{\ell}(h)||Y_{\ell}^{m}(\tau)| \le \Biggl[ a_{\ell}(0) \biggl\{ \sum_{{\ell}'=\kappa}^{\infty} a'_{{\ell}'}(0) Y_{{\ell}'}^{{m}'}(\tau) Y_{{\ell}'}^{{m}'}(\tau) \biggl\} \Biggl]^\frac{1}{2}\\
+\\
+&\text{Since \quad $a_{\ell}(0) \ge a''_{\ell}(h)$, it suffices to show that }\\
+&\Rightarrow |a''_{\ell}(h)||Y_{\ell}^{m}(\tau)|^2 \le \sum_{{\ell}'=\kappa}^{\infty} a'_{{\ell}'}(0) Y_{{\ell}'}^{{m}'}(\tau) Y_{{\ell}'}^{{m}'}(\tau)\\
+&\text{Because $a'_\ell(0) \ge a''_\ell(h)  \ge 0$, this is true.}\\
+\end{align*}
+
+\item
+$b_{0}(h)$ and $b_{\ell,m}(h)$ are positive definite?\\ 
+It is true because $a_\ell(h)$ is positive definite.\\
+\\
+According to Bochner Theorem, it suffices to show that spectral density function $f_{\ell,m}(\omega)$ is non negative to show semi positive definiteness. We can find $f_{\ell,m}(\omega)$ by inversion of Fourier transformation if $b_{\ell,m}(h)$ is given. (Yaglom, p313)\\
+\begin{align*}
+f_{\ell,m}(\omega) &=  \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell,m}(h) dh \quad \text{ or } \quad f_{\ell,m}(\omega) =  \frac{1}{2\pi} \sum_{-\infty}^\infty e^{-i\omega h} b_{\ell,m}(h) 
+\end{align*}
+We assume  $f_{\ell,m}(\omega)$ exists. The spectral density function $f_{\ell,m}(\omega)$ exists if $\int_{-\infty}^\infty |b_{\ell,m}(h)|dh < \infty$ or $\sum_{-\infty}^\infty |b_{\ell,m}(h)|dh < \infty$. This means that $|b_{\ell,m}(h)|$ falls off rapidly as $|h| \rightarrow \infty$ (Yaglom, p104).\\
+\begin{proof}
+\begin{align*}
+f_{\ell,m}(\omega) &= \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell,m}(h) dh\\
+&= \frac{p_1^\ell}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} e^{-p_2 \ell |h|} dh\\
+&= \frac{p_1^\ell}{2\pi} \int_{0}^\infty e^{-(i \omega + p_2 \ell) h} dh + \frac{p_1^\ell}{2\pi} \int_{-\infty}^0 e^{-(i \omega - p_2 \ell) h} dh\\
+&= \frac{p_1^\ell}{2\pi} \left\{ \frac{1}{i \omega + p_2 \ell} + \frac{-1}{i \omega - p_2 \ell} \right\}\\
+&= \frac{p_1^\ell}{\pi} \frac{p_1^\ell p_2 \ell}{\omega^2 + p_2^2 \ell^2} \ge 0\\
+\end{align*}
+Therefore, $\phi'_\kappa(\cdot,\cdot)$ is also positive semi-definite. As a result, $b_0(h)$ is also positive semi-definite.\\
+\end{proof}
+
+\item
+Want to show\\
+\begin{align*}
+&\sum_{i=1}^n \sum_{j=1}^n 
+\begin{bmatrix}
+c_{i1} & c_{i2}
+\end{bmatrix}
+\begin{bmatrix}
+b_0(t_i-t_j) & b_0^{\ell,m}(t_i-t_j)\\ 
+b_{\ell,m}^0(t_i-t_j) & b_{\ell,m}(t_i-t_j)
+\end{bmatrix}
+\begin{bmatrix}
+c_{j1}\\
+c_{j2} 
+\end{bmatrix}
+\ge0
+\end{align*}
+
+According to Yaglom, the condition 4 can be replaced by:\\
+$$\sum_{j,k=1}^n f_{jk}(\omega) c_j \overline{c_k} \ge 0$$
+In the case of 2 by 2 matrix, this one is equivalent to show:\\
+$$f_{\ell_1,m_1}(\omega) \ge 0, \quad f_{\ell_2,m_2}(\omega) \ge 0, \quad \text{ and } |f_{\ell_1,m_1}^{\ell_2, m_2}(\omega)|^2 \le f_{\ell_1,m_1}(\omega) f_{\ell_2,m_2}(\omega)$$
+We have already verified that the first two conditions are satisfied for condition 3; thus, only need to show the last one, which is:\\
+$$|f_{\ell_1,m_1}^{\ell_2, m_2}(\omega)|^2 \le f_{\ell_1,m_1}(\omega) f_{\ell_2,m_2}(\omega)$$
+
+\begin{proof}
+This means that:
+\begin{align*}
+&\left\{ \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{0}^{\ell,m}(h) dh \right\}^2 \quad \le \quad \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell,m}(h) dh \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{0}(h) dh \\
+\\
+&\Rightarrow \left\{ \int_{-\infty}^\infty e^{-i\omega h} Y_{\ell}^{m}(\tau) a''_{\ell}(h) dh \right\}^2\\ 
+&\quad \quad \quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} a_{\ell}(h) dh \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{{\ell}'=\kappa}^{\infty} a'_{{\ell}'}(h) Y_{{\ell}'}^{{m}'}(\tau) Y_{{\ell}'}^{{m}'}(\tau) \biggl\} dh\\
+\\
+&\text{Since $a_\ell(h) \ge a''_\ell(h)$, this inequality holds if }\\
+&\Rightarrow |Y_{\ell}^{m}(\tau)|^2 \int_{-\infty}^\infty e^{-i\omega h} a''_{\ell}(h) dh \quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{{\ell}'=\kappa}^{\infty} a'_{{\ell}'}(h) Y_{{\ell}'}^{{m}'}(\tau) Y_{{\ell}'}^{{m}'}(\tau) \biggl\} dh\\
+\end{align*}
+This is satisfied in that $a'_{\ell}(h) \ge a''_\ell(h) \ge 0$ and $\ell' \ge \kappa$.\\
+\end{proof}
+
+\end{enumerate}
+
+Thus, all of conditions of multivariate time series are satisfied.\\
+
+\pagebreak
+
+Nov 17, 2022
+
+\item IRF(2)/I(0)
+
+\item
+\begin{align*}
+Cov(X(P,t), X(Q,s)) &= \sum_{\ell_2=2}^{\infty}  \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h) Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(Q)\\ 
+&+ \sum_{\ell_2=2}^{\infty}  \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}'(h) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(\tau) \sum_{\ell_1=0}^{1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{{\ell_1}'=0}^{1} \sum_{{m_1}'=-{\ell_1}'}^{{\ell_1}'} Y_{\ell_1}^{m_1}(P) Y_{{\ell_1}'}^{{m_1}'}(Q)\\
+&+  \sum_{\ell_1=0}^{1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) \sum_{\ell_2=2}^{\infty}  \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}''(h) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(Q)\\
+&+  \sum_{\ell_1=0}^{1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q) \sum_{\ell_2=2}^{\infty}  \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}''(h) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(P)\\
+\\
+&= \phi_2(\overrightarrow{PQ},h) \quad + \quad \sum_{\ell_1=0}^{1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{{\ell_1}'=0}^{1} \sum_{{m_1}'=-{\ell_1}'}^{{\ell_1}'} Y_{\ell_1}^{m_1}(P) Y_{{\ell_1}'}^{{m_1}'}(Q) \phi_2'(0,h)\\
+&+  \sum_{\ell_1=0}^{1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) \phi_2''(\overrightarrow{Q\tau},h) \quad + \quad  \sum_{\ell_1=0}^{1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q) \phi_2''(\overrightarrow{P\tau},h)\\ 
+\end{align*}
+
+\item 
+If $a_\ell(h) = a_\ell'(h) = a_\ell''(h)$\\
+\begin{align*}
+&Cov\biggl(X(P,t), X(Q,s)\biggl)\\
+&\quad = \sum_{\ell_2=2}^{\infty}  \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h) \biggl \{ Y_{\ell_2}^{m_2}(P) +  Y_{\ell_2}^{m_2}(\tau) \sum_{\ell_1=0}^{1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) \biggl \} \biggl \{ Y_{\ell_2}^{m_2}(Q) +  Y_{\ell_2}^{m_2}(\tau) \sum_{\ell_1=0}^{1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q) \biggl \}\\
+\end{align*}
+{\color{red} \textbf{This is positive-semi definite.}}\\
+
+\pagebreak
+
+\item
+By introducing the scale parameters,\\
+
+{\footnotesize
+\begin{align*}
+&Cov\biggl(X(P,t), X(Q,s)\biggl)\\ 
+&= p_3\biggl\{ \frac{(1 - {p_1}^2 e^{-2 p_2 \lvert h \lvert})}{(1-2 \cos{\psi(P, Q)} (p_1 e^{-p_2 \lvert h \lvert}) + {p_1}^2 e^{-2p_2 \lvert h \lvert})^{3/2}} - \sum_{\ell=0}^{1}  \sum_{m=-\ell}^{\ell} p_1^\ell e^{-\ell p_2 |h|} Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) \biggl\}\\
+&+  p_3' \biggl\{ \frac{(1 - {p_1'}^2 e^{-2 p_2' \lvert h \lvert})}{(1-2 p_1' e^{-p_2' \lvert h \lvert} + {p_1'}^2 e^{-2p_2' \lvert h \lvert})^{3/2}} - \sum_{\ell=0}^{1} \sum_{m_2=-\ell_2}^{\ell_2} p_1'^\ell e^{-\ell p_2' |h|} Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(\tau) \biggl \} \sum_{\ell_1=0}^{1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{{\ell_1}'=0}^{1} \sum_{{m_1}'=-{\ell_1}'}^{{\ell_1}'} Y_{\ell_1}^{m_1}(P) Y_{{\ell_1}'}^{{m_1}'}(Q)\\
+&+ p_3'' \biggl\{ \frac{(1 - {p_1''}^2 e^{-2 p_2'' \lvert h \lvert})}{(1-2 \cos{\psi(P,\tau)} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}} - \sum_{\ell_2=0}^{1}  \sum_{m_2=-\ell_2}^{\ell_2} p_1''^{\ell_2} e^{-\ell_2 p_2'' |h|} Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(\tau) \biggl\} \sum_{\ell=0}^{1} \sum_{m=-\ell}^{\ell} Y_{\ell}^{m}(Q)\\
+&+ p_3'' \biggl\{ \frac{(1 - {p_1''}^2 e^{-2 p_2'' \lvert h \lvert})}{(1-2 \cos{\psi(Q,\tau)} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}} - \sum_{\ell_2=0}^{1}  \sum_{m_2=-\ell_2}^{\ell_2} p_1''^{\ell_2} e^{-\ell_2 p_2'' |h|} Y_{\ell_2}^{m_2}(Q) Y_{\ell_2}^{m_2}(\tau) \biggl \} \sum_{\ell=0}^{1} \sum_{m=-\ell}^{\ell} Y_{\ell}^{m}(P)\\
+\\
+&\text{ where } \quad p'_1, p_1 \ge p''_1, \quad p'_2, p_2 \le p''_2, \quad \text{ and } \quad p'_3, p_3 \ge p''_3,\\
+&\quad 0<p_1,p'_1,p''_1<1, \quad p_2, p'_2, p''_2, p_3, p'_3, p''_3 > 0, \quad \ell=0,1,2,\dots\\
+\end{align*}
+
+or\\
+
+\begin{align*}
+&Cov\biggl(X(P,t), X(Q,s)\biggl)\\ 
+&= p_3\biggl\{ \frac{(1 - {p_1}^2 e^{-2 p_2 \lvert h \lvert})}{(1-2 \cos{\psi(P, Q)} (p_1 e^{-p_2 \lvert h \lvert}) + {p_1}^2 e^{-2p_2 \lvert h \lvert})^{3/2}} - \sum_{\ell=0}^{1} \frac{2\ell + 1}{4\pi} p_1^\ell e^{-\ell p_2 |h|} P_\ell(\cos{\overrightarrow{PQ}}) \biggl\}\\
+&+  p_3' \biggl\{ \frac{(1 - {p_1'}^2 e^{-2 p_2' \lvert h \lvert})}{(1-2 p_1' e^{-p_2' \lvert h \lvert} + {p_1'}^2 e^{-2p_2' \lvert h \lvert})^{3/2}} - \sum_{\ell_2=0}^{1} \frac{2\ell_2 + 1}{4\pi} p_1'^{\ell_2} e^{-{\ell_2} p_2' |h|} P_{\ell_2}(1) \biggl \} \sum_{\ell_1=0}^{1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{{\ell_1}'=0}^{1} \sum_{{m_1}'=-{\ell_1}'}^{{\ell_1}'} Y_{\ell_1}^{m_1}(P) Y_{{\ell_1}'}^{{m_1}'}(Q)\\
+&+ p_3'' \biggl\{ \frac{(1 - {p_1''}^2 e^{-2 p_2'' \lvert h \lvert})}{(1-2 \cos{\psi(P,\tau)} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}} - \sum_{\ell_2=0}^{1}  \frac{2\ell_2 + 1}{4\pi} p_1''^{\ell_2} e^{-\ell_2 p_2'' |h|} P_{\ell_2}(\cos{\overrightarrow{P\tau}})\biggl\} \sum_{\ell=0}^{1} \sum_{m=-\ell}^{\ell} Y_{\ell}^{m}(Q)\\
+&+ p_3'' \biggl\{ \frac{(1 - {p_1''}^2 e^{-2 p_2'' \lvert h \lvert})}{(1-2 \cos{\psi(Q,\tau)} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}} - \sum_{\ell_2=0}^{1}  \frac{2\ell_2 + 1}{4\pi} p_1''^{\ell_2} e^{-\ell_2 p_2'' |h|} P_{\ell_2}(\cos{\overrightarrow{Q\tau}}) \biggl \} \sum_{\ell=0}^{1} \sum_{m=-\ell}^{\ell} Y_{\ell}^{m}(P)\\
+\\
+&\text{ where } \quad p'_1, p_1 \ge p''_1, \quad p'_2, p_2 \le p''_2, \quad \text{ and } \quad p'_3, p_3 \ge p''_3,\\
+&\quad 0<p_1,p'_1,p''_1<1, \quad p_2, p'_2, p''_2, p_3, p'_3, p''_3 > 0, \quad \ell=0,1,2,\dots\\
+\end{align*}
+}
+
+\pagebreak
+
+\item
+To get a truncated process, how should we deal with temporal terms?\\
+truncated given time term?\\
+lm(dat$Z ~ 1 + low\_spherical[,2] + low\_spherical[,3] + low\_spherical[,4] + time)$res???\\
+or\\
+lm(dat$Z ~ 1 + low\_spherical[,2] + low\_spherical[,3] + low\_spherical[,4] )$res???\\
+
+\item
+Our IRF is defined given a temporal term.\\
+Also, the coefficients should consider temporal terms.\\ 
+i.e. $Z_{\ell,m}(t)$ and $Z_{\ell,m}(s)$ should be different depending on the values of $t$ and $s$.\\
+Thus,\\
+"lm(dat$Z ~ 1 + low\_spherical[,2] + low\_spherical[,3] + low\_spherical[,4] + time)$res"\\
+would be a better choice.\\
+
+\pagebreak
+
+Dec4 2022\\
+
+\item Roy's paper\\
+
+\item sample size\\
+
+\item check R coding (rmvn and truncated parts)\\
+
+\item Temperature Data and kriging?\\
+
+\item bigger kappa?\\
+
+\pagebreak
+
+\item
+Positive semi definite function $Cov\biggl(X(P,t), X(Q,s)\biggl)$ can be expressed as squared form.\\
+
+\item
+Matrix version proof:\\
+Let A is positive definite (semiddefinite)\\
+Since A is symmetric,\\
+\begin{align*}
+A &= Q^T \Lambda Q \quad (\because \text{A is symmetric})\\
+&= Q^T \Lambda^{1/2} \Lambda^{1/2} Q \quad (\Lambda_{ii}^{1/2}=\sqrt{\lambda_i})\\
+&= Q^T \Lambda^{1/2} Q Q^T \Lambda^{1/2} Q \quad (\because Q^T Q = Q Q^T =I)\\
+&= A^{1/2} A^{1/2}\\
+\end{align*}
+
+\item For IRF(1)/I(0)\\
+
+\item
+\begin{align*}
+Cov(X(P,t), X(Q,s)) &=\sum_{\ell=\kappa}^{\infty}  \sum_{m=-\ell}^{\ell} a_{\ell}(h) \biggl \{ Y_{\ell}^{m}(P) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(P) \biggl \} \biggl \{ Y_{\ell}^{m}(Q) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(Q) \biggl \}\\
+\\
+&= Y_{0}^{0}(P) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(Q) + Y_{0}^{0}(Q) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(\tau)\\
+&+ \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) + \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau) Y_{0}^{0}(P) Y_{0}^{0}(Q)\\
+\\
+&= \frac{1}{2\sqrt{\pi}} \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(Q) + \frac{1}{2\sqrt{\pi}} \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(\tau)\\
+&+ \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) + \frac{1}{4\pi} \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+\end{align*}
+
+\item In other words,\\
+\begin{align*}
+E(Z_{0,0}(t) Y_0^0(P), Z_{0,0}(s) Y_0^0(Q)) &= E(Z_{0,0}(t) , Z_{0,0}(s) )Y_0^0(P) Y_0^0(Q)\\
+&= \left\{ \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau) \right\} Y_{0}^{0}(P) Y_{0}^{0}(Q)\\
+\\
+\text{This means that } \quad E(Z_{0,0}(t),Z_{0,0}(s)) &= b_0(h) = \left\{ \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau) \right\}\\
+&= \phi_1(0,h)\\ 
+&= \frac{1-p_1^2 e^{-2p_2|h|}}{(1-2p_1e^{-p_2|h|} + p_1^2 e^{-2p_2|h|})^{3/2}}\\
+\end{align*}
+
+
+\pagebreak
+
+\begin{align*}
+\text{Let } &a_\ell(h) = p_1^\ell e^{-p_2 \ell |h|}\\
+&a'_\ell(h) = p_1'^{\ell} e^{-p'_2 \ell |h|}\\  
+&a''_\ell(h) = p_1''^\ell e^{-p''_2 \ell |h|}\\
+\\
+\text{By } &\text{introducing scale parameters, } p_3, p'_3, p''_3,\\
+& p_3 \phi_\kappa(\overrightarrow{PQ},h) = p_3 \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) = \frac{p_3(1-p_1^2 e^{-2p_2|h|})}{(1-2 \cos{\overrightarrow{PQ}} (p_1e^{-p_2|h|}) + p_1^2 e^{-2p_2|h|})^{3/2}}\\
+& p_3' \phi'_\kappa(\overrightarrow{PQ},h) = p'_3 \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell}  a'_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) = \frac{{p'}_3(1-p_1'^2 e^{-2p'_2|h|})}{(1-2 \cos{\overrightarrow{PQ}} (p_1'e^{-p_2'|h|}) + p_1'^2 e^{-2p_2'|h|})^{3/2}}\\
+&  p_3''\phi''_\kappa(\overrightarrow{PQ},h) = p''_3 \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) = \frac{p_3''(1-p_1''^2 e^{-2p_2''|h|})}{(1-2 \cos{\overrightarrow{PQ}} (p_1''e^{-p_2''|h|}) + p_1''^2 e^{-2p_2''|h|})^{3/2}}\\
+\\
+&\text{where } \quad 0<p_1,p'_1,p''_1<1, \quad p_2, p'_2, p'_2, p_3, p'_3, p''_3 > 0, \quad \ell=0,1,2,\dots\\
+\end{align*}
+
+\pagebreak
+
+Dec 6, 2022
+
+\item
+Let $X(P,t)$ be a spatio-temporal random process  on the sphere. Then, We can expand such a random process through its spectral representation.(Yaglom, 1961, Jones, 1963, Roy, 1969)\\
+$$ X(P,t)= \sum_{\ell=0}^{\infty}\sum_{m=-\ell}^{\ell}Z_{\ell,m}(t)Y_\ell^m(P)$$
+$$Z_{\ell,m}(t)=\int_{\mathbb{S}^2} X(P,t)Y_\ell^m(P)dP$$
+
+The $Y_\ell^m(\cdot)$s are spherical harmonics, which are orthonormal basis functions of the sphere and do not depend on time $t \in \mathbb{R}$. On the other hand, each coefficient $Z_{\ell,m}(t)$ is a function of a time term $t$ and free from the location $P \in \mathbb{S}^2$ in that it is integrated in terms of $P$. \\
+
+\item (Add introduction of IRF and allowable measeure here) Now, let assume X(P,t) is an IRF($\kappa$)/I(0). In other words, X(P,t) is non-homogeneous for the spatial term but still stationary in terms of time component. Then, we can say that $X(P,t) = \sum_{\ell=0}^{\kappa-1} \sum_{m=-\ell}^{\ell}Z_{\ell,m}(t)Y_\ell^m(P) + X_\kappa(P,t)$ where $X_\kappa(P,t) =  \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P).$ Huang(2018) showed that the low frequency truncated process $X_\kappa(P,t)$ is homogeneous if the original process $X(P,t)$ is an IRF($\kappa$) on the sphere. In addition, since $X_{\kappa}(P,t)$ is homogenous and stationary, according to Roy(1969), the stochastic process $\{Z_{\ell,m}(t) : t \in \mathbb{R} \}$ is stationary for all $m$ and $\ell \ge \kappa$; also, they are uncorrelated for different $\ell$ and $m$, i.e., $Cov\biggl(Z_{\ell,m}(t), Z_{\ell',m'}(t')\biggl)=0$ for $\ell \ne \ell'$ or $m \ne m'$ when $\ell, \ell' \ge \kappa$.\\
+
+Considering these facts, we can get a covariance function of $X_\kappa(P,t)$ such that:\\
+\begin{align*}
+&Cov\biggl(\sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)\\
+&\quad = \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} \sum_{\ell'=\kappa}^{\infty} \sum_{m'=-\ell'}^{\ell'} Cov\biggl( Z_{\ell,m}(t), Z_{\ell',m'}(s) \biggl) Y_{\ell}^{m}(P) Y_{\ell'}^{m'}(Q)\\
+&\quad \text{By shur's decompostion (Roy, 1969), }\\
+&\quad = \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) \quad \text{ where } \quad a_\ell(h)=Cov\biggl( Z_{\ell,m}(t), Z_{\ell',m'}(s) \biggl), \quad h=t-s\\
+&\quad = \sum_{\ell=\kappa}^\infty \frac{2\ell+1}{4\pi} a_\ell(h) P_\ell(\cos\overrightarrow{PQ}) \quad \text{ by addition theorem.}\\
+&\quad = \phi_\kappa(\overrightarrow{PQ},h)\\
+\end{align*}
+
+\item
+$\phi_\kappa(\overrightarrow{PQ},h)$ is called Intrinsic Covariance Function(ICF) with order $\kappa$. This is homogenous and stationary.\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% IRF(kappa)/I(0) %%%%%%%%%%%%%%%%%%%%%%%
+
+
+\item Now, for the sake of simplicity, let consider IRF(1)/I(0), i.e, $\kappa=1$. Then, its covariance function is:\\
+{\footnotesize
+\begin{align*}
+Cov\biggl(X(P,t), X(Q,s)\biggl) &= Cov\biggl(Z_{0,0}(t)Y_0^0(P) + \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P), \quad Z_{0,0}(s)Y_0^0(Q) + \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q) \biggl)\\
+&= Cov\biggl(\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)\\
+&+ Cov\biggl(Z_0(t)Y_0^0(P),\quad Z_0(s) Y_0^0(Q)\biggl)\\
+&+ Cov\biggl(Z_0(t)Y_0^0(P),\quad \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)\\ 
+&+ Cov\biggl(\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad Z_{0}(s) Y_{0}^{0}(Q) \biggl)\\
+\\
+&= \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} \sum_{\ell'=1}^{\infty} \sum_{m'=-\ell'}^{\ell'} Cov\biggl( Z_{\ell,m}(t), Z_{\ell',m'}(s) \biggl) Y_{\ell}^{m}(P) Y_{\ell'}^{m'}(Q)\\
+&+ Cov\biggl( Z_{0,0}(t), Z_{0,0}(s) \biggl) Y_0^0(P) Y_0^0(Q)\\
+&+ \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Cov\biggl( Z_{0,0}(t), Z_{\ell,m}(s) \biggl) Y_{0}^{0}(P) Y_{\ell}^{m}(Q)\\
+&+ \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Cov\biggl( Z_{\ell,m}(t), Z_{0,0}(s) \biggl) Y_{\ell}^{m}(P) Y_{0}^{0}(Q)\\
+\end{align*}
+}
+\\
+Since $X(P,t)$ is an IRF(1)/I(0), which is not homogenous, we cannot guarantee that the covariance functions related to the low frequency $Z_{0,0}(t)$ is 0. That is, it is possible and even more reasonable to assume that $Cov(Z_{0,0}(t), Z_{\ell,m}(s)) \ne 0$ for any $\ell, m$, and $t,s \in \mathbb{R}$. In other words, $Z_{0,0}(t)$ is correlated with the other coefficients unlike the previous case of $X_\kappa(P,t)$.{\color{red}????} In fact, Huang(2016) showed that coefficients of the low frequency can be correlated with the other coefficients of higher frequencies by providing an example of the Brownian bridge, which is an IRF(1) on a circle. In this research, our goal is to introduce appropriate structures for these covariances functions of non-homogenous or non-stationary processes.\\
+In pursuit of this aim, let\\
+\begin{align*}
+&Cov\biggl( Z_{\ell,m}(t), Z_{\ell',m'}(s) \biggl) = a_{\ell}(h) I\{(\ell,m),(\ell',m')\} \\
+&Cov\biggl( Z_{0,0}(t), Z_{0,0}(s) \biggl) = \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} a_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)  \quad \text{where } \tau \in \mathbb{S}^2 \\
+&Cov\biggl( Z_{0,0}(t), Z_{\ell,m}(s) \biggl) =Cov\biggl( Z_{\ell,m}(t), Z_{0,0}(s) \biggl) = a_{\ell}(h) Y_{\ell}^{m}(\tau)\\
+&\text{where } \quad a_\ell(h)=p_1^\ell e^{-p_2 \ell |h|}, \quad 0<p_1<1, \quad p_2>0, \quad \ell=0,1,2,\dots\\
+&\text{\color{red} How can we justify these structures???? Restriction to guarantee positive definiteness.}\\
+&\text{\color{red} These structures allow positive definiteness to the covariance model.}\\
+\end{align*}
+
+
+Then, by Shur's decomposition (Roy 1969),\\
+\begin{align*}
+&Cov\biggl(X(P,t), X(Q,s)\biggl) = \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) + \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau) Y_{0}^{0}(P) Y_{0}^{0}(Q)\\
+&+ Y_{0}^{0}(P) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(Q) + Y_{0}^{0}(Q) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(\tau)\\
+\end{align*}
+
+By addition theorem,\\
+\begin{align*}
+&= \left\{ \sum_{\ell=0}^\infty \frac{2\ell+1}{4\pi} a_\ell(h) P_\ell(\cos{\overrightarrow{PQ}}) - \frac{1}{4\pi} \right\} + Y_0^0(P)Y_0^0(Q) \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h) - \frac{1}{4\pi} \right\}\\
+&+ Y_0^0(P) \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{Q\tau}}) - \frac{1}{4\pi} \right\}\\ 
+&+ Y_0^0(Q) \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{P \tau}}) - \frac{1}{4\pi} \right\}\\
+\\
+&= \left\{ \sum_{\ell=0}^\infty \frac{2\ell+1}{4\pi} a_\ell(h) P_\ell(\cos{\overrightarrow{PQ}}) - \frac{1}{4\pi} \right\} + \frac{1}{4\pi} \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h) - \frac{1}{4\pi} \right\}\\
+&+ \frac{1}{2\sqrt{\pi}} \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{Q\tau}}) - \frac{1}{4\pi} \right\}\\ 
+&+ \frac{1}{2\sqrt{\pi}} \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{P \tau}}) - \frac{1}{4\pi} \right\}\\
+\\
+&= \phi_1(\overrightarrow{PQ},h) + Y_0^0(\tau) Y_0^0(\tau) \phi_1(0,h) +  Y_0^0(P) \phi_1(\overrightarrow{Q\tau},h)  + Y_0^0(Q) \phi_1(\overrightarrow{P\tau},h)\\
+\\
+&\text{Since } a_\ell(h)=p_1^\ell e^{-p_2 \ell |h|}, \quad 0<p_1<1, \quad p_2>0, \quad \ell=0,1,2,\dots\\
+&\Rightarrow \frac{(1 - {p_1}^2 e^{-2 p_2 \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{PQ})} (p_1 e^{-p_2 \lvert h \lvert}) + {p_1}^2 e^{-2p_2 \lvert h \lvert})^{3/2}}\\
+&+ \frac{1}{4\pi}\frac{(1 - {p_1'}^2 e^{-2 p_2' \lvert h \lvert})}{(1-2 p_1' e^{-p_2' \lvert h \lvert} + {p_1'}^2 e^{-2p_2' \lvert h \lvert})^{3/2}}\\ 
+&+ \frac{1}{2\sqrt{\pi}}\frac{(1 - {p_1''}^2 e^{-2 p_2'' \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{\tau Q})} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}}\\
+& + \frac{1}{2\sqrt{\pi}} \frac{(1 - {p_1''}^2 e^{-2 p_2 \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{P \tau})} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}} -  \frac{1}{4\pi} - \frac{1}{16\pi^2} - \frac{1}{4\pi^\frac{3}{2}}\\
+\end{align*}
+
+\item
+\textbf{{\color{red} Doesn't it look weird to have the constant terms, $\frac{1}{4\pi} - \frac{1}{16\pi^2} - \frac{1}{4\pi^\frac{3}{2}}$ in the covariance function? How can we explain or justify this?}}\\
+
+\item
+Now, we want to verify the positive definiteness of the covariance function. To prove the positive definiteness for this, we need to show:\\
+$$\sum_{i=1}^n \sum_{j=1}^n c_i Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl) \bar{c}_j  \ge 0$$
+\begin{proof}
+\begin{align*}
+&\sum_{i=1}^n \sum_{j=1}^n c_i Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl) \bar{c}_j\\
+&= \sum_{i=1}^n \sum_{j=1}^n c_i \biggl\{  \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) + Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&+ Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \biggl\} \bar{c}_j\\
+\\
+&= \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&+ \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \ge 0\\
+&=\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell=\kappa}^{\infty}  \sum_{m=-\ell}^{\ell} a_{\ell}(h_{ij}) \biggl \{ Y_{\ell}^{m}(y_i) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(y_i) \biggl \} \biggl\{ Y_{\ell}^{m}(y_j) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(y_j) \biggl\}\\
+\\
+&\text{By Bochner theorem, }\\
+&=\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell=\kappa}^{\infty}  \sum_{m=-\ell}^{\ell} \int_{\mathbb{R}} e^{i \omega (t_i-t_j)} F_{\ell,m}(d\omega) \biggl \{ Y_{\ell}^{m}(y_i) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(y_i) \biggl \} \biggl\{ Y_{\ell}^{m}(y_j) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(y_j) \biggl\}\\ 
+&\quad \text{where } h_{ij} = t_i-t_j, \text{ and } F_{\ell,m}(d\omega) \text{ is a non-negative measure.} \\
+&= \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} \int_{\mathbb{R}} F_{\ell,m}(d\omega) \sum_{i=1}^{n} c_i e^{i \omega t_i} \biggl \{ Y_{\ell}^{m}(y_i) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(y_i) \biggl \} \sum_{j=1}^{n} \bar{c}_j e^{i \omega t_j} \biggl\{ Y_{\ell}^{m}(y_j) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(y_j) \biggl\}\\
+&= \sum_{\ell=\kappa}^{\infty}  \sum_{m=-\ell}^{\ell} \int_{\mathbb{R}} F_{\ell,m}(d\omega) \biggl | \sum_{i=1}^{n} c_i e^{i \omega t_i} \biggl( Y_{\ell}^{m}(y_i) +  Y_{\ell}^{m}(\tau) Y_{0}^{0}(y_i)\biggl) \biggl |^2 \ge 0\\
+\end{align*}
+\end{proof}
+
+\item {\color{red} (Add why we need the scale parameters and benefit of them here)} The scale parameters $p_3, p_3'$, and $p_3''$ can be introduced to achieve more flexibility. Then,\\
+\begin{align*}
+&Cov\biggl(X(P,t), X(Q,s)\biggl) = p_3 \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) + p_3' \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau) Y_{0}^{0}(P) Y_{0}^{0}(Q)\\
+&+ p_3'' Y_{0}^{0}(P) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(Q) + p_3'' Y_{0}^{0}(Q) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(\tau)\\
+\\
+&= p_3 \phi_1(\overrightarrow{PQ},h) + p_3' Y_0^0(\tau) Y_0^0(\tau) \phi_1(0,h) +  p_3'' Y_0^0(P) \phi_1(\overrightarrow{Q\tau},h)  + p_3'' Y_0^0(Q) \phi_1(\overrightarrow{P\tau},h)\\
+\\
+&\Rightarrow \frac{p_3(1 - {p_1}^2 e^{-2 p_2 \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{PQ})} (p_1 e^{-p_2 \lvert h \lvert}) + {p_1}^2 e^{-2p_2 \lvert h \lvert})^{3/2}}\\
+&+ \frac{1}{4\pi}\frac{p_3'(1 - {p_1'}^2 e^{-2 p_2' \lvert h \lvert})}{(1-2 p_1' e^{-p_2' \lvert h \lvert} + {p_1'}^2 e^{-2p_2' \lvert h \lvert})^{3/2}}\\ 
+&+ \frac{1}{2\sqrt{\pi}}\frac{p_3''(1 - {p_1''}^2 e^{-2 p_2'' \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{\tau Q})} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}}\\
+& + \frac{1}{2\sqrt{\pi}} \frac{p_3''(1 - {p_1''}^2 e^{-2 p_2 \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{P \tau})} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}} -  \frac{p_3}{4\pi} - \frac{p_3'}{16\pi^2} - \frac{p_3''}{4\pi^\frac{3}{2}}\\
+&\text{where} \quad  0<p_1<1, \quad p_2>0, \quad p_3 \ge p_3', p_3'' \ge 0 \quad \ell=0,1,2,\dots\\
+\end{align*}
+
+\item This covariance function with the scale parameters is still positive definite.\\
+\begin{proof}
+
+\item We already showed that
+\begin{align*}
+&\sum_{i=1}^n \sum_{j=1}^n c_i Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl) \bar{c}_j  \ge 0\\
+& \Rightarrow \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j  \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j  Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a'_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&+ \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j  Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j  Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \ge 0\\
+\\
+&\text{Therefore, }\\
+& \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j  \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j)\\
+&\ge -\biggl(\sum_{j=1}^n c_i \bar{c}_j  Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a'_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&+\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \biggl)\\
+\end{align*}
+
+\textbf{{\color{red} Key part to check!!!!}}\\
+The first term in the left side is an intrinsic covariance function, and this is greater than or equal to 0 due to its positive semi definiteness. That is,\\
+$$ \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j) \ge 0$$ 
+On the other hand,\\
+$$\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)$$ 
+\text{(This one is positive semi definite because $\kappa=1$, but it is not if $\kappa > 1$)}\\
+$$ \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) \text{ and } \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau)$$
+the other terms terms in the right side can be either positive or negative depending on values of $y_i, y_j, c_i,$ and $\bar{c}_j$. Thus, to make the desired inequality valid for any $c_i, \bar{c}_j \in \mathbb{C}$, the intrinsic covariance funtion in the left side should dominate the other terms in the right side. Hence, the condition of the positive-definiteness is still hold if $p_3 \ge  p_3', p_3'' \ge 0$ as shown below :\\
+{\footnotesize
+\begin{align*}
+& p_3 \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(y_j)\\
+&\ge - p_3' \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j Y_{0}^{0}(y_i) Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a'_\ell(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)\\
+&\quad - p_3'' \biggl(\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j Y_{0}^{0}(y_i) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(y_j) + \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j Y_{0}^{0}(y_j) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a''_{\ell}(h_{ij}) Y_{\ell}^{m}(y_i) Y_{\ell}^{m}(\tau) \biggl)\\
+\end{align*}
+}
+\end{proof}
+
+\item
+Therefore, $Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl)$ is positive-semi definite.\\
+
+\pagebreak
+
+\item
+As it is shown, the suggested covariance function  $Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl)$ contains stationary time series $Z_{\ell,m}(t)$ such that:\\
+\begin{align*}
+&b_{\ell,m}(h) := Cov\biggl( Z_{\ell,m}(t), Z_{\ell',m'}(s) \biggl) = a_{\ell}(h) I\{(\ell,m),(\ell',m')\} \quad \text{where } h=t-s\\
+&b_{0}(h) := Cov\biggl( Z_{0,0}(t), Z_{0,0}(s) \biggl) = \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)  \quad \text{where } \tau \in \mathbb{S}^2 \\
+&b_{0}^{\ell,m}(h) := Cov\biggl( Z_{0,0}(t), Z_{\ell,m}(s) \biggl) = b_{\ell,m}^0(h) := Cov\biggl( Z_{\ell,m}(t), Z_{0,0}(s) \biggl) = a_{\ell}(h) Y_{\ell}^{m}(\tau)\\
+&\text{where } \quad a_\ell(h)=p_1^\ell e^{-p_2 \ell |h|}, \quad 0<p_1<1, \quad p_2>0, \quad \ell=0,1,2,\dots\\
+\end{align*}
+
+\item {\color{red} (Add brief introduction about multivariate time series here(Yaglom p308, Blackwell p234))}\\
+
+\item Therefore, the covariance functions, $b_0(h)$, $b_{\ell, m}(h)$, $b_0^{\ell,m}(h)$, and $b_{\ell,m}^0(h)$, should be treated in terms of multivariate random process (time series), which requires to verify some extra conditions.\\
+
+\item Basic properties of multivariate covariance matrices $\Gamma(\cdot)$ (Brockwell, Davis, p234):\\
+\begin{enumerate}
+\item $\Gamma(h)=\Gamma'(-h)$
+\item $|\gamma_{ij}(h)| \le (\gamma_{ii}(0) \gamma_{jj}(0))^{\frac{1}{2}}, \quad i,j=1,2,\dots, m$
+\item $\gamma_{ii}(\cdot)$ is an autocovariance function, $i=1,2,\dots,m$.
+i.e. $\gamma_{ii}(\cdot)$ is semi-positive definite.
+\item $\sum_{j,k=1}^n a_j' \Gamma(j-k) a_k \ge 0$ for $\forall n \in \{1,2,\dots\}$ and $a_1,a_2,\dots,a_n \in \mathbb{R}^m$\\
+i.e. $E(\sum_{j,k=1}^n a_j '(X_j-\mu))^2 \ge 0$\\
+\end{enumerate}
+
+\item
+$B(h)= 
+\begin{bmatrix}
+b_0(h) & b_0^{\ell,m}(h) \\ 
+b_{\ell,m}^0(h) & b_{\ell,m}(h)) 
+\end{bmatrix}$
+\\\\
+In general case for IRF($\kappa$), {\color{red} Can we generalize like this???}\\
+$B(h)= 
+\begin{bmatrix}
+b_{\ell_1,m_1}^{\ell_1',m_1'}(h) & b_{\ell_1,m_1}^{\ell_2,m_2}(h) \\ 
+b_{\ell_2,m_2}^{\ell_1,m_1}(h) & b_{\ell_2,m_2}(h)) 
+\end{bmatrix}$
+
+\item
+the covariance functions, $b_0(h)$, $b_{\ell, m}(h)$, $b_0^{\ell,m}(h)$, and $b_{\ell,m}^0(h)$ are from multivariate time series.\\
+
+\begin{proof}
+\begin{enumerate}
+\item
+Obvious.\\
+$B(h)=B^t(-h)$ since $a_\ell(h)=p_1^\ell e^{-p_2 \ell |h|}$ and $b_{0}^{\ell,m}(h) = b_{\ell,m}^{0}(h)$\\
+
+\item
+WTS:\\
+\begin{align*}
+&|b_{0}^{\ell,m}(h)| \le \{b_{0}(0) b_{\ell,m}(0)\}^\frac{1}{2}\\
+&\Rightarrow |a_{\ell}(h)||Y_{\ell}^{m}(\tau)| \le \Biggl[ a_{\ell}(0) \biggl\{ \sum_{{\ell}'=1}^{\infty} \sum_{m'=\ell'}^{\ell'} a_{{\ell}'}(0) Y_{{\ell}'}^{{m}'}(\tau) Y_{{\ell}'}^{{m}'}(\tau) \biggl\} \Biggl]^\frac{1}{2}\\
+\\
+&\text{Since \quad $a_{\ell}(0) \ge a_{\ell}(h)$ for any $h$, it suffices to show that }\\
+&\Rightarrow |a_{\ell}(h)||Y_{\ell}^{m}(\tau)|^2 \le \sum_{{\ell}'=\kappa}^{\infty} \sum_{m'=\ell'}^{\ell'} a_{{\ell}'}(0) Y_{{\ell}'}^{{m}'}(\tau) Y_{{\ell}'}^{{m}'}(\tau)\\
+&\text{Because $a_\ell(0) \ge a_\ell(h)  \ge 0$, this is true.}\\
+\end{align*}
+
+\item
+Need to check whether $b_{0}(h)$ and $b_{\ell,m}(h)$ are positive definite.\\ 
+(It is true because $a_\ell(h)$ is positive definite.)\\
+\\
+Let $f_{\ell,m}(\omega)$ is a spectral density function of $b_{\ell,m}(h)$. According to Bochner Theorem, it suffices to show that $f_{\ell,m}(\omega)$ is non-negative to prove positive semi definiteness. We can find $f_{\ell,m}(\omega)$ by inversion of Fourier transformation if $b_{\ell,m}(h)$ is given. (Yaglom, p313)\\
+\begin{align*}
+f_{\ell,m}(\omega) &=  \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell,m}(h) dh \quad \text{ or } \quad f_{\ell,m}(\omega) =  \frac{1}{2\pi} \sum_{-\infty}^\infty e^{-i\omega h} b_{\ell,m}(h) 
+\end{align*}
+We assume  $f_{\ell,m}(\omega)$ exists. The spectral density function $f_{\ell,m}(\omega)$ exists if $\int_{-\infty}^\infty |b_{\ell,m}(h)|dh < \infty$ or $\sum_{-\infty}^\infty |b_{\ell,m}(h)|dh < \infty$. This means that $|b_{\ell,m}(h)|$ falls off rapidly as $|h| \rightarrow \infty$ (Yaglom, p104). Therefore, as long as our covariance functions exponentially decay, this assumption is reasonable.\\
+\begin{proof}
+\begin{align*}
+f_{\ell,m}(\omega) &= \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell,m}(h) dh\\
+&= \frac{p_1^\ell}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} e^{-p_2 \ell |h|} dh\\
+&= \frac{p_1^\ell}{2\pi} \int_{0}^\infty e^{-(i \omega + p_2 \ell) h} dh + \frac{p_1^\ell}{2\pi} \int_{-\infty}^0 e^{-(i \omega - p_2 \ell) h} dh\\
+&= \frac{p_1^\ell}{2\pi} \left\{ \frac{1}{i \omega + p_2 \ell} + \frac{-1}{i \omega - p_2 \ell} \right\}\\
+&= \frac{p_1^\ell}{\pi} \frac{p_1^\ell p_2 \ell}{\omega^2 + p_2^2 \ell^2} \ge 0\\
+\end{align*}
+Therefore, $b_0(h)=\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)$ is also positive semi-definite.\\
+\end{proof}
+
+\item
+{\color{red}(For each (or fixed) $\ell$, $m$,)}\\
+Want to show\\
+\begin{align*}
+&\sum_{i=1}^n \sum_{j=1}^n 
+\begin{bmatrix}
+c_{i1} & c_{i2}
+\end{bmatrix}
+\begin{bmatrix}
+\gamma_{11}(t_i-t_j) = b_0(t_i-t_j) & \gamma_{12}(t_i-t_j) = b_0^{\ell,m}(t_i-t_j)\\ 
+\gamma_{21}(t_i-t_j) = b_{\ell,m}^0(t_i-t_j) & \gamma_{22}(t_i-t_j) = b_{\ell,m}(t_i-t_j)
+\end{bmatrix}
+\begin{bmatrix}
+c_{j1}\\
+c_{j2} 
+\end{bmatrix}
+\ge0 \quad{\color{red}???????}
+\end{align*}
+\\
+\\
+Let\\
+$\Gamma(h)= 
+\begin{bmatrix}
+\gamma_{11}(h) & \gamma_{12}(h) \\ 
+\gamma_{21}(h) & \gamma_{22}(h) 
+\end{bmatrix}
+=
+\begin{bmatrix}
+b_{0}(h) & b_{0}^{\ell,m}(h) \\ 
+b_{\ell,m}^{0}(h) & b_{\ell,m}(h) 
+\end{bmatrix}$
+\\
+
+Want to show\\
+$$\sum_{j,k=1}^{n=4} \gamma_{jk}(h) c_j \overline{c_k} \ge 0$$
+According to Yaglom, the condition 4 can be replaced by:\\
+$$\sum_{j,k=1}^n f_{jk}(\omega) c_j \overline{c_k} \ge 0 \quad \text{ where } f_{jk}(\omega) \text{ is spectral and cross spectral densities for } \gamma_{jk}(h).$$
+In the case of 2 by 2 matrix, this one is equivalent to show:\\
+$$f_{\ell_1,m_1}(\omega) \ge 0, \quad f_{\ell_2,m_2}(\omega) \ge 0, \quad \text{ and } |f_{\ell_1,m_1}^{\ell_2, m_2}(\omega)|^2 \le f_{\ell_1,m_1}(\omega) f_{\ell_2,m_2}(\omega)$$
+We have already verified that the first two conditions are satisfied for condition 3; thus, only need to show the last one, which is:\\
+$$|f_{\ell_1,m_1}^{\ell_2, m_2}(\omega)|^2 \le f_{\ell_1,m_1}(\omega) f_{\ell_2,m_2}(\omega)$$
+
+This means that:
+\begin{align*}
+&\left\{ \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{0}^{\ell,m}(h) dh \right\}^2 \quad \le \quad \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell,m}(h) dh \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{0}(h) dh \\
+\\
+&\Rightarrow \left\{ \int_{-\infty}^\infty e^{-i\omega h} Y_{\ell}^{m}(\tau) a_{\ell}(h) dh \right\}^2\\ 
+&\quad \quad \quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} a_{\ell}(h) dh \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{{\ell}'=\kappa}^{\infty} \sum_{m'=\ell'}^{\ell'} a_{{\ell}'}(h) Y_{{\ell}'}^{{m}'}(\tau) Y_{{\ell}'}^{{m}'}(\tau) \biggl\} dh\\
+\\
+&\Rightarrow |Y_{\ell}^{m}(\tau)|^2 \int_{-\infty}^\infty e^{-i\omega h} a_{\ell}(h) dh \quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{{\ell}'=\kappa}^{\infty} \sum_{m'=\ell'}^{\ell'} a_{{\ell}'}(h) Y_{{\ell}'}^{{m}'}(\tau) Y_{{\ell}'}^{{m}'}(\tau) \biggl\} dh\\
+&= |Y_{\ell}^{m}(\tau)|^2 \int_{-\infty}^\infty e^{-i\omega h} a_{\ell}(h) dh \quad \le \quad |Y_{\ell}^{m}(\tau)|^2 \int_{-\infty}^\infty e^{-i\omega h} a_{\ell}(h) dh + \alpha\\
+&(\because \alpha \ge 0 \quad \text{ since } a_\ell(h) \ge 0 \text{ and } \ell \ge \kappa)\\
+\end{align*}
+
+\end{enumerate}
+
+Thus, all of conditions of multivariate time series are satisfied.\\
+
+\end{proof}
+
+\pagebreak
+\item
+So far, we have verified that each $Z_{\ell,m}(t)$ and its covariance function can be explained in terms of multivariate time series.\\
+
+\item
+{\color{red}
+When we check the conditions of multivariate time series, is it required to consider every $\ell, m$ simultaneously together at once?\\ 
+
+\item 
+Probably no because our covariance function in Nill space, $b_{\ell_1,m_1}^{\ell_1',m_1'}(h)$s, are all the same as $\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)$ regardless of their orders. That is, we are assuming that $Z_{\ell,m}(t)$s for $\ell<\kappa$ are from the same random process. Is it realistic or too strong assumption? (at least we can introduce different scale parameters for each term. Will explain it later.) 
+
+\item
+Probably still yes since the covariance function for the truncated part, $b_{\ell,m}(h)$s are still depending on their $\ell$ and $m$. In other words, they are from different random processes with difference covariance functions.\\
+
+\item 
+Can we extend these conditions (from Brockwell and Yaglom) of the multivariate random process to infinite dimensional multivariate time series? If so, it enables us to say our covariance functions of the coefficients are infinite dimensional multivariate time series.\\
+}
+
+\pagebreak
+
+\item
+Now, we want to consider $Z(t) = \{Z_{\ell,m}(t): \quad \ell=0,1,2,..., \text{ and } -m \le \ell \le m \}$ as multivariate time series.\\
+
+\item
+Proof of Condition 1 and 3 are all the same as the fixed $\ell,m$ case.\\
+
+\item
+For Condition 2,\\
+It suffices to show $|b_{0}^{\ell,m}(h)| \le \{b_{0}(0) b_{\ell,m}(0)\}^\frac{1}{2}$.\\
+\begin{align*}
+&|b_{0}^{\ell,m}(h)| \le \{b_{0}(0) b_{\ell,m}(0)\}^\frac{1}{2}\\
+&\Rightarrow |a_{\ell}(h)||Y_{\ell}^{m}(\tau)| \le \Biggl[ a_{\ell}(0) \biggl\{ \sum_{{\ell}'=1}^{\infty} \sum_{m'=\ell'}^{\ell'} a_{{\ell}'}(0) Y_{{\ell}'}^{{m}'}(\tau) Y_{{\ell}'}^{{m}'}(\tau) \biggl\} \Biggl]^\frac{1}{2}\\
+\\
+&\text{Since \quad $a_{\ell}(0) \ge a_{\ell}(h)$ for any $h$, it suffices to show that }\\
+&\Rightarrow |a_{\ell}(h)||Y_{\ell}^{m}(\tau)|^2 \le \sum_{{\ell}'=\kappa}^{\infty} \sum_{m'=\ell'}^{\ell'} a_{{\ell}'}(0) Y_{{\ell}'}^{{m}'}(\tau) Y_{{\ell}'}^{{m}'}(\tau)\\
+&\text{Because $a_\ell(0) \ge a_\ell(h)  \ge 0$, this is true.}\\
+\end{align*}
+
+\item
+For Condition4, we want to show\\
+$$\sum_{j,k=1}^{{\color{red}\infty}} \gamma_{jk}(h) c_j \overline{c_k} \ge 0$$
+According to Yaglom, the condition 4 can be replaced by:\\
+$$\sum_{j,k=1}^{{\color{red}\infty}} f_{jk}(\omega) c_j \overline{c_k} \ge 0 \quad \text{ where } f_{jk}(\omega) \text{ is spectral and cross spectral densities for } \gamma_{jk}(h).$$
+
+\begin{align*}
+\sum_{j,k=1}^{{\color{red}\infty}} f_{jk}(\omega) c_j \overline{c_k} &= \sum_{\ell=1}^\infty \sum_{m=-\ell}^{\ell} c_{\ell,m} \overline{c}_{\ell,m} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) dh\\ 
+&+ c_{0} \overline{c}_{0} \int_{-\infty}^{\infty} e^{-i \omega h} \sum_{\ell=1}^\infty \sum_{m=-\ell}^{\ell} a_\ell(h) Y_{\ell}^m(\tau) Y_{\ell}^m(\tau) dh\\ 
+&\quad \quad \text{{\color{red}(Can we switch the integral with the summation?)}}\\
+&+ \sum_{\ell=1}^\infty \sum_{m=-\ell}^{\ell} c_{\ell,m} \overline{c}_{0} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) dh + \sum_{\ell=1}^\infty \sum_{m=-\ell}^{\ell} c_{0} \overline{c}_{\ell,m} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) dh\\
+\\
+&\Rightarrow \sum_{\ell=1}^\infty \sum_{m=-\ell}^{\ell} \biggl\{ c_{\ell,m} \overline{c}_{\ell,m} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) dh + c_{0} \overline{c}_{0} \int_{-\infty}^{\infty} e^{-i \omega h} a_\ell(h) Y_{\ell}^m(\tau) Y_{\ell}^m(\tau) dh\\
+&\quad + c_{\ell,m} \overline{c}_{0} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) dh + c_{0} \overline{c}_{\ell,m} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) dh \biggl\}\\
+\end{align*}
+
+Therefore, the desired inequality is hold if\\
+\begin{align*}
+&c_{\ell,m} \overline{c}_{\ell,m} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) dh + c_{0} \overline{c}_{0} \int_{-\infty}^{\infty} e^{-i \omega h} a_\ell(h) Y_{\ell}^m(\tau) Y_{\ell}^m(\tau) dh\\
+&\quad + c_{\ell,m} \overline{c}_{0} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) dh + c_{0} \overline{c}_{\ell,m} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) dh \ge 0
+\end{align*}
+
+By Yaglom(p313), it suffices to show that\\
+\begin{align*}
+\biggl\{ \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) dh \biggl\}^2 \quad \le \quad \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) dh \quad \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) Y_{\ell}^m(\tau) dh 
+\end{align*}
+This is obviously true. In fact, the left side and right side are equal.\\
+
+
+\pagebreak
+
+\item \textbf{Simulation Study}\\
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ |p{1cm}|p{1cm}|p{1cm}||p{1.5cm}|p{1.5cm}|p{1.5cm}||p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+ \hline
+ \multicolumn{9}{|c|}{Simulation Result} \\
+ \hline
+ $p_1$ & $p_2$ & $p_3$ & $Avg(\hat{p}_1)$ & $Avg(\hat{p}_2)$  & $Avg(\hat{p}_3$)& $sd(\hat{p}_1)$ & $sd(\hat{p}_2)$  & $sd(\hat{p}_3$)\\
+ \hline
+ 0.95& 0.005& 1.00& 0.9365& 0.0073& 1.3427& 0.0171& 0.0022& 0.8560\\ 
+ 0.90& 0.001& 1.00& 0.8985& 0.0013& 0.9563& 0.0278& 0.0005& 0.8098\\
+ 0.90& 0.90& 1.00& 0.8753& 12.2934&  1.3779& 0.0650& 8.7326& 0.3080\\
+ 0.85& 0.01& 1.00& 0.8611& 0.0106& 0.8746& 0.0393& 0.0037& 0.6426\\ 
+ 0.80& 0.10& 0.50& 0.8234& 0.1189& 0.4007& 0.0297& 0.0380& 0.1708\\ 
+ 0.75& 0.15& 10.0& 0.7926& 0.1750& 6.9500& 0.0468& 0.0578& 2.7859\\
+ 0.70& 0.05& 1.00& 0.7627& 0.0533& 0.6639& 0.0555& 0.0213& 0.4845\\
+ 0.70& 0.50& 1.00& 0.7699& 1.3258& 0.5731& 0.0517& 3.3399& 0.1385\\
+ 0.65& 0.20& 10.0& 0.7487& 0.2193& 4.9744& 0.0577& 0.0801& 1.9752\\
+ 0.60& 0.30& 50.0& 0.7306& 0.3273& 20.8662& 0.0674& 0.1287& 7.1531\\
+ 0.50& 0.20& 1.00& 0.6975& 0.2020& 0.3193& 0.0595& 0.0779& 0.1720\\
+ 0.40& 0.60& 5.00& 0.6842& 0.6907& 0.9357& 0.0901& 1.4447& 0.3119\\
+ 0.30& 1.50& 1.00& 0.6815& 6.8669& 0.1129& 0.0713& 8.3867& 0.0312\\
+ 0.20& 0.02& 0.10& 0.5218& 0.0199& 0.0167& 0.0704& 0.0155& 0.0150\\
+ 0.10& 0.80& 0.50&  0.6421& 0.8989& 0.0160& 0.0773& 2.2854& 0.0064\\
+ \hline
+\end{tabular}
+\caption{\label{tab1} Average values and standard deviations of 1,000 estimates with true parameter values. Each simulation includes 200 locations and 20 temporal points.}
+\end{table}
+
+\item For $p_2$, need to define outliers.\\
+
+\item $p_1$ seems related to overall decay rate (in light of both temporal and spatial terms). If it is smaller than 0.7, fail to estimate. (decay too late and not converging to 0. Check the plots.)\\
+
+\item $p_2$ seems more related to temporal terms. if it is too big, more likely to have outliers (probably failure of the optimization algorithm).
+If it is too small, it doesn't look converging to 0, but still our estimators are good (This is interesting).\\
+
+\item $p_3$ is less accurate compared to the ones in the DA project. It is more likely to fail when either $p_1$ or $p_2$ fails.\\
+
+\pagebreak
+
+\item
+\textbf{DA Project result}\\
+\begin{table}[h!]
+\centering
+\begin{tabular}{ |p{1cm}|p{1cm}|p{1cm}||p{1.5cm}|p{1.5cm}|p{1.5cm}||p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+ \hline
+ \multicolumn{9}{|c|}{Simulation Result} \\
+ \hline
+ $p_1$ & $p_2$ & $p_3$ & $Avg(\hat{p}_1)$ & $Avg(\hat{p}_2)$  & $Avg(\hat{p}_3$)& $sd(\hat{p}_1)$ & $sd(\hat{p}_2)$  & $sd(\hat{p}_3$)\\
+ \hline
+ 0.70& 0.02& 1.00& 0.6922& 0.0214& 1.2640& 0.1215& 0.0086& 1.2691\\
+ 0.75& 0.05& 1.00& 0.7450& 0.0498& 1.1420& 0.0849& 0.0161& 0.8111\\
+ 0.80& 0.10& 1.00& 0.7877& 0.1019& 1.2575& 0.0696& 0.0175& 0.9311\\
+ 0.65& 0.20& 1.00& 0.6673& 0.2033& 1.0215& 0.0914& 0.0768& 0.7925\\
+ 0.60& 0.30& 1.00& 0.5738& 0.3180& 1.3026& 0.1036& 0.1259& 0.8552\\
+ 0.50& 0.40& 1.00& 0.5442& 0.4667& 0.8697& 0.1163& 0.2124& 0.6206\\ 
+ 0.40& 0.50& 1.00& 0.4683& 0.5645& 1.0135& 0.1612& 0.2374& 0.9071\\ 
+ 0.30& 0.60& 1.00& 0.3931& 0.6798& 1.3189& 0.2058& 0.3610& 1.5982\\ 
+ 0.20& 0.70& 1.00& 0.3635& 0.7914& 0.8485& 0.1931& 0.3585& 1.0374\\ 
+ 0.10& 0.80& 1.00& 0.2396& 1.2605& 1.0905& 0.1989& 2.6151& 1.4070\\
+ 0.80& 0.80& 1.00& 0.8002& 2.1697& 1.0365& 0.0520& 4.1953& 0.6697\\
+ 0.10& 0.02& 1.00& 0.1910& 0.0489& 0.8053& 0.1100& 0.0763& 1.0400\\
+ \hline
+\end{tabular}
+\caption{\label{tab1} Average values and standard deviations of 50 estimates with true parameter values. Each simulation includes 200 locations and 20 temporal points.}
+\end{table}
+
+\pagebreak
+\item \textbf{Sample Size Reference}\\
+
+\item 
+Spatio-Temporal Covariance and Cross-Covariance Functions of the Great Circle Distance on a Sphere, Porcu Moreno Bevilacqua \& Marc G. Genton (2016): \\
+$600 \times 5$ for simulation \& $336 \times 15$ for real data.\\
+
+\item 
+Space-Time Covariance Structures and Models, Wanfang Chen, Marc G. Genton, and Ying Sun(2020):\\
+ $225 \times 10$.\\
+ 
+ \item
+ Spatio-Temporal Covariance and Cross-Covariance Functions of the Great Circle Distance on a Sphere, Quan Vu, Andrew Zammit-Mangion, and Stephen J. Chuter(2022):\\
+ $2,601 \times 10$.\\
+ 
+ \item
+ FULL-SCALE APPROXIMATIONS OF SPATIO-TEMPORAL COVARIANCE MODELS FOR LARGE DATASETS, Bohai Zhang, Huiyan Sang and Jianhua Z. Huang (2015):\\
+ $4,000$ temporal-spatio locations on a space-time domain $Space=[0,20] \times [0,20]$ and $Time=[0,20]$.\\
+ 
+ \item
+Spatio-Temporal Cross-Covariance Functions under the Lagrangian Framework with Multiple Advections, Mary Lai O. Salvana, Amanda Lenzi \& Marc G. Genton(2022):\\
+529 spatial observation on $23 \times 23$ grid in the unit square at time $t=0,1,...,5$.\\ 
+100 realizations of 'bivariate' random field.\\
+
+%\begin{figure}[h!]
+%\centering
+ % \includegraphics [width=13cm, height=12cm] {s_plot.pdf}
+  %\caption{MoM estimates, fitted covariance values, and true covariance values with  $p_1=0.8$, $p_2=0.1$, and $p_3=1$ provided temporal lags h are fixed.}
+  %\label{fig2}
+%\end{figure}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%% IRF(kappa)/I(0) %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\item IRF($\kappa$)/I(0)\\
+
+\item
+So far, we looked into IRF(1)/I(0). Now, let's try to generalize it to IRF($\kappa$)/I(0).\\
+
+\item
+{\footnotesize
+\begin{align*}
+&Cov\biggl(X(P,t), X(Q,s)\biggl)\\
+&= Cov\biggl(\sum_{\ell=0}^{\kappa-1} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t)Y_{\ell}^{m}(P) + \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P), \quad \sum_{\ell=0}^{\kappa-1} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q) + \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q) \biggl)\\
+\\
+&= Cov\biggl(\sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)\\
+&+ Cov\biggl(\sum_{\ell=0}^{\kappa-1} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t)Y_{\ell}^{m}(P), \quad \sum_{\ell=0}^{\kappa-1} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t)Y_{\ell}^{m}(P)\biggl)\\
+&+ Cov\biggl(\sum_{\ell=0}^{\kappa-1} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t)Y_{\ell}^{m}(P),\quad \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)\\ 
+&+ Cov\biggl(\sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad \sum_{\ell=0}^{\kappa-1} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s)Y_{\ell}^{m}(Q) \biggl)\\
+\\
+&= \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} \sum_{\ell'=\kappa}^{\infty} \sum_{m'=-\ell'}^{\ell'} Cov\biggl( Z_{\ell,m}(t), Z_{\ell',m'}(s) \biggl) Y_{\ell}^{m}(P) Y_{\ell'}^{m'}(Q)\\
+&+ \sum_{\ell=0}^{\kappa-1} \sum_{m=-\ell}^{\ell} \sum_{\ell'=0}^{\kappa-1} \sum_{m'=-\ell'}^{\ell'} Cov\biggl( Z_{\ell,m}(t), Z_{\ell',m'}(s) \biggl) Y_{\ell}^{m}(P) Y_{\ell'}^{m'}(Q)\\
+&+ \sum_{\ell=0}^{\kappa-1} \sum_{m=-\ell}^{\ell} \sum_{\ell'=\kappa}^{\infty} \sum_{m'=-\ell'}^{\ell'} Cov\biggl( Z_{\ell,m}(t), Z_{\ell',m'}(s) \biggl) Y_{\ell}^{m}(P) Y_{\ell'}^{m'}(Q)\\
+&+ \sum_{\ell=0}^{\kappa-1} \sum_{m=-\ell}^{\ell} \sum_{\ell'=\kappa}^{\infty} \sum_{m'=-\ell'}^{\ell'} Cov\biggl( Z_{\ell,m}(t), Z_{\ell',m'}(s) \biggl) Y_{\ell}^{m}(P) Y_{\ell'}^{m'}(Q)\\
+&+ \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} \sum_{\ell'=0}^{\kappa-1} \sum_{m'=-\ell'}^{\ell'} Cov\biggl( Z_{\ell',m'}(t), Z_{\ell,m}(s) \biggl) Y_{\ell}^{m}(P) Y_{\ell'}^{m'}(Q)\\
+\end{align*}
+}
+\\
+Since $X(P,t)$ is an IRF($\kappa$)/I(0), which is not homogenous, we cannot guarantee that the covariance functions related to the low frequency $Z_{\ell, m}(t)$ is 0 when $\ell$ is smaller than $\kappa$. That is, it is plausible and even more reasonable to assume that $Cov(Z_{\ell,m}(t), Z_{\ell',m'}(s)) \ne 0$ for any $\ell', m'$, and $t,s \in \mathbb{R}$ when $\ell<\kappa$. In other words, elements of Nil space $N=\{Z_{\ell,m}(t) : \quad \ell<\kappa, \quad -\ell \le m \le \ell\}$ are correlated with the other coefficients in contrast to the previous case of $X_\kappa(P,t)$, which is homogenous.{\color{red}????} In fact, Huang(2016) showed that coefficients of the low frequency can be correlated with the other coefficients of higher frequencies by providing an example of the Brownian bridge, which is an IRF(1) on a circle. In this research, our goal is to introduce appropriate structures for these covariances functions of non-homogenous or non-stationary processes. In pursuit of this aim, let $\ell_1, \ell_1' < \kappa$ and $\ell_2, \ell _2' \ge \kappa$ and $\ell_i \le m_i \le \ell_i$, $\ell_i' \le m_i' \le \ell_i'$ for $i=1,2$. From now, for clear understanding, we will use indices $\ell_1$, $\ell_1'$ for the truncated parts and $\ell_2,\ell_2'$ for elements in Nil space made of low frequencies.\\
+\begin{align*}
+&Cov\biggl( Z_{\ell_2,m_2}(t), Z_{\ell_2',m_2'}(s) \biggl) = a_{\ell_2}(h) I\{(\ell_2,m_2),(\ell'_2,m_2')\} \\
+&Cov\biggl( Z_{\ell_1,m_1}(t), Z_{\ell_1',m_1'}(s) \biggl) = \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} a_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)  \quad \text{where } \tau \in \mathbb{S}^2 \\
+&Cov\biggl( Z_{\ell_1,m_1}(t), Z_{\ell_2,m_2}(s) \biggl) = Cov\biggl( Z_{\ell_2,m_2}(t), Z_{\ell_1,m_1}(s) \biggl) = a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau)\\
+&\text{where } \quad a_\ell(h)=p_1^\ell e^{-p_2 \ell |h|}, \quad 0<p_1<1, \quad p_2>0.\\
+&\text{\color{red} How can we justify these structures???? Restriction to guarantee positive definiteness.}\\
+&\text{\color{red} These structures allow positive definiteness to the covariance model.}\\
+\end{align*}
+
+
+Then, by Shur's decomposition (Roy 1969),\\
+\begin{align*}
+&Cov\biggl(X(P,t), X(Q,s)\biggl) = \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h) Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(Q)\\ 
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(P) Y_{\ell_1'}^{m_1'}(Q) \sum_{\ell_2=1}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(\tau)\\
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(Q)\\ 
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h) Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(\tau)\\
+\end{align*}
+
+By addition theorem,\\
+\begin{align*}
+&= \left\{ \sum_{\ell=0}^\infty \frac{2\ell+1}{4\pi} a_\ell(h) P_\ell(\cos{\overrightarrow{PQ}}) -  \sum_{\ell=0}^{\kappa-1} \frac{2\ell+1}{4\pi} a_\ell(h) P_\ell(\cos{\overrightarrow{PQ}}) \right\}\\ 
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1}  \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(P)Y_{\ell_1'}^{m_1'}(Q) \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h) - \sum_{\ell=0}^{\kappa-1} \frac{2\ell+1}{4\pi} a_{\ell}(h) \right\}\\
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{Q\tau}}) - \sum_{\ell=0}^{\kappa-1} \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{Q\tau}}) \right\}\\ 
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q) \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{P \tau}}) - \sum_{\ell=0}^{\kappa-1}  \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{P\tau}}) \right\}\\
+\\
+&= \phi_{\kappa}(\overrightarrow{PQ},h) + \phi_{\kappa}(0,h) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(\tau) Y_{\ell_1'}^{m_1'}(\tau)\\ 
+&+ \phi_{\kappa}(\overrightarrow{Q\tau},h) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) + \phi_{\kappa}(\overrightarrow{P\tau},h) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q)\\
+\\
+&\text{Since } a_\ell(h)=p_1^\ell e^{-p_2 \ell |h|}, \quad 0<p_1<1, \quad p_2>0, \quad \ell=0,1,2,\dots\\
+&\Rightarrow \biggl\{ \frac{(1 - {p_1}^2 e^{-2 p_2 \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{PQ})} (p_1 e^{-p_2 \lvert h \lvert}) + {p_1}^2 e^{-2p_2 \lvert h \lvert})^{3/2}} - \sum_{\ell=0}^{\kappa-1} \frac{2\ell+1}{4\pi} a_\ell(h) P_\ell(\cos{\overrightarrow{PQ}}) \biggl\}\\
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1}  \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(P)Y_{\ell_1'}^{m_1'}(Q) \biggl\{ \frac{(1 - {p_1'}^2 e^{-2 p_2' \lvert h \lvert})}{(1-2 p_1' e^{-p_2' \lvert h \lvert} + {p_1'}^2 e^{-2p_2' \lvert h \lvert})^{3/2}} - \sum_{\ell=0}^{\kappa-1} \frac{2\ell+1}{4\pi} a_{\ell}(h) \biggl\}\\ 
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) \biggl\{ \frac{(1 - {p_1''}^2 e^{-2 p_2'' \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{\tau Q})} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}} - \sum_{\ell=0}^{\kappa-1} \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{Q\tau}}) \biggl\}\\
+& + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q) \biggl\{\frac{(1 - {p_1''}^2 e^{-2 p_2 \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{P \tau})} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}} - \sum_{\ell=0}^{\kappa-1} \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{P\tau}}) \biggl\}\\
+\end{align*}
+
+\item
+\textbf{{\color{red} If $\kappa=1$, doesn't it look weird to have the constant terms, $-\frac{1}{4\pi} - \frac{1}{16\pi^2} - \frac{1}{4\pi^\frac{3}{2}}$ in the covariance function? How can we explain or justify this?}}\\
+
+\item
+Now, we want to verify the positive definiteness of the covariance function. To prove the positive definiteness for this, we need to show:\\
+$$\sum_{i=1}^n \sum_{j=1}^n c_i Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl) \bar{c}_j  \ge 0 \quad \text{where} \quad y_i,y_j \in \mathbb{S}^2, \quad t_i,t_j \in \mathbb{R} \text{ or } \mathbb{Z} \quad c_i, c_j \in \mathbb{C}$$
+\begin{proof}
+{\tiny
+\begin{align*}
+&\sum_{i=1}^n \sum_{j=1}^n c_i  Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl) \bar{c}_j\\
+&= \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \biggl\{ \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(y_i) Y_{\ell_2}^{m_2}(y_j)\\ 
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(y_i) Y_{\ell_1'}^{m_1'}(y_j) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(\tau)\\
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_i) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(y_j)\\
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_j) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(y_i) Y_{\ell_2}^{m_2}(\tau) \biggl\} \\
+\\
+&=\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_2=\kappa}^{\infty}  \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h_{ij}) \biggl \{ Y_{\ell_2}^{m_2}(y_i) + Y_{\ell_2}^{m_2}(\tau) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_i) \biggl \} \biggl\{ Y_{\ell_2}^{m_2}(y_j) +  Y_{\ell_2}^{m_2}(\tau) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_j) \biggl\}\\
+\\
+&\text{By Bochner theorem, }\\
+&=\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_2=\kappa}^{\infty}  \sum_{m_2=-\ell_2}^{\ell_2} \int_{\mathbb{R}} e^{i \omega (t_i-t_j)} F_{\ell_2, m_2}(d\omega) \biggl \{ Y_{\ell_2}^{m_2}(y_i) + Y_{\ell_2}^{m_2}(\tau) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_i) \biggl \} \biggl\{ Y_{\ell_2}^{m_2}(y_j) +  Y_{\ell_2}^{m_2}(\tau) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_j) \biggl\}\\ 
+&\quad \text{where } h_{ij} = t_i-t_j, \text{ and } F_{\ell_2,m_2}(d\omega) \text{ is a non-negative measure.} \\
+\\
+&= \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} \int_{\mathbb{R}} F_{\ell_2,m_2}(d\omega) \sum_{i=1}^{n} c_i e^{-i \omega t_i} \biggl \{ Y_{\ell_2}^{m_2}(y_i) + Y_{\ell_2}^{m_2}(\tau) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_i) \biggl \} \sum_{j=1}^{n} \bar{c}_j e^{-i \omega t_j} \biggl\{ Y_{\ell_2}^{m_2}(y_j) + Y_{\ell_2}^{m_2}(\tau) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_j) \biggl\}\\
+&= \sum_{\ell=\kappa}^{\infty}  \sum_{m=-\ell}^{\ell} \int_{\mathbb{R}} F_{\ell_2,m_2}(d\omega) \biggl | \sum_{i=1}^{n} c_i e^{i \omega t_i} \biggl( Y_{\ell_2}^{m_2}(y_i) + Y_{\ell_2}^{m_2}(\tau) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_i) \biggl) \biggl |^2 \ge 0\\
+\end{align*}
+}
+\end{proof}
+
+\item {\color{red} (Add why we need the scale parameters and benefit of them here)} The scale parameters $p_3$ and $p_3'$ can be introduced to achieve more flexibility. Then,\\
+\begin{align*}
+&Cov\biggl(X(P,t), X(Q,s)\biggl) = p_3 \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h) Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(Q)\\ 
+&+ p_3'  \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(P) Y_{\ell_1'}^{m_1'}(Q) \sum_{\ell_2=1}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(\tau)\\
+&+ p_3'  \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(Q)\\ 
+&+ p_3' \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h) Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(\tau)\\
+\\
+\\
+&= p_3 \phi_{\kappa}(\overrightarrow{PQ},h) + p_3' \phi_1(0,h) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(\tau) Y_{\ell_1'}^{m_1'}(\tau)\\ 
+&+ p_3' \phi_{\kappa}(\overrightarrow{Q\tau},h) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) + p_3' \phi_{\kappa}(\overrightarrow{P\tau},h) \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q)\\
+\\
+&\text{Since } a_\ell(h)=p_1^\ell e^{-p_2 \ell |h|}, \quad \ell=0,1,2,\dots\\
+&\Rightarrow p_3 \biggl\{ \frac{(1 - {p_1}^2 e^{-2 p_2 \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{PQ})} (p_1 e^{-p_2 \lvert h \lvert}) + {p_1}^2 e^{-2p_2 \lvert h \lvert})^{3/2}} - \sum_{\ell=0}^{\kappa-1} \frac{2\ell+1}{4\pi} a_\ell(h) P_\ell(\cos{\overrightarrow{PQ}}) \biggl\}\\
+&+ p_3' \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(P)Y_{\ell_1'}^{m_1'}(Q) \biggl\{ \frac{(1 - {p_1'}^2 e^{-2 p_2' \lvert h \lvert})}{(1-2 p_1' e^{-p_2' \lvert h \lvert} + {p_1'}^2 e^{-2p_2' \lvert h \lvert})^{3/2}} - \sum_{\ell=0}^{\kappa-1} \frac{2\ell+1}{4\pi} a_{\ell}(h) \biggl\}\\ 
+&+ p_3' \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) \biggl\{ \frac{(1 - {p_1''}^2 e^{-2 p_2'' \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{\tau Q})} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}} - \sum_{\ell=0}^{\kappa-1} \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{Q\tau}}) \biggl\}\\
+& + p_3' \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q) \biggl\{\frac{(1 - {p_1''}^2 e^{-2 p_2 \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{P \tau})} (p_1'' e^{-p_2'' \lvert h \lvert}) + {p_1''}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}} - \sum_{\ell=0}^{\kappa-1} \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{P\tau}}) \biggl\}\\
+&\text{where} \quad  0<p_1<1, \quad p_2>0, \quad p_3 \ge p_3' \ge 0 \\
+\end{align*}
+
+\item This covariance function with the scale parameters is still positive definite.\\
+\begin{proof}
+
+\item We already showed that
+\begin{align*}
+&\sum_{i=1}^n \sum_{j=1}^n c_i  Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl) \bar{c}_j \ge 0\\
+&\Rightarrow \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(y_i) Y_{\ell_2}^{m_2}(y_j)\\ 
+&+ \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(y_i) Y_{\ell_1'}^{m_1'}(y_j) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(\tau)\\
+&+ \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_i) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(y_j)\\
+&+ \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_j) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(y_i) Y_{\ell_2}^{m_2}(\tau) \ge 0\\
+\\
+&\text{Therefore, }\\
+&\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(y_i) Y_{\ell_2}^{m_2}(y_j)\\
+&\ge - \biggl\{ \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(y_i) Y_{\ell_1'}^{m_1'}(y_j) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(\tau)\\
+&+ \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_i) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(y_j)\\
+&+ \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_j) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(y_i) Y_{\ell_2}^{m_2}(\tau) \biggl\} \\
+\end{align*}
+
+\textbf{{\color{red} Key part to check!!!!}}\\
+The first term in the left side is an intrinsic covariance function, and this is greater than or equal to 0 due to its positive semi definiteness. That is,\\
+$$\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(y_i) Y_{\ell_2}^{m_2}(y_j) \ge 0$$
+
+On the other hand,\\
+$$\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(y_i) Y_{\ell_1'}^{m_1'}(y_j) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(\tau)$$
+\text{(This one is positive semi definite because $\kappa=1$, but it is not if $\kappa > 1$)}\\
+$$\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_i) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(y_j)$$
+and\\
+$$\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_j) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(y_i) Y_{\ell_2}^{m_2}(\tau)$$
+
+the other terms terms in the right side can be either positive or negative depending on values of $y_i, y_j, c_i,$ and $\bar{c}_j$. Thus, to make the desired inequality valid for any $c_i, \bar{c}_j \in \mathbb{C}$, the intrinsic covariance funtion in the left side should dominate the other terms in the right side. Hence, the condition of the positive-definiteness is still hold if $p_3 \ge p_3' \ge 0$ as shown below :\\
+{\footnotesize
+\begin{align*}
+&p_3 \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(y_i) Y_{\ell_2}^{m_2}(y_j)\\
+&\ge - p_3' \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(y_i) Y_{\ell_1'}^{m_1'}(y_j) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(\tau)\\
+&- p_3' \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_i) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(y_j)\\
+&- p_3' \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(y_j) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h_{ij}) Y_{\ell_2}^{m_2}(y_i) Y_{\ell_2}^{m_2}(\tau)
+\end{align*}
+}
+\end{proof}
+
+\item
+Therefore, $Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl)$ is positive-semi definite.\\
+
+\pagebreak
+
+\item
+As it is shown, the suggested covariance function  $Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl)$ contains stationary time series $Z_{\ell,m}(t)$ such that:\\
+\begin{align*}
+&\text{For } \ell_1, \ell_1' < \kappa \quad \text{and} \quad \ell_2, \ell_2' \ge \kappa,\\
+&b_{\ell_2,m_2}(h) := Cov\biggl( Z_{\ell_2,m_2}(t), Z_{\ell_2',m_2'}(s) \biggl) = a_{\ell_2}(h) I\{(\ell_2,m_2),(\ell_2',m_2')\} \quad \text{where } h=t-s\\
+&b_{\ell_1,m_1}(h) := Cov\biggl( Z_{\ell_1m_1}(t), Z_{\ell_1',m_1'}(s) \biggl) = \sum_{\ell_2=\kappa}^{\infty} \sum_{m=-\ell_2}^{\ell_2} a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(\tau)  \quad \text{where } \tau \in \mathbb{S}^2 \\
+&b_{\ell_1,m_1}^{\ell_2,m_2}(h) := Cov\biggl( Z_{\ell_1,m_1}(t), Z_{\ell_2,m_2}(s) \biggl) = b_{\ell_2,m_2}^{\ell_1,m_1}(h) := Cov\biggl( Z_{\ell_2,m_2}(t), Z_{\ell_1,m_1}(s) \biggl) = a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau)\\
+&\text{where } \quad a_\ell(h)=p_1^\ell e^{-p_2 \ell |h|}, \quad 0<p_1<1, \quad p_2>0, \quad \ell=0,1,2,\dots\\
+\end{align*}
+
+\item {\color{red} (Add brief introduction about multivariate time series here(Yaglom p308, Blackwell p234))}\\
+
+\item Therefore, the covariance functions, $b_{\ell_2,m_2}(h)$, $b_{\ell_1,m_1}(h)$, $b_{\ell_1,m_1}^{\ell_2,m_2}(h)$, and $b_{\ell_2,m_2}^{\ell_1,m_1}(h)$, should be treated in terms of multivariate random process (time series), which requires to verify some extra conditions.\\
+
+\item Basic properties of multivariate covariance matrices $\Gamma(\cdot)$ (Brockwell, Davis, p234):\\
+\begin{enumerate}
+\item $\Gamma(h)=\Gamma'(-h)$
+\item $|\gamma_{ij}(h)| \le (\gamma_{ii}(0) \gamma_{jj}(0))^{\frac{1}{2}}, \quad i,j=1,2,\dots, m$
+\item $\gamma_{ii}(\cdot)$ is an autocovariance function, $i=1,2,\dots,m$.
+i.e. $\gamma_{ii}(\cdot)$ is semi-positive definite.
+\item $\sum_{j,k=1}^n a_j' \Gamma(j-k) a_k \ge 0$ for $\forall n \in \{1,2,\dots\}$ and $a_1,a_2,\dots,a_n \in \mathbb{R}^m$\\
+i.e. $E(\sum_{j,k=1}^n a_j '(X_j-\mu))^2 \ge 0$\\
+\end{enumerate}
+
+\item
+$B(h)= 
+\begin{bmatrix}
+b_{\ell_1,m_1}(h) & b_{\ell_1,m_1}^{\ell_2,m_2}(h) \\ 
+b_{\ell_2,m_2}^{\ell_1,m_1}(h) & b_{\ell_2,m_2}(h)) 
+\end{bmatrix}$
+
+\item
+\textbf{Claim:} the covariance functions, $b_{\ell_2,m_2}(h)$, $b_{\ell_1,m_1}(h)$, $b_{\ell_1,m_1}^{\ell_2,m_2}(h)$, and $b_{\ell_2,m_2}^{\ell_1,m_1}(h)$ are from multivariate time series.\\
+
+\begin{proof}
+\begin{enumerate}
+\item
+Obvious.\\
+$B(h)=B^t(-h)$ since $a_\ell(h)=p_1^\ell e^{-p_2 \ell |h|}$ and $b_{\ell_1,m_1}^{\ell_2,m_2}(h) = b_{\ell_2,m_2}^{\ell_1,m_1}(h)$\\
+
+\item
+WTS:\\
+\begin{align*}
+&|b_{\ell_1,m_1}^{\ell_2,m_2}(h)| \le \{b_{\ell_1,m_1}(0) b_{\ell_2,m_2}(0)\}^\frac{1}{2}\\
+&\Rightarrow |a_{\ell_2}(h)||Y_{\ell_2}^{m_2}(\tau)| \le \Biggl[ a_{\ell_2}(0) \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=\ell_2'}^{\ell_2'} a_{\ell_2'}(0) Y_{\ell_2'}^{m_2'}(\tau) Y_{\ell_2'}^{m_2'}(\tau) \biggl\} \Biggl]^\frac{1}{2}\\
+\\
+&\text{Since \quad $a_{\ell}(0) \ge a_{\ell}(h)$ for any $h$ and $\ell$, it suffices to show that }\\
+&\Rightarrow |a_{\ell_2}(h)||Y_{\ell_2}^{m_2}(\tau)|^2 \le \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=\ell_2'}^{\ell_2'} a_{\ell_2'}(0) Y_{\ell_2'}^{m_2'}(\tau) Y_{\ell_2'}^{m_2'}(\tau)\\
+&\text{Because $a_{\ell_2}(0) \ge a_{\ell_2}(h)  \ge 0$, this is true.}\\
+\end{align*}
+
+\item
+Need to check whether $b_{\ell_1,m_1}(h)$ and $b_{\ell_2,m_2}(h)$ are positive definite.\\ 
+(It is true because $a_\ell(h)$ is positive definite.)\\
+\\
+Let $f_{\ell,m}(\omega)$ is a spectral density function of $b_{\ell,m}(h)$. According to Bochner Theorem, it suffices to show that $f_{\ell,m}(\omega)$ is non-negative to prove positive semi definiteness. We can find $f_{\ell,m}(\omega)$ by inversion of Fourier transformation if $b_{\ell,m}(h)$ is given. (Yaglom, p313)\\
+\begin{align*}
+f_{\ell,m}(\omega) &=  \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell,m}(h) dh \quad \text{ or } \quad f_{\ell,m}(\omega) =  \frac{1}{2\pi} \sum_{h=-\infty}^\infty e^{-i\omega h} b_{\ell,m}(h) 
+\end{align*}
+We assume  $f_{\ell,m}(\omega)$ exists. The spectral density function $f_{\ell,m}(\omega)$ exists if $\int_{-\infty}^\infty |b_{\ell,m}(h)|dh < \infty$ or $\sum_{h=-\infty}^\infty |b_{\ell,m}(h)|dh < \infty$. This means that $|b_{\ell,m}(h)|$ falls off rapidly as $|h| \rightarrow \infty$ (Yaglom, p104). Therefore, as long as our covariance functions exponentially decay, this assumption is reasonable.\\
+\begin{proof}
+\begin{align*}
+f_{\ell,m}(\omega) &= \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell,m}(h) dh\\
+&= \frac{p_1^\ell}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} e^{-p_2 \ell |h|} dh\\
+&= \frac{p_1^\ell}{2\pi} \int_{0}^\infty e^{-(i \omega + p_2 \ell) h} dh + \frac{p_1^\ell}{2\pi} \int_{-\infty}^0 e^{-(i \omega - p_2 \ell) h} dh\\
+&= \frac{p_1^\ell}{2\pi} \left\{ \frac{1}{i \omega + p_2 \ell} + \frac{-1}{i \omega - p_2 \ell} \right\}\\
+&= \frac{p_1^\ell}{\pi} \frac{p_1^\ell p_2 \ell}{\omega^2 + p_2^2 \ell^2} \ge 0\\
+\end{align*}
+To sum up, $b_{\ell_2,m_2}(h)$ is positive semi-definite.\\
+As a result, $b_{\ell_1, m_1}(h)=\sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau) Y_{\ell_2}^{m_2}(\tau)$ is also positive semi-definite.\\
+\end{proof}
+
+\item
+{\color{red}(For each (or fixed) $\ell$, $m$,)}\\
+Want to show\\
+\begin{align*}
+&\sum_{i=1}^n \sum_{j=1}^n 
+\begin{bmatrix}
+c_{i1} & c_{i2}
+\end{bmatrix}
+\begin{bmatrix}
+\gamma_{11}(t_i-t_j) = b_0(t_i-t_j) & \gamma_{12}(t_i-t_j) = b_0^{\ell,m}(t_i-t_j)\\ 
+\gamma_{21}(t_i-t_j) = b_{\ell,m}^0(t_i-t_j) & \gamma_{22}(t_i-t_j) = b_{\ell,m}(t_i-t_j)
+\end{bmatrix}
+\begin{bmatrix}
+c_{j1}\\
+c_{j2} 
+\end{bmatrix}
+\ge0 \quad{\color{red}???????}
+\end{align*}
+\\
+\\
+Let\\
+$\Gamma(h)= 
+\begin{bmatrix}
+\gamma_{11}(h) & \gamma_{12}(h) \\ 
+\gamma_{21}(h) & \gamma_{22}(h) 
+\end{bmatrix}
+=
+\begin{bmatrix}
+b_{\ell_1,m_1}(h) & b_{\ell_1,,m_1}^{\ell_2,m_2}(h) \\ 
+b_{\ell_2,m_2}^{\ell_1,m_1}(h) & b_{\ell_2,m_2}(h) 
+\end{bmatrix}$
+\\
+
+Want to show\\
+$$\sum_{j,k=1}^{n=4} \gamma_{jk}(h) c_j \overline{c_k} \ge 0$$
+According to Yaglom, the condition 4 can be replaced by:\\
+$$\sum_{j,k=1}^n f_{jk}(\omega) c_j \overline{c_k} \ge 0 \quad \text{ where } f_{jk}(\omega) \text{ is spectral and cross spectral densities for } \gamma_{jk}(h).$$
+In the case of 2 by 2 matrix, this one is equivalent to show:\\
+$$f_{\ell_1,m_1}(\omega) \ge 0, \quad f_{\ell_2,m_2}(\omega) \ge 0, \quad \text{ and } |f_{\ell_1,m_1}^{\ell_2, m_2}(\omega)|^2 \le f_{\ell_1,m_1}(\omega) f_{\ell_2,m_2}(\omega)$$
+We have already verified that the first two conditions are satisfied for condition 3; thus, only need to show the last one, which is:\\
+$$|f_{\ell_1,m_1}^{\ell_2, m_2}(\omega)|^2 \le f_{\ell_1,m_1}(\omega) f_{\ell_2,m_2}(\omega)$$
+
+This means that:
+\begin{align*}
+&\left\{ \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell_1,m_1}^{\ell_2,m_2}(h) dh \right\}^2 \quad \le \quad \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell2,m_2}(h) dh \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell_1,m_1}(h) dh \\
+\\
+&\Rightarrow \left\{ \int_{-\infty}^\infty e^{-i\omega h} Y_{\ell_2}^{m_2}(\tau) a_{\ell_2}(h) dh \right\}^2\\ 
+&\quad \quad \quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} a_{\ell_2}(h) dh \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=\ell_2'}^{\ell_2'} a_{\ell_2'}(h) Y_{\ell_2'}^{m_2'}(\tau) Y_{\ell_2'}^{m_2'}(\tau) \biggl\} dh\\
+\\
+&\Rightarrow |Y_{\ell_2}^{m_2}(\tau)|^2 \int_{-\infty}^\infty e^{-i\omega h} a_{\ell_2}(h) dh \quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=\ell_2'}^{\ell_2'} a_{\ell_2'}(h) Y_{\ell_2'}^{m_2'}(\tau) Y_{\ell_2'}^{m_2'}(\tau) \biggl\} dh\\
+&= |Y_{\ell_2}^{m_2}(\tau)|^2 \int_{-\infty}^\infty e^{-i\omega h} a_{\ell_2}(h) dh \quad \le \quad |Y_{\ell_2}^{m_2}(\tau)|^2 \int_{-\infty}^\infty e^{-i\omega h} a_{\ell_2}(h) dh + \alpha\\
+&(\because \alpha \ge 0 \quad \text{ since } a_{\ell_2}(h) \ge 0 \text{ and } \ell \ge \kappa)\\
+\end{align*}
+
+\end{enumerate}
+
+Thus, all of conditions of multivariate time series are satisfied.\\
+
+\end{proof}
+
+\pagebreak
+\item
+So far, we have verified that each $Z_{\ell,m}(t)$ and its covariance function can be explained in terms of multivariate time series.\\
+
+\item
+{\color{red}
+When we check the conditions of multivariate time series, is it required to consider every $\ell, m$ simultaneously together at once?\\ 
+
+\item 
+Probably no because our covariance function in Nill space, $b_{\ell_1,m_1}^{\ell_1',m_1'}(h)$s, are all the same as $\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_{\ell}(h) Y_{\ell}^{m}(\tau) Y_{\ell}^{m}(\tau)$ regardless of their orders. That is, we are assuming that $Z_{\ell,m}(t)$s for $\ell<\kappa$ are from the same random process. Is it realistic or too strong assumption? (at least we can introduce different scale parameters for each term. Will explain it later.) 
+
+\item
+Probably still yes since the covariance function for the truncated part, $b_{\ell,m}(h)$s are still depending on their $\ell$ and $m$. In other words, they are from different random processes with difference covariance functions.\\
+
+\item 
+Can we extend these conditions (from Brockwell and Yaglom) of the multivariate random process to infinite dimensional multivariate time series? If so, it enables us to say our covariance functions of the coefficients are infinite dimensional multivariate time series.\\
+}
+
+\pagebreak
+
+\item
+Now, we want to consider $Z(t) = \{Z_{\ell,m}(t): \quad \ell=0,1,2,..., \text{ and } -m \le \ell \le m \}$ as multivariate time series.\\
+
+\item
+Proof of Condition 1 and 3 are all the same as the fixed $\ell,m$ case.\\
+
+\item
+For Condition 2,\\
+It suffices to show $|b_{0}^{\ell,m}(h)| \le \{b_{0}(0) b_{\ell,m}(0)\}^\frac{1}{2}$.\\
+\begin{align*}
+&|b_{0}^{\ell,m}(h)| \le \{b_{0}(0) b_{\ell,m}(0)\}^\frac{1}{2}\\
+&\Rightarrow |a_{\ell}(h)||Y_{\ell}^{m}(\tau)| \le \Biggl[ a_{\ell}(0) \biggl\{ \sum_{{\ell}'=1}^{\infty} \sum_{m'=\ell'}^{\ell'} a_{{\ell}'}(0) Y_{{\ell}'}^{{m}'}(\tau) Y_{{\ell}'}^{{m}'}(\tau) \biggl\} \Biggl]^\frac{1}{2}\\
+\\
+&\text{Since \quad $a_{\ell}(0) \ge a_{\ell}(h)$ for any $h$, it suffices to show that }\\
+&\Rightarrow |a_{\ell}(h)||Y_{\ell}^{m}(\tau)|^2 \le \sum_{{\ell}'=\kappa}^{\infty} \sum_{m'=\ell'}^{\ell'} a_{{\ell}'}(0) Y_{{\ell}'}^{{m}'}(\tau) Y_{{\ell}'}^{{m}'}(\tau)\\
+&\text{Because $a_\ell(0) \ge a_\ell(h)  \ge 0$, this is true.}\\
+\end{align*}
+
+\item
+For Condition4, we want to show\\
+$$\sum_{j,k=1}^{{\color{red}\infty}} \gamma_{jk}(h) c_j \overline{c_k} \ge 0$$
+According to Yaglom, the condition 4 can be replaced by:\\
+$$\sum_{j,k=1}^{{\color{red}\infty}} f_{jk}(\omega) c_j \overline{c_k} \ge 0 \quad \text{ where } f_{jk}(\omega) \text{ is spectral and cross spectral densities for } \gamma_{jk}(h).$$
+
+\begin{align*}
+\sum_{j,k=1}^{{\color{red}\infty}} f_{jk}(\omega) c_j \overline{c_k} &= \sum_{\ell=1}^\infty \sum_{m=-\ell}^{\ell} c_{\ell,m} \overline{c}_{\ell,m} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) dh\\ 
+&+ c_{0} \overline{c}_{0} \int_{-\infty}^{\infty} e^{-i \omega h} \sum_{\ell=1}^\infty \sum_{m=-\ell}^{\ell} a_\ell(h) Y_{\ell}^m(\tau) Y_{\ell}^m(\tau) dh\\ 
+&\quad \quad \text{{\color{red}(Can we switch the integral with the summation? Fubini?)}}\\
+&+ \sum_{\ell=1}^\infty \sum_{m=-\ell}^{\ell} c_{\ell,m} \overline{c}_{0} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) dh + \sum_{\ell=1}^\infty \sum_{m=-\ell}^{\ell} c_{0} \overline{c}_{\ell,m} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) dh\\
+\\
+&\Rightarrow \sum_{\ell=1}^\infty \sum_{m=-\ell}^{\ell} \biggl\{ c_{\ell,m} \overline{c}_{\ell,m} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) dh + c_{0} \overline{c}_{0} \int_{-\infty}^{\infty} e^{-i \omega h} a_\ell(h) Y_{\ell}^m(\tau) Y_{\ell}^m(\tau) dh\\
+&\quad + c_{\ell,m} \overline{c}_{0} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) dh + c_{0} \overline{c}_{\ell,m} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) dh \biggl\}\\
+\end{align*}
+
+Therefore, the desired inequality is hold if\\
+\begin{align*}
+&c_{\ell,m} \overline{c}_{\ell,m} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) dh + c_{0} \overline{c}_{0} \int_{-\infty}^{\infty} e^{-i \omega h} a_\ell(h) Y_{\ell}^m(\tau) Y_{\ell}^m(\tau) dh\\
+&\quad + c_{\ell,m} \overline{c}_{0} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) dh + c_{0} \overline{c}_{\ell,m} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) dh \ge 0
+\end{align*}
+
+By Yaglom(p313), it suffices to show that\\
+\begin{align*}
+\biggl\{ \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) dh \biggl\}^2 \quad \le \quad \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) dh \quad \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{-i \omega h}a_\ell(h) Y_{\ell}^m(\tau) Y_{\ell}^m(\tau) dh 
+\end{align*}
+This is obviously true. In fact, the left side and right side are equal.\\
+
+\pagebreak
+
+\item \textbf{Simulation Study}\\
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ |p{1cm}|p{1cm}|p{1cm}||p{1.5cm}|p{1.5cm}|p{1.5cm}||p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+ \hline
+ \multicolumn{9}{|c|}{Simulation Result} \\
+ \hline
+ $p_1$ & $p_2$ & $p_3$ & $Avg(\hat{p}_1)$ & $Avg(\hat{p}_2)$  & $Avg(\hat{p}_3$)& $sd(\hat{p}_1)$ & $sd(\hat{p}_2)$  & $sd(\hat{p}_3$)\\
+ \hline
+
+ 0.95& 0.005& 1.00& 0.9406& 0.0087& 1.2707&0.0167& 0.0038& 0.8384\\ 
+ 0.90& 0.001& 1.00& 0.9078& 0.0015& 0.7482& 0.0263& 0.0006& 0.7033\\
+ 0.90& 0.90& 1.00& 0.8786& 11.1974& 1.5038& 0.0100& 9.0557& 0.3418\\
+ 0.85& 0.01& 1.00& 0.8757& 0.0126& 0.6923&  0.0375& 0.0049& 0.5799\\ 
+ 0.80& 0.10& 0.50& 0.8425& 0.1278& 0.5416& 0.0443& 0.0755& 0.8945\\ 
+ 0.75& 0.15& 10.0& 0.8468& 0.1455& 11.0278& 0.1456& 0.2683& 15.6822\\
+ 0.70& 0.05& 1.00& 0.8518& 0.0710& 1.2501& 0.0761& 0.0649& 1.7397\\
+ 0.70& 0.50& 1.00& 0.8355& 0.2252& 34491.8027& 0.1015& 1.6465& 181030.0699\\
+ 0.65& 0.20& 10.0& 0.7751& 0.1696& 312613.3084& 0.1663& 2.1096& 805731.6714\\
+ 0.60& 0.30& 50.0& 0.6561& 0.1101& 1001203.3845& 0.2659& 0.6270& 2250388.1400\\
+ 0.50& 0.20& 1.00& 0.7323& 0.1091& 39687.6921& 0.0676& 0.0455& 161566.2100\\
+ 0.40& 0.60& 5.00& 0.6524& 0.1687& 125072.8063& 0.0546& 0.0465& 679291.3002\\
+ 0.30& 1.50& 1.00& 0.6536& 0.4559& 13540.91360.6536& 0.0403& 2.3018& 320377.9088\\
+ 0.20& 0.02& 0.10& 0.6272& 0.0743& 0.3301& 0.0621& 0.0290& 0.2944\\
+ 0.10& 0.80& 0.50& 0.6360& 0.2282& 1.5912& 0.0337& 0.0754& 1.4037\\
+ \\
+ 0.80& 0.20& 1.00& 0.8792& 0.4365& 1.4926& 0.0110& 0.2601& 0.4260\\
+ 0.60& 0.02& 50.0& 0.8770& 0.0365& 92.5674& 0.1021& 0.0340& 116.2935\\
+ \hline
+\end{tabular}
+\caption{\label{tab1} Average values and standard deviations of 1,000 estimates with true parameter values for IRF(2)/I(0). Each simulation includes 200 locations and 20 temporal points.}
+\end{table}
+
+{\color{red}(see the plot)}
+\item when $kappa=2$, nlminb algorithm fails more often. Especially when $p_2 \ge 0.1$??\\
+
+\item $p_3$ also seems to fail a lot, but see the mode oh the plots.\\
+
+\pagebreak
+
+\item \textbf{Simulation Study}\\
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ |p{1cm}|p{1cm}|p{1cm}||p{1.5cm}|p{1.5cm}|p{1.5cm}||p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+ \hline
+ \multicolumn{9}{|c|}{Simulation Result} \\
+ \hline
+ $p_1$ & $p_2$ & $p_3$ & $Avg(\hat{p}_1)$ & $Avg(\hat{p}_2)$  & $Avg(\hat{p}_3$)& $sd(\hat{p}_1)$ & $sd(\hat{p}_2)$  & $sd(\hat{p}_3$)\\
+ \hline
+ 0.95& 0.005& 1.00& 0.9365& 0.0073& 1.3427& 0.0171& 0.0022& 0.8560\\ 
+ 0.90& 0.001& 1.00& 0.8985& 0.0013& 0.9563& 0.0278& 0.0005& 0.8098\\
+ 0.90& 0.90& 1.00& 0.8753& 12.2934&  1.3779& 0.0650& 8.7326& 0.3080\\
+ 0.85& 0.01& 1.00& 0.8611& 0.0106& 0.8746& 0.0393& 0.0037& 0.6426\\ 
+ 0.80& 0.10& 0.50& 0.8234& 0.1189& 0.4007& 0.0297& 0.0380& 0.1708\\ 
+ 0.75& 0.15& 10.0& 0.7926& 0.1750& 6.9500& 0.0468& 0.0578& 2.7859\\
+ 0.70& 0.05& 1.00& 0.7627& 0.0533& 0.6639& 0.0555& 0.0213& 0.4845\\
+ 0.70& 0.50& 1.00& 0.7699& 1.3258& 0.5731& 0.0517& 3.3399& 0.1385\\
+ 0.65& 0.20& 10.0& 0.7487& 0.2193& 4.9744& 0.0577& 0.0801& 1.9752\\
+ 0.60& 0.30& 50.0& 0.7306& 0.3273& 20.8662& 0.0674& 0.1287& 7.1531\\
+ 0.50& 0.20& 1.00& 0.6975& 0.2020& 0.3193& 0.0595& 0.0779& 0.1720\\
+ 0.40& 0.60& 5.00& 0.6842& 0.6907& 0.9357& 0.0901& 1.4447& 0.3119\\
+ 0.30& 1.50& 1.00& 0.6815& 6.8669& 0.1129& 0.0713& 8.3867& 0.0312\\
+ 0.20& 0.02& 0.10& 0.5218& 0.0199& 0.0167& 0.0704& 0.0155& 0.0150\\
+ 0.10& 0.80& 0.50&  0.6421& 0.8989& 0.0160& 0.0773& 2.2854& 0.0064\\
+ \hline
+\end{tabular}
+\caption{\label{tab1} Average values and standard deviations of 1,000 estimates with true parameter values. Each simulation includes 200 locations and 20 temporal points.}
+\end{table}
+
+\pagebreak
+
+\item \textbf{TITLE}\\
+Parametrized Covariance Modeling for non-Homogeneous (and non-Stationary) Spatio-Temporal Random Process on the
+Sphere\\
+
+\item \textbf{ABSTRACT}\\
+Identifying an appropriate covariance function is one of the primary interests in spatial or spatio-temporal data analysis in that it allows researchers to analyze the dependence structure and predict unobserved values of the process. For this purpose, homogeneity is a widely used assumption in spatial or spatio-temporal statistics, and many parameterized covariance models have been developed under this assumption. However, this is a strong and unrealistic condition in many cases. In addition, although different statistical approaches should be applied to build a proper covariance model on the sphere considering its unique characteristics, relevant studies are relatively less common. In this research, we introduce a novel parametrized model of the covariance function for non-homogenious (and non-stationary) spatio-temporal random process on the sphere. To alleviate the homogeneity assumption and consider its spherical domain, this research applies the theories of intrinsic random function (IRF) while considering the significant influence of time components in the model as well. We also provide a methodology to estimate the parameters of intrinsic covariance function (ICF) that has a key role for prediction through kriging. Finally, the simulation study demonstrates validity of the suggested covariance model with its advantage of interpretability.\\
+
+\item
+\textbf{Keywords } Non-homogeneity, Non-stationarity, Spatio-temporal statistics, Covariance function, Sphere, Intrinsic Random Functions\\
+
+\pagebreak
+
+\item Why do we need the finite second moment for $X(P,t)$? Is it to guarantee the existence of covariance?\\
+
+\item How can we justify our mom estimator without ergodicity?\\
+
+\item 
+\textbf{Ergodicity}\\
+I think this definition is more straight forward than that of Cressie (P55)\\
+If $\omega[t]$ eventually visits all of $\Omega$ regardless of $\omega[0]$, then Birkoff's equality (1931) holds :\\
+$$\lim_{T \rightarrow \infty} \frac{1}{T} \int_{0}^{T}f(\omega [t])dt = \int_{\Omega}f(\omega)P(\omega)d\omega$$  
+The left one is average of a long trajectory (called time average) and the right one is average over all possible states (also called ensemble average)\\
+
+
+\item 
+Think about AR(1), $X_n(t+1) = \phi X_n(t) + \epsilon(t)$ with $|\phi| <1$\\
+If we use an autoregressive model, we can use the ergodicity assumption since when $|\phi| <1$, it forgets initial condition over time.\\
+If initial conditions are very influential, that random process is not ergodic.\\
+
+\item 
+Ergodic time series has to be "strongly stationary" (a second-order stationarity is not sufficient). However, statisticians are often using only part of the ergodicity assumption to guarantee the convergences of the sample mean and covariance to their population.(Cressie, p57).\\
+This notion formulated by Gardiner (1983) is ergodicity in mean and ergodicity in covariance. These are specified by $L_2$ convergence of the sample quantities. (i.e., $E(X_n - X)^2 \rightarrow 0$ as $n \rightarrow \infty$). {\color{red} He also gives sufficient conditions for convergence that depend on fourth-order moments of the process.????}\\
+
+\item
+For Gaussian random process, second-order stationarity and strong stationarity coincide because the distribution is specified by its mean and covariance. A sufficient condition for ergodicity is $C(h) \rightarrow 0$ as $\left \| h \right \| \rightarrow \infty$ (Adler, 1981).
+
+\item
+\textbf{Nugget Effect}\\
+$\gamma(-h) = \gamma(h)$ and $\gamma(0)=0$.\\
+If $\gamma(h) \rightarrow C_0 > 0$ as $h \rightarrow 0$, then $c_0$ has been called the \textbf{nugget effect} (Matheron, 1962).\\
+
+\item It is believed that microscale variation (small nuggets) is causing a discontinuity at the origin.
+$$C_0 = C_{MS} + C_{ME}$$
+$C_{MS}$ is a measurement error variance. $C_{ME}$ is a white noise.\\
+
+\item
+The behavior of the variogram near the origin is very informative about the continuity properties of the random process $Z(\cdot)$. 
+According to Matheron(1971b, p58):\\
+
+\begin{enumerate}
+
+	\item $2\gamma(\cdot)$ is continous at the origin. Then $Z(\cdot)$ is $L_2$-continuous. [Clearly, $E(Z(s+h) - Z(s) )^2 \rightarrow 0 \text{ iff } 2\gamma(h) \rightarrow 0, \text{ as } ||h|| \rightarrow 0.$]
+
+	\item  $2\gamma(\cdot)$ does not approach 0 as h approaches the origin. Then $Z(\cdot)$ is not even $L_2$-continuous and is highly irregular. This discontinuity of $\gamma$ at the origin is the \textbf{nugget effect} discussed previously.\\
+	
+	\item $2\gamma(\cdot)$ is a positive constant (except at the origin where it is zero). Then $Z(s_1)$ and $Z_(s_2)$ are uncorrelated for any $s_1 \ne s_2$, regardless of how close they are; $Z(\cdot)$ is often called white noise.\\
+\end{enumerate}
+
+\item The classical variogram estimator is unbiased for $2\gamma(\cdot)$ when $Z(\cdot)$ is intrinsically stationary. However, when $Z(\cdot)$ is second-order stationary, $\hat{C}$ has $O(1/n)$ bias: $E(\hat{C}) = C(h) + O(1/n)$.\\
+$$ \hat{C} = \frac{1}{|N(h)|} \sum_{N(h)} (Z(s_i) - \bar{Z}) (Z(s_j) - \bar{Z}) \quad \text{where} \quad \bar{Z} = \sum_{i=1}^n Z(s_i)/n $$
+$$ 2\hat{\gamma}(h) \equiv \frac{1}{|N(h)|} \sum_{N(h)} (Z(s_i) - Z(s_j))^2 \quad \text{where} \quad N(h) = \{(s_i,s_j): s_i-s_j=h; i,j=1,...,n\} $$
+
+\item Variogram is unbiased but covariogram(covariance) is biased??? Probably, $\bar{Z}$ is unbiased (if we can assume egodicity) but $\bar{Z}^2$ might be biased.\\
+
+\item \textbf{Classical Variogram Estimator $2\hat{\gamma}$} (Cressie, p96)\\
+Assuming a Gaussian model,\\
+\begin{align*}
+&\{Z(s+h) - Z(s)\}^2 \sim 2\gamma(h)\cdot \chi_1^2\\
+\\
+&E\biggl( \{ Z(s+h) - Z(s)\}^2\biggl) = 2\gamma(h)\\
+&var\biggl( \{ Z(s+h) - Z(s)\}^2\biggl) = 2(2\gamma(h))^2\\
+\\
+&corr\biggl(\{Z(s_1 + h_1) - Z(s_1)\}^2, \{ Z(s_2 + h_2) - Z(s_2) \}^2 \biggl)\\
+&= \frac{\biggl\{ \gamma(s_1 - s_2 + h_1) + \gamma(s_1 - s_2 - h_2) - \gamma(s_1 - s_2 + h_1 - h_2) - \gamma(s_1 - s_2) \biggl\}^2 }{2\gamma(h_1) \cdot 2\gamma(h_2)}\\
+\end{align*}
+\\
+Thus, we can compute $var(2\hat{\gamma}(h(j)))$ and $cov(2\hat{\gamma}(h(i)), 2\hat{\gamma}(h(j)))$, which allows $V(\theta)$. Then, the weighted-least-squares criterion becomes:\\ 
+$$(2\hat{\gamma} - 2\gamma(\theta))' V(\theta)^{-1} (2\hat{\gamma} - 2\gamma(\theta))$$
+which can be a complicated function of $\theta$ to minimize.\\
+\\
+Cressie(1985a) suggested that 
+$$\sum_{j=1}^{K} |N(h(j))| \biggl\{ \frac{\hat{\gamma(h(j))}}{\gamma(h(j);\theta)} -1 \biggl \}^2$$
+is a good approximation o w.l.s.\\
+\\
+"This criterion is sensible from the viewpoint that the more pairs of observations $|N(h(j))|$ there are the more weight the residual at lag $h(j)$ receives in the overall fit. Also, the smaller the value of the theoretical variogram, the more weight the residual receives at the lag (i,e., lags closest to $h=0$ typically get more weight, which is an attractive property because it is important to obtain a good fit of the variogram near the origin; see Stein, 1988). This criterion could be seen as a pragmatic compromise between efficiency (generalized least squares) and simplicity (ordinary least squares)."
+\\
+\item {\color{red} variogram is smaller at $h=0$ unlike ICF???\\ Then, our model and criterion have wrong(or opposite) weights?}\\
+
+\item Bessel Function. Matern covariance function.\\
+
+\item relationship b/w variogram and ICF???\\
+
+\item spectral representation of a variogram?\\
+
+\item Is our covariance function is isotropic?\ 
+
+\pagebreak
+
+Jan 22, 2023\\
+
+\item 
+
+\end{itemize}
+\end{document}
