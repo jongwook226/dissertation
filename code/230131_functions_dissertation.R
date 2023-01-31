@@ -498,17 +498,17 @@ temp_t_plot2 <- function(i, R_fitted, ylim_upper=0.6){
 
 #################################### Cpp version ####################################
 #Wrapper function of C codes
-C_Cov_mat <- function(dat=dat, sDmat, a1, a2, a3, kappa, low_spherical, tau_spherical){
+C_Cov_mat <- function(dat=dat, sDmat, a1, a2, a3, kappa, low_spherical, tauDist, bwtauDist){
   
   dat$index = dat$index-1 #for C
   nrow_dat <- nrow(dat); ncol_dat <- ncol(dat) #data set
   nrow_Dmat <- nrow(sDmat) #spherical distance matrix
-  ncol_low_spherical <- ncol(low_spherical) # the number of truncated spherical harmonics
+  ncol_low_spherical <- ncol(low_spherical) # the number of truncated spherical harmonics (kappa)
   
   R <- matrix(0, nrow=nrow(dat), ncol=nrow(dat)) #covariance matrix
   
-  res <- .C('Cov_mat', as.integer(nrow_dat),  as.integer(ncol_dat), as.double(as.matrix(dat)), as.integer(nrow_Dmat),
-            as.double(sDmat), as.double(a1), as.double(a2), as.double(a3), as.integer(kappa), as.double(as.matrix(low_spherical)), as.integer(ncol_low_spherical), as.double(tau_spherical), R=as.double(R))
+  res <- .C('Cov_mat', as.integer(nrow_dat), as.integer(ncol_dat), as.double(as.matrix(dat)), as.integer(nrow_Dmat),
+            as.double(sDmat), as.double(a1), as.double(a2), as.double(a3), as.integer(kappa), as.double(as.matrix(low_spherical)), as.integer(ncol_low_spherical), as.double(as.matrix(tauDist)), as.double(as.matrix(bwtauDist)), R=as.double(R))
   
   return(matrix(res$R,nrow=nrow_dat))
 }

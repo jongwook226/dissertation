@@ -1,19 +1,20 @@
-setwd("/Users/jongwookkim/Library/CloudStorage/OneDrive-IndianaUniversity/IU/Dissertation")
+#setwd("/Users/jongwookkim/Library/CloudStorage/OneDrive-IndianaUniversity/IU/Dissertation")
+setwd("/Users/jongwookkim/Documents/dissertation/code")
 source("102822_functions_dissertation.R")
 source("irfkrg-fcn01-sphere-harmonics.R")
 source("irfkrg-fcn02-legendre-polynomials.R")
 
 sim2 <- function(a1=c(0.8,0.8,0.8), a2=c(0.1,0.1,0.1), a3=c(1,1,1), P=200, t=20, kappa=1){
   
-   # a1=c(0.8,0.8,0.8); a2=c(0.1,0.1,0.1); a3=c(1,1,1)
-   # a1=c(0.8,0.6,0.5); a2=c(0.1,0.2,0.3); a3=c(10,5,3)
-   # 
-   # P <- 300 #location data size
-   # t <- 50 #time data size
-   # 
-   # P <- 100 #location data size
-   # t <- 10 #time data size
-   # kappa <- 2 #IRF order
+   a1=c(0.8,0.8,0.8); a2=c(0.1,0.1,0.1); a3=c(1,1,1)
+   #a1=c(0.8,0.6,0.5); a2=c(0.1,0.2,0.3); a3=c(10,5,3)
+
+   P <- 300 #location data size
+   t <- 50 #time data size
+
+   P <- 100 #location data size
+   t <- 10 #time data size
+   kappa <- 2 #IRF order
 
    
   # a1 <- c(0.8,0.7,0.6) #should be a1<1 #a parameter for spatial term
@@ -31,10 +32,25 @@ sim2 <- function(a1=c(0.8,0.8,0.8), a2=c(0.1,0.1,0.1), a3=c(1,1,1), P=200, t=20,
     stop("\nwrong parameter values!\n")
   }
   
+  #create tau data.frame.
   
-  #random sampling for tau
-  tau_lat <- runif(1, min=-pi/2, max=pi/2) #tau_latitude
-  tau_long <- runif(1, min=0, max=2*pi) #tau_longitude
+  
+  if(kappa==0){
+    tau <- data.frame(tau_lat=0, tau_long=0)
+  }else{
+    tau <- data.frame(tau_lat=rep(0,kappa^2), tau_long=rep(0,kappa^2))
+    
+    # #using the same tau
+    #   tau$tau_lat <- runif(1, min=-pi/2, max=pi/2) #tau_latitude
+    #   tau$tau_long <- runif(1, min=0, max=2*pi) #tau_longitude
+    
+    #using different taus
+    for(i in 1:kappa^2){
+      #random sampling for tau
+      tau$tau_lat[i] <- runif(1, min=-pi/2, max=pi/2) #tau_latitude
+      tau$tau_long[i] <- runif(1, min=0, max=2*pi) #tau_longitude
+    }
+  }
   
   n <- P*t #total data size
   
@@ -56,7 +72,7 @@ sim2 <- function(a1=c(0.8,0.8,0.8), a2=c(0.1,0.1,0.1), a3=c(1,1,1), P=200, t=20,
   #save the values of Spherical harmonics of the truncated parts
   low_spherical <- data.frame(matrix(0, ncol=4, nrow=nrow(dat)*t))
   colnames(low_spherical) <- c("Y00", "Y1n1", "Y10", "Y11")
-  tau_spherical <- rep(0,4)
+  #tau_spherical <- rep(0,4)
   
   if(kappa==2){
     
@@ -71,7 +87,7 @@ sim2 <- function(a1=c(0.8,0.8,0.8), a2=c(0.1,0.1,0.1), a3=c(1,1,1), P=200, t=20,
     # low_spherical$Y11 <- rep(apply(dat[,1:2],1,Y.1.1),t)
     
     #values of low order spherical harmonics for tau
-    tau_spherical <- c(Y00(c(tau_lat,tau_long)), Y1n1(c(tau_lat,tau_long)), Y10(c(tau_lat,tau_long)), Y11(c(tau_lat,tau_long)))
+    #tau_spherical <- c(Y00(c(tau_lat,tau_long)), Y1n1(c(tau_lat,tau_long)), Y10(c(tau_lat,tau_long)), Y11(c(tau_lat,tau_long)))
     #tau_spherical <- c(Y.0.0(c(tau_lat,tau_long)), Y.n1.1(c(tau_lat,tau_long)), Y.0.1(c(tau_lat,tau_long)), Y.1.1(c(tau_lat,tau_long)))
   }
   
@@ -84,45 +100,65 @@ sim2 <- function(a1=c(0.8,0.8,0.8), a2=c(0.1,0.1,0.1), a3=c(1,1,1), P=200, t=20,
   # }
   # ########################################################################################
 
-  
-  #Spherical distance with tau
-  tauDist <- rep(0, P)
-  if(kappa != 0){ #we do not need tau if kappa =0
-    for(i in 1:nrow(dat)){
-      tauDist[i] <- SphDist(dat[i,1], dat[i,2], tau_lat, tau_long) 
+  #Spherical distance b/w dataset and taus
+  if(kappa==0){
+    tauDist <- bwtauDist <- 0
+  }else{
+    tauDist <- data.frame(matrix(rep(0, P*(kappa^2)), ncol=kappa^2))
+    
+    if(kappa != 0){ #we do not need tau if kappa =0
+      for(i in 1:P){
+        for(j in 1:(kappa^2)){
+          tauDist[i,j] <- SphDist(dat[i,1], dat[i,2], tau$tau_lat[j], tau$tau_long[j]) 
+        }
+      }
+    }
+    
+    tauDist <- as.data.frame(lapply(tauDist, rep, t))
+    for(i in 1:kappa^2){
+      colnames(tauDist)[i] <- paste("tauDist",i, sep="")
+    }
+    
+    #Spherical distance b/w taus
+    bwtauDist <- matrix(0, nrow=kappa^2, ncol=kappa^2)
+    for(i in 1:kappa^2){
+      for(j in i:kappa^2){
+        bwtauDist[i,j] <- bwtauDist[j,i] <- SphDist(tau$tau_lat[i], tau$tau_long[j], tau$tau_lat[j], tau$tau_long[j]) 
+      }
     }
   }
-
   
   index <- 1:P #index of spatial locations (we use it to avoid redundancy of computation of distances)
-  dat <- data.frame(dat,time,tauDist,index)
+  dat <- data.frame(dat,time,index)
   
   
   ####################### Get covariance function by cpp code ######################
   #dyn.load("C_dissertation.so")
   #dyn.unload("C_dissertation.so")
   
-  R <- C_Cov_mat(dat=dat, sDmat, a1, a2, a3, kappa, low_spherical, tau_spherical)
+  R <- C_Cov_mat(dat=dat, sDmat, a1, a2, a3, kappa, low_spherical, tauDist, bwtauDist)
+  length(which(is.na(R)))
+  
+#check R is positive semi definite
+ e <- eigen(R)$values
+ which(e<=0)
+ e[which(e<=0)]
+ summary(e)
+ length(e)
 
-  # #check R is positive semi definite
-  #  e <- eigen(R)$values
-  #  which(e<=0)
-  #  e[which(e<=0)]
-  #  summary(e)
-  # 
-  #  matrixcalc::is.positive.semi.definite(R, tol=1e-8)
-  # 
-  #  isSymmetric(R) #Check symmetry
-  #################################################################################
-# 
-#   R2 <- Cov_mat(dat, a1, a2, a3, kappa, tau_lat, tau_long, low_spherical, tau_spherical) #covariance matrix with R version
-#   all.equal(round(R,4),round(R2,4),tolerance=1e-8) #check R version and cpp version have the same values
-#   R[1:5,1:5]; R2[1:5,1:5]
-# 
-#   e2 <- eigen(R2)$values
-#   which(e2<=0)
-#   e2[which(e2<=0)]
-#   summary(e2)
+ matrixcalc::is.positive.semi.definite(R, tol=1e-8)
+
+ isSymmetric(R) #Check symmetry
+################################################################################
+
+  R2 <- Cov_mat(dat, a1, a2, a3, kappa, tau$tau_lat[1], tau$tau_long[1], low_spherical, tau_spherical) #covariance matrix with R version
+  all.equal(round(R,4),round(R2,4),tolerance=1e-8) #check R version and cpp version have the same values
+  R[1:7,1:7]; R2[1:7,1:7]
+
+  e2 <- eigen(R2)$values
+  which(e2<=0)
+  e2[which(e2<=0)]
+  summary(e2)
 
   #random sampling by Cholesky
   #Cholesky decompostion only works for positive definite functions (not positive-semi definite)
