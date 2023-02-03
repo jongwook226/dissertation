@@ -1,6 +1,6 @@
 #setwd("/Users/jongwookkim/Library/CloudStorage/OneDrive-IndianaUniversity/IU/Dissertation")
 setwd("/Users/jongwookkim/Documents/dissertation/code")
-source("102822_functions_dissertation.R")
+source("230131_functions_dissertation.R")
 source("irfkrg-fcn01-sphere-harmonics.R")
 source("irfkrg-fcn02-legendre-polynomials.R")
 
@@ -9,12 +9,12 @@ sim2 <- function(a1=c(0.8,0.8,0.8), a2=c(0.1,0.1,0.1), a3=c(1,1,1), P=200, t=20,
    a1=c(0.8,0.8,0.8); a2=c(0.1,0.1,0.1); a3=c(1,1,1)
    #a1=c(0.8,0.6,0.5); a2=c(0.1,0.2,0.3); a3=c(10,5,3)
 
-   P <- 300 #location data size
-   t <- 50 #time data size
+   P <- 200 #location data size
+   t <- 20 #time data size
 
-   P <- 100 #location data size
-   t <- 10 #time data size
-   kappa <- 2 #IRF order
+   # P <- 100 #location data size
+   # t <- 10 #time data size
+   # kappa <- 2 #IRF order
 
    
   # a1 <- c(0.8,0.7,0.6) #should be a1<1 #a parameter for spatial term
@@ -43,7 +43,7 @@ sim2 <- function(a1=c(0.8,0.8,0.8), a2=c(0.1,0.1,0.1), a3=c(1,1,1), P=200, t=20,
     # #using the same tau
     #   tau$tau_lat <- runif(1, min=-pi/2, max=pi/2) #tau_latitude
     #   tau$tau_long <- runif(1, min=0, max=2*pi) #tau_longitude
-    
+
     #using different taus
     for(i in 1:kappa^2){
       #random sampling for tau
@@ -123,7 +123,7 @@ sim2 <- function(a1=c(0.8,0.8,0.8), a2=c(0.1,0.1,0.1), a3=c(1,1,1), P=200, t=20,
     bwtauDist <- matrix(0, nrow=kappa^2, ncol=kappa^2)
     for(i in 1:kappa^2){
       for(j in i:kappa^2){
-        bwtauDist[i,j] <- bwtauDist[j,i] <- SphDist(tau$tau_lat[i], tau$tau_long[j], tau$tau_lat[j], tau$tau_long[j]) 
+        bwtauDist[i,j] <- bwtauDist[j,i] <- SphDist(tau$tau_lat[i], tau$tau_long[i], tau$tau_lat[j], tau$tau_long[j]) 
       }
     }
   }
@@ -151,14 +151,15 @@ sim2 <- function(a1=c(0.8,0.8,0.8), a2=c(0.1,0.1,0.1), a3=c(1,1,1), P=200, t=20,
  isSymmetric(R) #Check symmetry
 ################################################################################
 
-  R2 <- Cov_mat(dat, a1, a2, a3, kappa, tau$tau_lat[1], tau$tau_long[1], low_spherical, tau_spherical) #covariance matrix with R version
-  all.equal(round(R,4),round(R2,4),tolerance=1e-8) #check R version and cpp version have the same values
-  R[1:7,1:7]; R2[1:7,1:7]
-
-  e2 <- eigen(R2)$values
-  which(e2<=0)
-  e2[which(e2<=0)]
-  summary(e2)
+ # R version function
+  # R2 <- Cov_mat(dat, a1, a2, a3, kappa, tau$tau_lat, tau$tau_long, low_spherical, tau_spherical) #covariance matrix with R version
+  # all.equal(round(R,4),round(R2,4),tolerance=1e-8) #check R version and cpp version have the same values
+  # R[1:7,1:7]; R2[1:7,1:7]
+  # 
+  # e2 <- eigen(R2)$values
+  # which(e2<=0)
+  # e2[which(e2<=0)]
+  # summary(e2)
 
   #random sampling by Cholesky
   #Cholesky decompostion only works for positive definite functions (not positive-semi definite)

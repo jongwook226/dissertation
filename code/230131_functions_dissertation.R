@@ -61,9 +61,11 @@ Cov_fn10 <- function(dat1, dat2, a1, a2, a3, tau){
   return(R)
 }
 
+
 #Covariance Function for IRF(2)/I(0)
-Cov_fn20 <- function(dat1, dat2, a1, a2, a3, tau, low_spherical1, low_spherical2, tau_spherical){
-  #i=1;j=50;dat1 <- dat[i,]; dat2 <- dat[j,]; tau=c(tau_lat, tau_long); low_spherical1=low_spherical[i,]; low_spherical2=low_spherical[j,]
+Cov_fn20 <- function(dat1, dat2, a1, a2, a3, tau_lat, tau_long, low_spherical1, low_spherical2, tau_spherical, dist_taus){
+  #tau_lat <- tau$tau_lat; tau_long <- tau$tau_long
+  #i=1;j=50;dat1 <- dat[i,]; dat2 <- dat[j,]; tau_lat <- tau$tau_lat; tau_long <- tau$tau_long; low_spherical1=low_spherical[i,]; low_spherical2=low_spherical[j,]
   
   lat1 <- dat1[[1]]
   lat2 <- dat2[[1]]
@@ -78,8 +80,8 @@ Cov_fn20 <- function(dat1, dat2, a1, a2, a3, tau, low_spherical1, low_spherical2
   #Ct <- exp(-a2*abs(time1-time2))
   #R <- a1/(4*pi)*(1-Ct^2)/(1-2*d*Ct+Ct^2)^(3/2)
   
-  Ct <- function(i){
-    Ct <- a1[i]*exp(-a2[i]*abs(time1-time2))
+  Ct <- function(n){
+    Ct <- a1[n]*exp(-a2[n]*abs(time1-time2))
     return(Ct)
   }
   
@@ -91,30 +93,36 @@ Cov_fn20 <- function(dat1, dat2, a1, a2, a3, tau, low_spherical1, low_spherical2
   Ct1 <- Ct(1);  Ct2 <- Ct(2);  Ct3 <- Ct(3)
   
   distPQ <- SphDist(lat1,long1, lat2, long2)
-  distPtau <- SphDist(lat1,long1,tau[1],tau[2])
-  distQtau <- SphDist(lat2,long2,tau[1],tau[2])
+  distPtau <- rep(NA, length(tau_lat))
+  distQtau <- rep(NA, length(tau_lat))
   
+  for(i in 1:length(tau_lat)){
+    distPtau[i] <- SphDist(lat1,long1,tau_lat[i],tau_long[i])
+    distQtau[i] <- SphDist(lat2,long2,tau_lat[i],tau_long[i])
+  }
+
   icf1 <- ICF(distPQ, Ct1)
-  icf2 <- ICF(0, Ct2)
+  icf2 <- ICF(dist_taus, Ct2)
   icf3 <- ICF(distPtau, Ct3)
   icf4 <- ICF(distQtau, Ct3)
   
   trunc1 <- 1/(4*pi) + 3/(4*pi)*Ct1*distPQ
-  trunc2 <- 1/(4*pi) + 3/(4*pi)*Ct2
+  trunc2 <- 1/(4*pi) + 3/(4*pi)*Ct2*dist_taus
   trunc3 <- 1/(4*pi) + 3/(4*pi)*Ct3*distPtau
   trunc4 <- 1/(4*pi) + 3/(4*pi)*Ct3*distQtau
   
-  Nil2 <- 0
-  Nil3 <- sum(low_spherical2)
-  Nil4 <- sum(low_spherical1)
+  Nil2 <- matrix(nrow=length(low_spherical1), ncol=length(low_spherical2))
+  Nil3 <- c(as.matrix(low_spherical2))
+  Nil4 <- c(as.matrix(low_spherical1))
   
   for(i in 1:length(low_spherical1)){
     for(j in 1:length(low_spherical2)){
-     Nil2 <- Nil2 + low_spherical1[i]*low_spherical2[j]
+     Nil2[i,j] <- Nil4[i]*Nil3[j]
     }
   }
+  Nil2 <- c(as.matrix(Nil2))
   
-  R <- (a3[1]*(icf1 - trunc1)) + (a3[2] * (icf2 - trunc2) * Nil2) + (a3[3] * (icf3 - trunc3) * Nil3) + (a3[3] * (icf4 - trunc4) * Nil4)
+  R <- (a3[1]*(icf1 - trunc1)) + (a3[2] * sum((icf2 - trunc2) * Nil2)) + (a3[3] * sum((icf3 - trunc3) * Nil3)) + (a3[3] * sum((icf4 - trunc4) * Nil4))
   
   ##new version
   #R <- a3[1]*ICF(SphDist(lat1,long1, lat2, long2),1) + a3[2]*1/(4*pi)*ICF(0,2) + a3[3]*1/(2*sqrt(pi))*ICF(SphDist(lat1,long1,tau[1],tau[2]),3) + a3[3]*1/(2*sqrt(pi))*ICF(SphDist(lat2,long2,tau[1],tau[2]),3) - 1/(4*pi) - 1/(16*pi^2) - 1/(4*pi^(3/2))
@@ -123,8 +131,75 @@ Cov_fn20 <- function(dat1, dat2, a1, a2, a3, tau, low_spherical1, low_spherical2
   return(R)
 }
 
+
+# 
+# #Covariance Function for IRF(2)/I(0)
+# Cov_fn20_old <- function(dat1, dat2, a1, a2, a3, tau_lat, tau_long, low_spherical1, low_spherical2, tau_spherical, dist_taus){
+#   #i=1;j=50;dat1 <- dat[i,]; dat2 <- dat[j,]; tau=c(tau_lat, tau_long); low_spherical1=low_spherical[i,]; low_spherical2=low_spherical[j,]
+#   tau <- c(tau_lat[1], tau_long[1]) #using the same tau   
+#
+#   lat1 <- dat1[[1]]
+#   lat2 <- dat2[[1]]
+#   
+#   long1 <- dat1[[2]]
+#   long2 <- dat2[[2]]
+#   
+#   time1 <- dat1[[3]]
+#   time2 <- dat2[[3]]
+#   
+#   #d <- SphDist(lat1, long1, lat2, long2) #spherical distance
+#   #Ct <- exp(-a2*abs(time1-time2))
+#   #R <- a1/(4*pi)*(1-Ct^2)/(1-2*d*Ct+Ct^2)^(3/2)
+#   
+#   Ct <- function(i){
+#     Ct <- a1[i]*exp(-a2[i]*abs(time1-time2))
+#     return(Ct)
+#   }
+#   
+#   ICF <- function(d,Ct){ #i is index for the parameters
+#     icf <- (1 - Ct^2)/((1-2*cos(d)*Ct+Ct^2)^(3/2))
+#     return(icf)
+#   }
+#   
+#   Ct1 <- Ct(1);  Ct2 <- Ct(2);  Ct3 <- Ct(3)
+#   
+#   distPQ <- SphDist(lat1,long1, lat2, long2)
+#   distPtau <- SphDist(lat1,long1,tau[1],tau[2])
+#   distQtau <- SphDist(lat2,long2,tau[1],tau[2])
+#   
+#   icf1 <- ICF(distPQ, Ct1)
+#   icf2 <- ICF(0, Ct2)
+#   icf3 <- ICF(distPtau, Ct3)
+#   icf4 <- ICF(distQtau, Ct3)
+#   
+#   trunc1 <- 1/(4*pi) + 3/(4*pi)*Ct1*distPQ
+#   trunc2 <- 1/(4*pi) + 3/(4*pi)*Ct2
+#   trunc3 <- 1/(4*pi) + 3/(4*pi)*Ct3*distPtau
+#   trunc4 <- 1/(4*pi) + 3/(4*pi)*Ct3*distQtau
+#   
+#   Nil2 <- 0
+#   Nil3 <- sum(low_spherical2)
+#   Nil4 <- sum(low_spherical1)
+#   
+#   for(i in 1:length(low_spherical1)){
+#     for(j in 1:length(low_spherical2)){
+#      Nil2 <- Nil2 + low_spherical1[i]*low_spherical2[j]
+#     }
+#   }
+#   
+#   R <- (a3[1]*(icf1 - trunc1)) + (a3[2] * (icf2 - trunc2) * Nil2) + (a3[3] * (icf3 - trunc3) * Nil3) + (a3[3] * (icf4 - trunc4) * Nil4)
+#   
+#   ##new version
+#   #R <- a3[1]*ICF(SphDist(lat1,long1, lat2, long2),1) + a3[2]*1/(4*pi)*ICF(0,2) + a3[3]*1/(2*sqrt(pi))*ICF(SphDist(lat1,long1,tau[1],tau[2]),3) + a3[3]*1/(2*sqrt(pi))*ICF(SphDist(lat2,long2,tau[1],tau[2]),3) - 1/(4*pi) - 1/(16*pi^2) - 1/(4*pi^(3/2))
+#   #R <- a3[1]*ICF(SphDist(lat1,long1, lat2, long2),1) + a3[2]/(4*pi)*ICF(0,2) + a3[3]/(2*sqrt(pi))*ICF(SphDist(lat1,long1,tau[1],tau[2]),3) + a3[3]/(2*sqrt(pi))*ICF(SphDist(lat2,long2,tau[1],tau[2]),3) - a3[1]/(4*pi) - a3[2]/(16*pi^2) - a3[3]/(4*pi^(3/2))
+#   
+#   return(R)
+# }
+
 #Function to create covariance matrix
 Cov_mat <- function(dat, a1, a2, a3, kappa, tau_lat, tau_long, low_spherical, tau_spherical){
+  #tau_lat <- tau$tau_lat; tau_long <- tau$tau_long
+  
   N <- nrow(dat)
   R <- matrix(nrow=N,ncol=N)
   for(i in 1:N){
@@ -137,7 +212,17 @@ Cov_mat <- function(dat, a1, a2, a3, kappa, tau_lat, tau_long, low_spherical, ta
       }else if(kappa == 2){
         names(low_spherical) <- NULL
         low_spherical <- as.matrix(low_spherical)
-        R[i,j] <- R[j,i] <- Cov_fn20(dat[i,], dat[j,], a1, a2, a3, tau=c(tau_lat, tau_long), low_spherical[i,], low_spherical[j,], tau_spherical)
+        
+        #distance b/w taus
+        dist_taus <- matrix(rep(NA, length(tau_lat)^2), nrow=length(tau_lat))
+        for(l in 1:length(tau_lat)){
+          for(m in 1:length(tau_lat)){
+            #distance b/w taus
+            dist_taus[l,m] <- SphDist(tau_lat[l],tau_long[l],tau_lat[m],tau_long[m])
+          }
+        }
+        dist_taus <- c(dist_taus)
+        R[i,j] <- R[j,i] <- Cov_fn20(dat[i,], dat[j,], a1, a2, a3, tau_lat, tau_long, low_spherical[i,], low_spherical[j,], tau_spherical, dist_taus)
       }
     }
   }
