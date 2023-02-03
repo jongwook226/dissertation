@@ -6,12 +6,12 @@ source("irfkrg-fcn02-legendre-polynomials.R")
 
 sim2 <- function(a1=c(0.8,0.8,0.8), a2=c(0.1,0.1,0.1), a3=c(1,1,1), P=200, t=20, kappa=1){
   
-   a1=c(0.8,0.8,0.8); a2=c(0.1,0.1,0.1); a3=c(1,1,1)
-   #a1=c(0.8,0.6,0.5); a2=c(0.1,0.2,0.3); a3=c(10,5,3)
-
-   P <- 200 #location data size
-   t <- 20 #time data size
-
+   # a1=c(0.8,0.8,0.8); a2=c(0.1,0.1,0.1); a3=c(1,1,1)
+   # #a1=c(0.8,0.6,0.5); a2=c(0.1,0.2,0.3); a3=c(10,5,3)
+   # 
+   # P <- 200 #location data size
+   # t <- 20 #time data size
+   # 
    # P <- 100 #location data size
    # t <- 10 #time data size
    # kappa <- 2 #IRF order
@@ -137,18 +137,17 @@ sim2 <- function(a1=c(0.8,0.8,0.8), a2=c(0.1,0.1,0.1), a3=c(1,1,1), P=200, t=20,
   #dyn.unload("C_dissertation.so")
   
   R <- C_Cov_mat(dat=dat, sDmat, a1, a2, a3, kappa, low_spherical, tauDist, bwtauDist)
-  length(which(is.na(R)))
   
-#check R is positive semi definite
- e <- eigen(R)$values
- which(e<=0)
- e[which(e<=0)]
- summary(e)
- length(e)
-
- matrixcalc::is.positive.semi.definite(R, tol=1e-8)
-
- isSymmetric(R) #Check symmetry
+# #check R is positive semi definite
+#  e <- eigen(R)$values
+#  which(e<=0)
+#  e[which(e<=0)]
+#  summary(e)
+#  length(e)
+# 
+#  matrixcalc::is.positive.semi.definite(R, tol=1e-8)
+# 
+#  isSymmetric(R) #Check symmetry
 ################################################################################
 
  # R version function
@@ -286,7 +285,7 @@ for(i in 1:sim_size){
   #cat("\n Iteration : ", i, "\n")
   #print(para[[1]][i,])
 
-  a1=rep(0.10,3); a2=rep(0.8,3); a3=rep(0.5,3)
+  a1=rep(0.80,3); a2=rep(0.1,3); a3=rep(1,3)
   
   para1 <- sim2(a1, a2, a3, P=200, t=20, kappa=2)
   para_list[[1]][i,] <- para1[[1]]

@@ -205,7 +205,7 @@ void G_hat(int* nrow, int* ncol, double* dat, int* nrow_Dmat, double* sDmat, int
     for(int j = i; j < *nrow; j++){
 
      //spherical distance of a pair by index
-     sDist = mDmat[(int) mdat[4][i]][(int) mdat[4][j]];
+     sDist = mDmat[(int) mdat[3][i]][(int) mdat[3][j]];
 
      //time lag of a pair
      tDist = abs(mdat[2][i] - mdat[2][j]);
@@ -216,7 +216,7 @@ void G_hat(int* nrow, int* ncol, double* dat, int* nrow_Dmat, double* sDmat, int
           //#number of obs
           mN[k][l] += 1;
           //#sum of covariances to compute MOM estimate
-          mG[k][l] += mdat[5][i] * mdat[5][j];
+          mG[k][l] += mdat[4][i] * mdat[4][j];
         }
       }
      }
