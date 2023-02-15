@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  2 FEB 2023 15:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  13 FEB 2023 16:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -461,137 +461,137 @@ Underfull \hbox (badness 10000) in paragraph at lines 182--186
  []
 
 [8]
-Overfull \hbox (55.57184pt too wide) detected at line 196
+Overfull \hbox (55.57184pt too wide) detected at line 199
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
 [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 212--213
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
 
-Overfull \hbox (6.1067pt too wide) detected at line 218
+Overfull \hbox (6.1067pt too wide) detected at line 221
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
 
  []
 
 
-Overfull \hbox (59.1927pt too wide) detected at line 231
+Overfull \hbox (59.1927pt too wide) detected at line 234
 []
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 233--235
+Underfull \hbox (badness 10000) in paragraph at lines 236--238
 
  []
 
 
-Overfull \hbox (47.71661pt too wide) detected at line 246
+Overfull \hbox (41.98018pt too wide) detected at line 249
 []
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 253--254
 
  []
 
 
-Overfull \hbox (28.93454pt too wide) detected at line 279
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
+
+ []
+
+
+Overfull \hbox (28.93454pt too wide) detected at line 282
 []
  []
 
 [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 289--290
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
 
  []
 
 
-Overfull \hbox (57.40657pt too wide) detected at line 297
+Overfull \hbox (57.40657pt too wide) detected at line 300
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--300
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--302
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--305
+Underfull \hbox (badness 10000) in paragraph at lines 306--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--311
+Underfull \hbox (badness 10000) in paragraph at lines 312--314
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 327--328
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--335
+Underfull \hbox (badness 10000) in paragraph at lines 335--338
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--337
+Underfull \hbox (badness 10000) in paragraph at lines 338--340
 
  []
 
 
-Overfull \hbox (35.96588pt too wide) detected at line 347
+Overfull \hbox (35.96588pt too wide) detected at line 350
 []
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 352--354
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 360--362
+Underfull \hbox (badness 10000) in paragraph at lines 363--365
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--368
+Underfull \hbox (badness 10000) in paragraph at lines 367--371
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--368
+Underfull \hbox (badness 10000) in paragraph at lines 367--371
 
  []
 
 
-Overfull \hbox (7.73697pt too wide) in paragraph at lines 370--373
+Overfull \hbox (7.73697pt too wide) in paragraph at lines 373--376
 \OT1/cmr/m/n/10.95 We as-sume $\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/
 cmm/m/it/10.95 !\OT1/cmr/m/n/10.95 )$ ex-ists. The spec-tral den-sity func-tion
  $\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 !\OT1/cmr/m/n/
@@ -601,146 +601,275 @@ mm/m/it/10.95 dh <
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--373
+Underfull \hbox (badness 10000) in paragraph at lines 373--376
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 373--374
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--384
+Underfull \hbox (badness 10000) in paragraph at lines 383--387
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--384
+Underfull \hbox (badness 10000) in paragraph at lines 383--387
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--401
+Underfull \hbox (badness 10000) in paragraph at lines 402--404
 
  []
 
 [20]
-Overfull \hbox (36.35547pt too wide) detected at line 415
+Overfull \hbox (36.35547pt too wide) detected at line 418
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 415--431
+Underfull \hbox (badness 10000) in paragraph at lines 418--434
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 415--431
+Underfull \hbox (badness 10000) in paragraph at lines 418--434
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 431--433
+Underfull \hbox (badness 10000) in paragraph at lines 434--436
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--435
+Underfull \hbox (badness 10000) in paragraph at lines 436--438
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--437
+Underfull \hbox (badness 10000) in paragraph at lines 438--440
 
  []
 
 
-Overfull \hbox (20.5467pt too wide) detected at line 452
+Overfull \hbox (20.5467pt too wide) detected at line 455
 []
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 454--455
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 473--474
+Underfull \hbox (badness 10000) in paragraph at lines 476--477
 
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 479--480
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 483--484
+Underfull \hbox (badness 10000) in paragraph at lines 486--487
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 489--490
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 498--499
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 501--502
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--506
+Underfull \hbox (badness 10000) in paragraph at lines 504--505
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 516--517
+Underfull \hbox (badness 10000) in paragraph at lines 507--509
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--519
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
 
  []
 
 
-Overfull \hbox (37.88702pt too wide) detected at line 529
+Underfull \hbox (badness 10000) in paragraph at lines 520--522
+
+ []
+
+
+Overfull \hbox (37.88702pt too wide) detected at line 532
 []
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 531--532
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 537--538
+Underfull \hbox (badness 10000) in paragraph at lines 540--541
 
  []
 
 
-Overfull \hbox (23.32782pt too wide) detected at line 540
+Overfull \hbox (23.32782pt too wide) detected at line 543
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--542
+Underfull \hbox (badness 10000) in paragraph at lines 543--545
 
  []
 
-[26] (./230122_2.aux) ) 
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 548--549
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
+[]\OT1/cmr/m/n/10.95 0.2652
+ []
+
+
+Overfull \hbox (22.16928pt too wide) in paragraph at lines 561--562
+[][][]| 
+ []
+
+
+Overfull \hbox (9.6376pt too wide) in paragraph at lines 566--566
+[]\OT1/cmr/m/n/10.95 67285.8498| 
+ []
+
+
+Overfull \hbox (15.11261pt too wide) in paragraph at lines 566--567
+[]\OT1/cmr/m/n/10.95 249889.1306| 
+ []
+
+
+Overfull \hbox (9.6376pt too wide) in paragraph at lines 567--567
+[]\OT1/cmr/m/n/10.95 47636.8859| 
+ []
+
+
+Overfull \hbox (15.11261pt too wide) in paragraph at lines 567--568
+[]\OT1/cmr/m/n/10.95 250055.2191| 
+ []
+
+
+Overfull \hbox (15.11261pt too wide) in paragraph at lines 568--568
+[]\OT1/cmr/m/n/10.95 439522.2402| 
+ []
+
+
+Overfull \hbox (20.58762pt too wide) in paragraph at lines 568--569
+[]\OT1/cmr/m/n/10.95 1075563.7332| 
+ []
+
+
+Overfull \hbox (20.58762pt too wide) in paragraph at lines 569--569
+[]\OT1/cmr/m/n/10.95 1046633.3154| 
+ []
+
+
+Overfull \hbox (20.58762pt too wide) in paragraph at lines 569--570
+[]\OT1/cmr/m/n/10.95 2128092.1238| 
+ []
+
+
+Overfull \hbox (9.6376pt too wide) in paragraph at lines 570--570
+[]\OT1/cmr/m/n/10.95 40059.3103| 
+ []
+
+
+Overfull \hbox (15.11261pt too wide) in paragraph at lines 570--571
+[]\OT1/cmr/m/n/10.95 249243.1086| 
+ []
+
+
+Overfull \hbox (9.6376pt too wide) in paragraph at lines 571--571
+[]\OT1/cmr/m/n/10.95 41854.6665| 
+ []
+
+
+Overfull \hbox (15.11261pt too wide) in paragraph at lines 571--572
+[]\OT1/cmr/m/n/10.95 162109.1729| 
+ []
+
+
+Overfull \hbox (4.1626pt too wide) in paragraph at lines 572--572
+[]\OT1/cmr/m/n/10.95 2227.7667| 
+ []
+
+
+Overfull \hbox (9.6376pt too wide) in paragraph at lines 572--573
+[]\OT1/cmr/m/n/10.95 18415.3117| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 581--582
+
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 585--587
+
+ []
+
+
+Overfull \hbox (30.04509pt too wide) detected at line 598
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 601--602
+
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 614--615
+
+ []
+
+
+Overfull \hbox (44.31122pt too wide) detected at line 618
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--621
+
+ []
+
+[29]
+Overfull \vbox (88.74924pt too high) has occurred while \output is active []
+
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 646--647
+
+ []
+
+[31] (./230122_2.aux) ) 
 Here is how much of TeX's memory you used:
- 2749 strings out of 492616
- 36674 string characters out of 6129482
- 130165 words of memory out of 5000000
- 6601 multiletter control sequences out of 15000+600000
+ 2750 strings out of 492616
+ 36680 string characters out of 6129482
+ 130164 words of memory out of 5000000
+ 6602 multiletter control sequences out of 15000+600000
  11539 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,22n,27p,1479b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -767,10 +896,10 @@ sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr
 local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></
 usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb
 >
-Output written on 230122_2.pdf (26 pages, 283433 bytes).
+Output written on 230122_2.pdf (31 pages, 297046 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 125 compressed objects within 2 object streams
+ 193 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -277,23 +277,43 @@ sim_size <- 1000
 para <- data.frame(matrix(ncol=3, nrow=sim_size))
 colnames(para) <- c("a1","a2","a3")
 para_list <- list(nlminb=para, nlminb2=para, optim=para)
+i2 <- 0
+a1=rep(0.65,3); a2=rep(0.20,3); a3=rep(10,3)
 
 set.seed(111)
-for(i in 1:sim_size){
-#for(i in i2){
-  #para[i,] <- sim(a1=0.8, a2=0.1, a3=1, P=10, t=20)
-  #cat("\n Iteration : ", i, "\n")
-  #print(para[[1]][i,])
 
-  a1=rep(0.80,3); a2=rep(0.1,3); a3=rep(1,3)
-  
-  para1 <- sim2(a1, a2, a3, P=200, t=20, kappa=2)
-  para_list[[1]][i,] <- para1[[1]]
-  para_list[[2]][i,] <- para1[[2]]
-  para_list[[3]][i,] <- para1[[3]]
-  cat("\n Iteration : ", i, "\n")
-  print(para1)
-}
+if(i2 == 0){
+  for(i in 1:sim_size){
+    #para[i,] <- sim(a1=0.8, a2=0.1, a3=1, P=10, t=20)
+    #cat("\n Iteration : ", i, "\n")
+    #print(para[[1]][i,])
+    
+    #a1=rep(0.65,3); a2=rep(0.20,3); a3=rep(10,3)
+    
+    para1 <- sim2(a1, a2, a3, P=200, t=20, kappa=2)
+    para_list[[1]][i,] <- para1[[1]]
+    para_list[[2]][i,] <- para1[[2]]
+    para_list[[3]][i,] <- para1[[3]]
+    cat("\n Iteration : ", i, "\n")
+    print(para1)
+    }
+  }else{
+    for(i in i2){
+      #para[i,] <- sim(a1=0.8, a2=0.1, a3=1, P=10, t=20)
+      #cat("\n Iteration : ", i, "\n")
+      #print(para[[1]][i,])
+      
+      #a1=rep(0.65,3); a2=rep(0.20,3); a3=rep(10,3)
+      
+      para1 <- sim2(a1, a2, a3, P=200, t=20, kappa=2)
+      para_list[[1]][i,] <- para1[[1]]
+      para_list[[2]][i,] <- para1[[2]]
+      para_list[[3]][i,] <- para1[[3]]
+      cat("\n Iteration : ", i, "\n")
+      print(para1)
+    }
+  }
+
 
 para_list$nlminb2
 
@@ -327,7 +347,10 @@ abline(v=a2[1], col="red")
 plot(density(para_list$nlminb2[,3][!is.na(para_list$nlminb2[,1])])) #p3
 abline(v=a3[1], col="red")
 
-#save(para_list,file="sim2_01_08_05_kappa2.Rda")
+file_name <- paste("sim2_", a1[1],"_",a2[1],"_",a3[1],"_kappa2.Rda",sep="")
+save(para_list,file=file_name)
+
+#save(para_list,file="sim2_070_005_1_kappa2.Rda")
 #para_list2<- para_list
 
 
