@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  15 FEB 2023 10:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  22 FEB 2023 12:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**230122_2.tex
-(./230122_2.tex
+**230215.tex
+(./230215.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -179,8 +179,8 @@ Package: cancel 2013/04/12 v2.2 Cancel math terms
 \ULC@box=\box31
 Package: ulem 2012/05/18
 \ULdepth=\dimen124
-) (./230122_2.aux)
-\openout1 = `230122_2.aux'.
+) (./230215.aux)
+\openout1 = `230215.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
@@ -194,6 +194,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
+
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count101
@@ -424,8 +425,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 146--147
  []
 
 
-Overfull \hbox (13.91245pt too wide) in paragraph at lines 148--149
-[]\OT1/cmr/m/n/10.95 (Add in-tro-duc-tion of IRF and al-low-able measeure here)
+Overfull \hbox (9.04578pt too wide) in paragraph at lines 148--149
+[]\OT1/cmr/m/n/10.95 (Add in-tro-duc-tion of IRF and al-low-able mea-sure here)
  Now, let as-sume X(P,t) is an IRF($\OML/cmm/m/it/10.95 ^^T$\OT1/cmr/m/n/10.95 
 )/I(0).
  []
@@ -656,202 +657,202 @@ Underfull \hbox (badness 10000) in paragraph at lines 438--440
  []
 
 
-Overfull \hbox (27.15791pt too wide) detected at line 455
+Overfull \hbox (28.98288pt too wide) detected at line 459
 []
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 476--477
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
 
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 482--483
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 486--487
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 492--493
+Underfull \hbox (badness 10000) in paragraph at lines 490--491
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--497
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 501--502
+Underfull \hbox (badness 10000) in paragraph at lines 505--506
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--505
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 507--509
+Underfull \hbox (badness 10000) in paragraph at lines 511--513
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 519--520
+Underfull \hbox (badness 10000) in paragraph at lines 523--524
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 520--522
+Underfull \hbox (badness 10000) in paragraph at lines 524--526
 
  []
 
 
-Overfull \hbox (37.88702pt too wide) detected at line 532
+Overfull \hbox (37.88702pt too wide) detected at line 536
 []
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 534--535
+Underfull \hbox (badness 10000) in paragraph at lines 538--539
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--541
+Underfull \hbox (badness 10000) in paragraph at lines 544--545
 
  []
 
 
-Overfull \hbox (23.32782pt too wide) detected at line 543
+Overfull \hbox (23.32782pt too wide) detected at line 547
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 543--545
+Underfull \hbox (badness 10000) in paragraph at lines 547--549
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 548--549
+Underfull \hbox (badness 10000) in paragraph at lines 552--553
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--562
+Underfull \hbox (badness 10000) in paragraph at lines 565--566
 []\OT1/cmr/m/n/10.95 0.2652
  []
 
 
-Overfull \hbox (22.16928pt too wide) in paragraph at lines 561--562
+Overfull \hbox (22.16928pt too wide) in paragraph at lines 565--566
 [][][]| 
  []
 
 
-Overfull \hbox (9.6376pt too wide) in paragraph at lines 566--566
+Overfull \hbox (9.6376pt too wide) in paragraph at lines 570--570
 []\OT1/cmr/m/n/10.95 67285.8498| 
  []
 
 
-Overfull \hbox (15.11261pt too wide) in paragraph at lines 566--567
+Overfull \hbox (15.11261pt too wide) in paragraph at lines 570--571
 []\OT1/cmr/m/n/10.95 249889.1306| 
  []
 
 
-Overfull \hbox (9.6376pt too wide) in paragraph at lines 567--567
+Overfull \hbox (9.6376pt too wide) in paragraph at lines 571--571
 []\OT1/cmr/m/n/10.95 47636.8859| 
  []
 
 
-Overfull \hbox (15.11261pt too wide) in paragraph at lines 567--568
+Overfull \hbox (15.11261pt too wide) in paragraph at lines 571--572
 []\OT1/cmr/m/n/10.95 250055.2191| 
  []
 
 
-Overfull \hbox (15.11261pt too wide) in paragraph at lines 568--568
+Overfull \hbox (15.11261pt too wide) in paragraph at lines 572--572
 []\OT1/cmr/m/n/10.95 439522.2402| 
  []
 
 
-Overfull \hbox (20.58762pt too wide) in paragraph at lines 568--569
+Overfull \hbox (20.58762pt too wide) in paragraph at lines 572--573
 []\OT1/cmr/m/n/10.95 1075563.7332| 
  []
 
 
-Overfull \hbox (20.58762pt too wide) in paragraph at lines 569--569
+Overfull \hbox (20.58762pt too wide) in paragraph at lines 573--573
 []\OT1/cmr/m/n/10.95 1046633.3154| 
  []
 
 
-Overfull \hbox (20.58762pt too wide) in paragraph at lines 569--570
+Overfull \hbox (20.58762pt too wide) in paragraph at lines 573--574
 []\OT1/cmr/m/n/10.95 2128092.1238| 
  []
 
 
-Overfull \hbox (9.6376pt too wide) in paragraph at lines 570--570
+Overfull \hbox (9.6376pt too wide) in paragraph at lines 574--574
 []\OT1/cmr/m/n/10.95 40059.3103| 
  []
 
 
-Overfull \hbox (15.11261pt too wide) in paragraph at lines 570--571
+Overfull \hbox (15.11261pt too wide) in paragraph at lines 574--575
 []\OT1/cmr/m/n/10.95 249243.1086| 
  []
 
 
-Overfull \hbox (9.6376pt too wide) in paragraph at lines 571--571
+Overfull \hbox (9.6376pt too wide) in paragraph at lines 575--575
 []\OT1/cmr/m/n/10.95 41854.6665| 
  []
 
 
-Overfull \hbox (15.11261pt too wide) in paragraph at lines 571--572
+Overfull \hbox (15.11261pt too wide) in paragraph at lines 575--576
 []\OT1/cmr/m/n/10.95 162109.1729| 
  []
 
 
-Overfull \hbox (4.1626pt too wide) in paragraph at lines 572--572
+Overfull \hbox (4.1626pt too wide) in paragraph at lines 576--576
 []\OT1/cmr/m/n/10.95 2227.7667| 
  []
 
 
-Overfull \hbox (9.6376pt too wide) in paragraph at lines 572--573
+Overfull \hbox (9.6376pt too wide) in paragraph at lines 576--577
 []\OT1/cmr/m/n/10.95 18415.3117| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 581--582
+Underfull \hbox (badness 10000) in paragraph at lines 585--586
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 585--587
+Underfull \hbox (badness 10000) in paragraph at lines 589--591
 
  []
 
 
-Overfull \hbox (30.04509pt too wide) detected at line 598
+Overfull \hbox (30.04509pt too wide) detected at line 602
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 601--602
+Underfull \hbox (badness 10000) in paragraph at lines 605--606
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 614--615
+Underfull \hbox (badness 10000) in paragraph at lines 618--619
 
  []
 
 
-Overfull \hbox (44.31122pt too wide) detected at line 618
+Overfull \hbox (44.31122pt too wide) detected at line 622
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 620--621
+Underfull \hbox (badness 10000) in paragraph at lines 624--625
 
  []
 
@@ -860,46 +861,55 @@ Overfull \vbox (88.74924pt too high) has occurred while \output is active []
 
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 646--647
+Underfull \hbox (badness 10000) in paragraph at lines 650--651
 
  []
 
-[31] (./230122_2.aux) ) 
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 654--655
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 656--657
+
+ []
+
+[32] (./230215.aux) ) 
 Here is how much of TeX's memory you used:
  2750 strings out of 492616
- 36680 string characters out of 6129482
+ 36662 string characters out of 6129482
  130164 words of memory out of 5000000
  6602 multiletter control sequences out of 15000+600000
  11539 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,22n,27p,1479b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/ams
-fonts/cmextra/cmex7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/
-amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.
-pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
-></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><
-/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
-sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr
-/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
-local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></
-usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb
->
-Output written on 230122_2.pdf (31 pages, 297174 bytes).
+ 41i,22n,27p,1477b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfo
+nts/cmextra/cmex7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/am
+sfonts/cmextra/cmex9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
+.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pf
+b></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
+/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/l
+ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/lo
+cal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
+r/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on 230215.pdf (32 pages, 298014 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
- 136 compressed objects within 2 object streams
+ 196 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

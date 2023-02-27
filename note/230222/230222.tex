@@ -139,13 +139,13 @@ is a good approximation o w.l.s.\\
 Jan 22, 2023\\
 
 \item
-Let $X(P,t)$ be a spatio-temporal random process on the sphere and be continuous in quadratic mean. Then, We can expand such a random process through its spectral representation, which is convergent in quadratic mean.(Yaglom, 1961, Jones, 1963, Roy, 1969)\\
+Let $X(P,t)$ be a spatio-temporal random process on the sphere and be continuous in quadratic mean. Then, we can expand such a random process through its spectral representation, which is convergent in quadratic mean.(Yaglom, 1961, Jones, 1963, Roy, 1969)\\
 $$ X(P,t)= \sum_{\ell=0}^{\infty}\sum_{m=-\ell}^{\ell}Z_{\ell,m}(t)Y_\ell^m(P)$$
 $$Z_{\ell,m}(t)=\int_{\mathbb{S}^2} X(P,t)Y_\ell^m(P)dP$$
 
 The $Y_\ell^m(\cdot)$s are spherical harmonics, which are orthonormal basis functions of the sphere and do not depend on time $t \in \mathbb{R}$. On the other hand, each coefficient $Z_{\ell,m}(t)$ is a function of a time term $t$ and free from the location $P \in \mathbb{S}^2$ in that it is integrated in terms of $P$. \\
 
-\item (Add introduction of IRF and allowable measure here) Now, let assume X(P,t) is an IRF($\kappa$)/I(0). In other words, X(P,t) is non-homogeneous for the spatial term but still stationary in terms of time component. Then, we can say that $X(P,t) = \sum_{\ell=0}^{\kappa-1} \sum_{m=-\ell}^{\ell}Z_{\ell,m}(t)Y_\ell^m(P) + X_\kappa(P,t)$ where $X_\kappa(P,t) =  \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P).$ Huang(2018) showed that the low frequency truncated process $X_\kappa(P,t)$ is homogeneous if the original process $X(P,t)$ is an IRF($\kappa$) on the sphere. In addition, since $X_{\kappa}(P,t)$ is homogenous and stationary, according to Roy(1969), the stochastic process $\{Z_{\ell,m}(t) : t \in \mathbb{R} \}$ is stationary for all $\ell \ge \kappa$ and $-\ell < m < \ell$; also, they are uncorrelated for different $\ell$ and $m$, i.e., $Cov\biggl(Z_{\ell,m}(t), Z_{\ell',m'}(t')\biggl)=0$ for $\ell \ne \ell'$ or $m \ne m'$ when $\ell, \ell' \ge \kappa$.\\
+\item {\color{red}(Add introduction of IRF, allowable measure and Nil space here)} Now, let assume X(P,t) is an IRF($\kappa$)/I(0). In other words, X(P,t) is non-homogeneous for the spatial term but still stationary in terms of time component. Then, we can say that $X(P,t) = \sum_{\ell=0}^{\kappa-1} \sum_{m=-\ell}^{\ell}Z_{\ell,m}(t)Y_\ell^m(P) + X_\kappa(P,t)$ where $X_\kappa(P,t) =  \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P).$ Huang(2018) showed that the low frequency truncated process $X_\kappa(P,t)$ is homogeneous if the original process $X(P,t)$ is an IRF($\kappa$) on the sphere. In addition, since $X_{\kappa}(P,t)$ is homogenous and stationary, according to Roy(1969), the stochastic process $\{Z_{\ell,m}(t) : t \in \mathbb{R} \}$ is stationary for all $\ell \ge \kappa$ and $-\ell < m < \ell$; also, they are uncorrelated for different $\ell$ and $m$, i.e., $Cov\biggl(Z_{\ell,m}(t), Z_{\ell',m'}(t')\biggl)=0$ for $\ell \ne \ell'$ or $m \ne m'$ when $\ell, \ell' \ge \kappa$.\\
 
 Considering these facts, we can get a covariance function of $X_\kappa(P,t)$ such that:\\
 \begin{align*}
@@ -182,21 +182,28 @@ $\phi_\kappa(\overrightarrow{PQ},h)$ is called Intrinsic Covariance Function(ICF
 \end{align*}
 }
 \\
-Since $X(P,t)$ is an IRF($\kappa$)/I(0), which is not homogenous, we cannot guarantee that the covariance functions related to the low frequency $Z_{\ell, m}(t)$ is 0 when $\ell$ is smaller than $\kappa$. That is, it is plausible and even more reasonable to assume that $Cov(Z_{\ell,m}(t), Z_{\ell',m'}(s)) \ne 0$ for any $\ell', m'$, and $t,s \in \mathbb{R}$ when $\ell<\kappa$. In other words, elements of Nil space $N=\{Z_{\ell,m}(t) : \quad \ell<\kappa, \quad -\ell \le m \le \ell\}$ are correlated with the other coefficients in contrast to the previous case of $X_\kappa(P,t)$, which is homogenous.{\color{red} CHECK WHETHER IT MAKES SENSE????} In fact, Huang(2016) showed that coefficients of the low frequency can be correlated with the other coefficients of higher frequencies by providing an example of the Brownian bridge, which is an IRF(1) on a circle. In this research, our goal is to introduce appropriate structures for these covariances functions of non-homogenous or non-stationary processes. In pursuit of clear understanding, from now, we will use indices $\ell_1$, $\ell_1'$ for the truncated parts and $\ell_2,\ell_2'$ for elements in Nil space made of low frequencies. In other words, $\ell_1, \ell_1' < \kappa$ and $\ell_2, \ell _2' \ge \kappa$ and $\ell_i \le m_i \le \ell_i$, $\ell_i' \le m_i' \le \ell_i'$ for $i=1,2$. Then, we can assume that the covariance functions of the coefficients have structures such that :\\
+Since $X(P,t)$ is an IRF($\kappa$)/I(0), which is not homogenous, we cannot guarantee that the covariance functions related to the low frequency $Z_{\ell, m}(t)$ is 0 when $\ell$ is smaller than $\kappa$. That is, it is plausible and even more reasonable to assume that $Cov(Z_{\ell,m}(t), Z_{\ell',m'}(s)) \ne 0$ for any $\ell', m'$, and $t,s \in \mathbb{R}$ when $\ell<\kappa$. In other words, elements of Nil space $N=\{Z_{\ell,m}(t) : \quad \ell<\kappa, \quad -\ell \le m \le \ell\}$ are correlated with the other coefficients in contrast to the previous case of $X_\kappa(P,t)$, which is homogenous.{\color{red} CHECK WHETHER IT MAKES SENSE????} In fact, Huang(2016) showed that coefficients of the low frequency can be correlated with the other coefficients of higher frequencies by providing an example of the Brownian bridge, which is an IRF(1) on a circle. In this research, our goal is to introduce appropriate structures for these covariances functions of non-homogenous or non-stationary processes. In pursuit of clear understanding, from now, we will use indices $\ell_1$, $\ell_1'$ for elements in Nil space made of low frequencies and $\ell_2,\ell_2'$ for parts after the truncation. In other words, $\ell_1, \ell_1' < \kappa$ and $\ell_2, \ell _2' \ge \kappa$ and $\ell_i \le m_i \le \ell_i$, $\ell_i' \le m_i' \le \ell_i'$ for $i=1,2$. Then, we can assume that the covariance functions of the coefficients have structures such that :\\
 \begin{align*}
-&Cov\biggl( Z_{\ell_2,m_2}(t), Z_{\ell_2',m_2'}(s) \biggl) = a_{\ell_2}(h) I\{(\ell_2,m_2),(\ell'_2,m_2')\}\\
-&Cov\biggl( Z_{\ell_1,m_1}(t), Z_{\ell_1',m_1'}(s) \biggl) = \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}^{(\ell_1,m_1), (\ell_1',m_1')} (h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) Y_{\ell_2}^{m_2}(\tau_{\ell_1',m_1'})\\
-&\text{\color{red} In fact, this covariance function is free from $\ell_2$}\\
-&\text{\color{red} (by addition theorem \& the generating function of Legendre Polynomial), }\\
-&\text{\color{red} and also free from $m_2$ (by Shur's decomposition.)}\\
-&Cov\biggl( Z_{\ell_1,m_1}(t), Z_{\ell_2,m_2}(s) \biggl) = Cov\biggl( Z_{\ell_2,m_2}(t), Z_{\ell_1,m_1}(s) \biggl) = a_{\ell_2}^{(\ell_1, m_1)}(h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})\\
+&{\color{red}\text{Let $a_{\ell_2}(h) \ge 0$ be positive definite and be expressed with a form of the $\ell_2$th power.}}\\ 
+&{\color{red}\text{That is, $a_{\ell_2}(h) = g^{\ell_2}(h)$.}}\\
 \\
-&\quad \text{where } \quad a_{\ell_2}(h) = \gamma^{2 \ell_2} e^{-\beta \ell_2|h|}, \quad  a_{\ell_2}^{(\ell_1,m_1), (\ell_1',m_1')}(h) = (\gamma_{\ell_1,m_1} \gamma_{\ell_1',m_1'})^{\ell_2} e^{-\beta \ell_2|h|},\\
-&\quad \quad a_{\ell_2}^{(\ell_1, m_1)}(h) = (\gamma \gamma_{\ell_1,m_1})^{\ell_2} e^{-\beta \ell_2|h|}, \quad 0<\gamma, \gamma_{\ell_1,m_1}, \gamma_{\ell_1',m_1'} < 1, \quad \beta >0, \quad \tau_{\ell_1,m_1},  \tau_{\ell_1',m_1'} \in \mathbb{S}^2 \\
-&\text{\color{red} How can we justify these structures and assumptions???? Restriction to guarantee positive definiteness.}\\
-&\text{\color{red} These structures allow positive definiteness to the covariance model.}\\
-&\text{\color{red} Can we use RK for fixed h to justify this assumption?}\\
+&{\color{blue}\textbf{\text{These are conditions of $a_{\ell_2}(h)$ for p.d and mv time series. Is it realistic or too strong?????}}}\\
+\\
+&Cov\biggl( Z_{\ell_2,m_2}(t), Z_{\ell_2',m_2'}(s) \biggl) = a_{\ell_2}(h) I\{(\ell_2,m_2),(\ell'_2,m_2')\}\\
+&Cov\biggl( Z_{\ell_1,m_1}(t), Z_{\ell_2,m_2}(s) \biggl) = Cov\biggl( Z_{\ell_2,m_2}(t), Z_{\ell_1,m_1}(s) \biggl) = a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})\\
+&Cov\biggl( Z_{\ell_1,m_1}(t), Z_{\ell_1',m_1'}(s) \biggl) = \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) Y_{\ell_2}^{m_2}(\tau_{\ell_1',m_1'})\\
+&\quad \quad = \sum_{\ell_2=\kappa}^{\infty} \frac{2\ell_2 +1}{4\pi} a_{\ell_2}(h)  P_{\ell_2}(\cos{\overrightarrow{\tau_{\ell_1,m_1} \tau_{\ell_1',m_1'}}}) \\
+&\text{Since $a_{\ell_2}(h) = g^{\ell_2}(h)$,}\\
+& \quad \quad =\frac{1-g(h)^2}{\biggl(1-2 g(h) \cdot \cos{(\overrightarrow{\tau_{\ell_1,m_1} \tau_{\ell_1',m_1'}})} + g^2(h)\biggl)^{3/2}}\\
+&\text{\color{red} In fact, this covariance function is free from $\ell_2$ if $a_{\ell_2}(h)$ has a form of $g(h)^{\ell_2}$}\\
+&\text{\color{red} (by addition theorem \& the generating function of Legendre Polynomial), }\\
+&\text{\color{red} and also free from $m_2$ (by Shur's decomposition.) Does it make sense??????}\\
+\\
+%&\quad \text{where } \quad a_{\ell_2}(h) = \gamma^{2 \ell_2} e^{-\beta \ell_2|h|}, \quad  a_{\ell_2}^{(\ell_1,m_1), (\ell_1',m_1')}(h) = (\gamma_{\ell_1,m_1} \gamma_{\ell_1',m_1'})^{\ell_2} e^{-\beta \ell_2|h|},\\
+%&\quad \quad a_{\ell_2}^{(\ell_1, m_1)}(h) = (\gamma \gamma_{\ell_1,m_1})^{\ell_2} e^{-\beta \ell_2|h|}, \quad 0<\gamma, \gamma_{\ell_1,m_1}, \gamma_{\ell_1',m_1'} < 1, \quad \beta >0, \quad \tau_{\ell_1,m_1},  \tau_{\ell_1',m_1'} \in \mathbb{S}^2 \\
 \end{align*}
+
+{\color{red} How can we justify these structures and assumptions???? Restriction to guarantee positive definiteness. These structures allow positive definiteness to the covariance model. Can we use RK for fixed h to justify this assumption?}\\
 
 {\color{red}
 In the case of the reproducing kernel for fixed $h$, each covariance function of the coefficients are following (from note 101022, page 67): \\
@@ -215,37 +222,35 @@ Does it mean if we use the same structures as the RK, we can guarantee that such
 Then, by Shur's decomposition (Roy 1969), {\color{red} (Do we need more detailed explanation about Shur's decomposition here?)}\\
 \begin{align*}
 &Cov\biggl(X(P,t), X(Q,s)\biggl) = \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h) Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(Q)\\ 
-&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(P) Y_{\ell_1'}^{m_1'}(Q) \sum_{\ell_2=1}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}^{(\ell_1,m_1),(\ell_1',m_1')}(h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) Y_{\ell_2}^{m_2}(\tau_{\ell_1',m_1'})\\
-&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}^{(\ell_1,m_1)} (h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) Y_{\ell_2}^{m_2}(Q)\\ 
-&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}^{(\ell_1,m_1)} (h) Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})\\
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(P) Y_{\ell_1'}^{m_1'}(Q) \sum_{\ell_2=1}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) Y_{\ell_2}^{m_2}(\tau_{\ell_1',m_1'})\\
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) Y_{\ell_2}^{m_2}(Q)\\ 
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h) Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})\\
 \end{align*}
 
 By addition theorem,\\
 
 \begin{align*}
 &= \biggl\{ \sum_{\ell_2=0}^\infty \frac{2\ell_2+1}{4\pi} a_{\ell_2}(h) P_{\ell_2}(\cos{\overrightarrow{PQ}}) -  \sum_{\ell_2=0}^{\kappa-1} \frac{2\ell_2+1}{4\pi} a_{\ell_2}(h) P_{\ell_2}(\cos{\overrightarrow{PQ}}) \biggl\}\\ 
-&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1}  \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(P)Y_{\ell_1'}^{m_1'}(Q) \biggl\{ \sum_{\ell_2=0}^{\infty}  \frac{2\ell_2+1}{4\pi} a_{\ell_2}^{(\ell_1,m_1), (\ell_1',m_1')}(h) P_{\ell_2}(\cos{\overrightarrow{\tau_{\ell_1,m_1} \tau_{\ell_1',m_1'}}})\\ 
-&- \sum_{\ell_2=0}^{\kappa-1} \frac{2\ell_2+1}{4\pi} a_{\ell_2}^{(\ell_1,m_1), (\ell_1',m_1')}(h) P_{\ell_2}(\cos{\overrightarrow{\tau_{\ell_1,m_1} \tau_{\ell_1',m_1'}}}) \biggl\}\\
-&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) \biggl\{ \sum_{\ell_2=0}^{\infty}  \frac{2\ell_2+1}{4\pi} a_{\ell_2}^{(\ell_1,m_1)}(h)  P_{\ell_2}(\cos{\overrightarrow{Q\tau}_{\ell_1,m_1}}) - \sum_{\ell_2=0}^{\kappa-1} \frac{2\ell_2+1}{4\pi} a_{\ell_2}^{(\ell_1,m_1)}(h)  P_{\ell_2}(\cos{\overrightarrow{Q\tau}_{\ell_1,m_1}}) \biggl\}\\ 
-&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q) \biggl\{ \sum_{\ell_2=0}^{\infty}  \frac{2\ell_2+1}{4\pi} a_{\ell_2}^{(\ell_1,m_1)}(h)  P_{\ell_2}(\cos{\overrightarrow{P \tau}_{\ell_1,m_1}}) - \sum_{\ell_2=0}^{\kappa-1}  \frac{2\ell_2+1}{4\pi} a_{\ell_2}^{(\ell_1,m_1)}(h)  P_{\ell_2}(\cos{\overrightarrow{P\tau}_{\ell_1,m_1}}) \biggl\}\\
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1}  \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} Y_{\ell_1}^{m_1}(P)Y_{\ell_1'}^{m_1'}(Q) \biggl\{ \sum_{\ell_2=0}^{\infty}  \frac{2\ell_2+1}{4\pi} a_{\ell_2}(h) P_{\ell_2}(\cos{\overrightarrow{\tau_{\ell_1,m_1} \tau_{\ell_1',m_1'}}})\\ 
+&- \sum_{\ell_2=0}^{\kappa-1} \frac{2\ell_2+1}{4\pi} a_{\ell_2}(h) P_{\ell_2}(\cos{\overrightarrow{\tau_{\ell_1,m_1} \tau_{\ell_1',m_1'}}}) \biggl\}\\
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(P) \biggl\{ \sum_{\ell_2=0}^{\infty}  \frac{2\ell_2+1}{4\pi} a_{\ell_2}(h)  P_{\ell_2}(\cos{\overrightarrow{Q\tau}_{\ell_1,m_1}}) - \sum_{\ell_2=0}^{\kappa-1} \frac{2\ell_2+1}{4\pi} a_{\ell_2}(h)  P_{\ell_2}(\cos{\overrightarrow{Q\tau}_{\ell_1,m_1}}) \biggl\}\\ 
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} Y_{\ell_1}^{m_1}(Q) \biggl\{ \sum_{\ell_2=0}^{\infty}  \frac{2\ell_2+1}{4\pi} a_{\ell_2}(h)  P_{\ell_2}(\cos{\overrightarrow{P \tau}_{\ell_1,m_1}}) - \sum_{\ell_2=0}^{\kappa-1}  \frac{2\ell_2+1}{4\pi} a_{\ell_2}(h)  P_{\ell_2}(\cos{\overrightarrow{P\tau}_{\ell_1,m_1}}) \biggl\}\\
 \\
-&= \phi_{\kappa}(\overrightarrow{PQ},h) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} \phi_{\kappa}^{(\ell_1,m_1),(\ell_1',m_1')}(0,h) Y_{\ell_1}^{m_1}(P) Y_{\ell_1'}^{m_1'}(Q)\\ 
-&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \phi_{\kappa}^{\ell_1,m_1}(\overrightarrow{Q\tau}_{\ell_1,m_1},h) Y_{\ell_1}^{m_1}(P) +  \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \phi_{\kappa}^{\ell_1,m_1}(\overrightarrow{P\tau}_{\ell_1,m_1},h) Y_{\ell_1}^{m_1}(Q)\\
+&= \phi_{\kappa}(\overrightarrow{PQ},h) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} \phi_{\kappa}(\overrightarrow{\tau_{\ell_1,m_1}\tau_{\ell_1',m_1'}},h) Y_{\ell_1}^{m_1}(P) Y_{\ell_1'}^{m_1'}(Q)\\ 
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \phi_{\kappa}(\overrightarrow{Q\tau}_{\ell_1,m_1},h) Y_{\ell_1}^{m_1}(P) +  \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \phi_{\kappa}(\overrightarrow{P\tau}_{\ell_1,m_1},h) Y_{\ell_1}^{m_1}(Q)\\
 \end{align*}
 
-\item {\color{red} (Add why we need the scale parameters and benefit of them here)} The scale parameters $\delta, \delta_{\ell_1, m_1}, \delta_{\ell_1', m_1'} > 0$ can be introduced to achieve more flexibility. Then,\\
+\item {\color{red} (Add why we need the scale parameters and benefit of them here)} The scale parameters $\gamma, \gamma_{\ell_1, m_1}, \gamma_{\ell_1', m_1'} > 0$ can be introduced to achieve more flexibility. Then,\\
 {\tiny
 \begin{align*}
-&\text{since } a_{\ell_2}(h) = \gamma^{2 \ell_2} e^{-\beta \ell_2|h|}, \quad  a_{\ell_2}^{(\ell_1,m_1), (\ell_1',m_1')}(h) = (\gamma_{\ell_1,m_1} \gamma_{\ell_1',m_1'})^{\ell_2} e^{-\beta \ell_2|h|},\\
-&\quad \quad a_{\ell_2}^{(\ell_1, m_1)}(h) = (\gamma \gamma_{\ell_1,m_1})^{\ell_2} e^{-\beta \ell_2|h|}, \quad 0<\gamma, \gamma_{\ell_1,m_1}, \gamma_{\ell_1',m_1'} < 1, \quad \beta >0, \quad \ell=0,1,2,\dots\\
+&\text{since we can express } a_{\ell_2}(h) = g^{\ell_2}(h), \quad \ell_2=0,1,2,\dots\\
 \\
-&\Rightarrow \delta^2 \biggl\{ \frac{(1 - {\gamma}^4 e^{-2 \beta \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{PQ})} (\gamma^2 e^{-\beta \lvert h \lvert}) + {\gamma}^4 e^{-2 \beta \lvert h \lvert})^{3/2}} - \sum_{\ell_2=0}^{\kappa-1} \frac{2\ell_2+1}{4\pi} a_{\ell_2}(h) P_{\ell_2}(\cos{\overrightarrow{PQ}}) \biggl\}\\
-&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1}  \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} (\delta_{\ell_1, m_1} \delta_{\ell_1',m_1'}) Y_{\ell_1}^{m_1}(P) Y_{\ell_1'}^{m_1'}(Q) \biggl\{ \frac{(1 - {(\gamma_{\ell_1,m_1} \gamma_{\ell_1',m_1'})}^2 e^{-2 \beta \lvert h \lvert})}{(1-2 (\cos{\overrightarrow{\tau_{\ell_1,m_1} \tau_{\ell_1',m_1'}}}) (\gamma_{\ell_1,m_1} \gamma_{\ell_1',m_1'}) e^{-\beta \lvert h \lvert} + {(\gamma_{\ell_1,m_1} \gamma_{\ell_1',m_1'})}^2 e^{-2\beta \lvert h \lvert})^{3/2}}\\ 
-&- \sum_{\ell_2=0}^{\kappa-1} \frac{2\ell_2+1}{4\pi} a_{\ell_2}^{(\ell_1,m_1),(\ell_1',m_1')}(h) P_{\ell_2}(\cos{\overrightarrow{\tau_{\ell_1,m_1} \tau_{\ell_1',m_1'}}}) \biggl\}\\ 
-&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} (\delta \delta_{\ell_1, m_1}) Y_{\ell_1}^{m_1}(P) \biggl\{ \frac{(1 - ({\gamma \gamma_{\ell_1,m_1})}^2 e^{-2 \beta \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{\tau_{\ell_1,m_1} Q})} (\gamma \gamma_{\ell_1,m_1} e^{-\beta \lvert h \lvert}) + {(\gamma \gamma_{\ell_1,m_1})}^2 e^{-2\beta \lvert h \lvert})^{3/2}} - \sum_{\ell_2=0}^{\kappa-1} \frac{2\ell_2+1}{4\pi} a_{\ell_2}^{(\ell_1,m_1)}(h)  P_{\ell_2}(\cos{\overrightarrow{Q\tau_{\ell_1,m_1}}}) \biggl\}\\
-& + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} (\delta \delta_{\ell_1, m_1}) Y_{\ell_1}^{m_1}(Q) \biggl\{\frac{(1 - {(\gamma \gamma_{\ell_1,m_1})}^2 e^{-2 \beta \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{P \tau_{\ell_1,m_1}})} (\gamma \gamma_{\ell_1,m_1} e^{-\beta \lvert h \lvert}) + {(\gamma \gamma_{\ell_1,m_1})}^2 e^{-2 \beta \lvert h \lvert})^{3/2}} - \sum_{\ell_2=0}^{\kappa-1} \frac{2\ell_2+1}{4\pi} a_{\ell_2}^{(\ell_1,m_1)}(h)  P_{\ell_2}(\cos{\overrightarrow{P\tau_{\ell_1,m_1}}}) \biggl\}\\
+&\Rightarrow \gamma^2 \biggl\{ \frac{1 - g(h)^2}{(1-2 \cos{(\overrightarrow{PQ})} g(h) + g(h)^2)^{3/2}} - \sum_{\ell_2=0}^{\kappa-1} \frac{2\ell_2+1}{4\pi} a_{\ell_2}(h) P_{\ell_2}(\cos{\overrightarrow{PQ}}) \biggl\}\\
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1}  \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} (\gamma_{\ell_1, m_1} \gamma_{\ell_1',m_1'}) Y_{\ell_1}^{m_1}(P) Y_{\ell_1'}^{m_1'}(Q) \biggl\{ \frac{1 - g(h)^2}{(1-2 (\cos{\overrightarrow{\tau_{\ell_1,m_1} \tau_{\ell_1',m_1'}}}) g(h) + g(h)^2)^{3/2}} - \sum_{\ell_2=0}^{\kappa-1} \frac{2\ell_2+1}{4\pi} a_{\ell_2}(h) P_{\ell_2}(\cos{\overrightarrow{\tau_{\ell_1,m_1} \tau_{\ell_1',m_1'}}}) \biggl\}\\ 
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} (\gamma \gamma_{\ell_1, m_1}) Y_{\ell_1}^{m_1}(P) \biggl\{ \frac{1 - g(h)^2}{(1-2 \cos{(\overrightarrow{\tau_{\ell_1,m_1} Q})} g(h) + g(h)^2)^{3/2}} - \sum_{\ell_2=0}^{\kappa-1} \frac{2\ell_2+1}{4\pi} a_{\ell_2}(h)  P_{\ell_2}(\cos{\overrightarrow{Q\tau_{\ell_1,m_1}}}) \biggl\}\\
+& + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} (\gamma \gamma_{\ell_1, m_1}) Y_{\ell_1}^{m_1}(Q) \biggl\{\frac{(1 - g(h)^2}{(1-2 \cos{(\overrightarrow{P \tau_{\ell_1,m_1}})} g(h) + g(h)^2)^{3/2}} - \sum_{\ell_2=0}^{\kappa-1} \frac{2\ell_2+1}{4\pi} a_{\ell_2}(h)  P_{\ell_2}(\cos{\overrightarrow{P\tau_{\ell_1,m_1}}}) \biggl\}\\
 \\
-&\quad \text{where } \delta, \delta_{\ell_1,m_1}>0, \quad 0<\gamma, \gamma_{\ell_1,m_1}, \gamma_{\ell_1',m_1'} < 1, \quad \beta >0, \quad \tau_{\ell_1,m_1},  \tau_{\ell_1',m_1'} \in \mathbb{S}^2 \\
+&\quad \text{where } \gamma, \gamma_{\ell_1,m_1}>0, \quad \text{ and } \quad \tau_{\ell_1,m_1},  \tau_{\ell_1',m_1'} \in \mathbb{S}^2 \\
 \end{align*}
 }
 
@@ -260,25 +265,22 @@ $$\sum_{i=1}^n \sum_{j=1}^n c_i Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl) \bar{c}_
 {\footnotesize
 \begin{align*}
 &\sum_{i=1}^n \sum_{j=1}^n c_i  Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl) \bar{c}_j\\
-&= \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \biggl\{ \delta^2 \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h) Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(Q)\\ 
-&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} (\delta_{\ell_1,m_1} \delta_{\ell_1',m_1'}) Y_{\ell_1}^{m_1}(P) Y_{\ell_1'}^{m_1'}(Q) \sum_{\ell_2=1}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}^{(\ell_1,m_1),(\ell_1',m_1')}(h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) Y_{\ell_2}^{m_2}(\tau_{\ell_1',m_1'})\\
-&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} (\delta \delta_{\ell_1,m_1}) Y_{\ell_1}^{m_1}(P) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}^{(\ell_1,m_1)} (h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) Y_{\ell_2}^{m_2}(Q)\\ 
-&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} (\delta \delta_{\ell_1,m_1}) Y_{\ell_1}^{m_1}(Q) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}^{(\ell_1,m_1)} (h) Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) \biggl\}\\
+&= \sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \biggl\{ \gamma^2 \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h) Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(Q)\\ 
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \sum_{\ell_1'=0}^{\kappa-1} \sum_{m_1'=-\ell_1'}^{\ell_1'} (\gamma_{\ell_1,m_1} \gamma_{\ell_1',m_1'}) Y_{\ell_1}^{m_1}(P) Y_{\ell_1'}^{m_1'}(Q) \sum_{\ell_2=1}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) Y_{\ell_2}^{m_2}(\tau_{\ell_1',m_1'})\\
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} (\gamma \gamma_{\ell_1,m_1}) Y_{\ell_1}^{m_1}(P) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) Y_{\ell_2}^{m_2}(Q)\\ 
+&+ \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} (\gamma \gamma_{\ell_1,m_1}) Y_{\ell_1}^{m_1}(Q) \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2}  a_{\ell_2}(h) Y_{\ell_2}^{m_2}(P) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) \biggl\}\\
 \\
-&\quad \text{where } \quad a_{\ell_2}(h) = \gamma^{2 \ell_2} e^{-\beta \ell_2|h|}, \quad  a_{\ell_2}^{(\ell_1,m_1), (\ell_1',m_1')}(h) = (\gamma_{\ell_1,m_1} \gamma_{\ell_1',m_1'})^{\ell_2} e^{-\beta \ell_2|h|},\\
-&\quad \quad a_{\ell_2}^{(\ell_1, m_1)}(h) = (\gamma \gamma_{\ell_1,m_1})^{\ell_2} e^{-\beta \ell_2|h|}, \quad 0<\gamma, \gamma_{\ell_1,m_1}, \gamma_{\ell_1',m_1'} < 1, \quad \beta >0, \quad \tau_{\ell_1,m_1},  \tau_{\ell_1',m_1'} \in \mathbb{S}^2 \\
-\\
-&=\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} e^{-\beta \ell_2 |h_{ij}|} \biggl\{ \delta \gamma^{\ell_2} Y_{\ell_2}^{m_2}(y_i) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \delta_{\ell_1,m_1} (\gamma_{\ell_1,m_1})^{\ell_2} Y_{\ell_1}^{m_1}(y_i) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})  \biggl \} \\
-&\quad \biggl\{ \delta \gamma^{\ell_2} Y_{\ell_2}^{m_2}(y_j) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \delta_{\ell_1,m_1} (\gamma_{\ell_1,m_1})^{\ell_2} Y_{\ell_1}^{m_1}(y_j) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) \biggl\}\\
+&=\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_2=\kappa}^{\infty} \sum_{m_2=-\ell_2}^{\ell_2} a_{\ell_2}(h) \biggl\{ \gamma Y_{\ell_2}^{m_2}(y_i) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \gamma_{\ell_1,m_1} Y_{\ell_1}^{m_1}(y_i) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})  \biggl \} \\
+&\quad \biggl\{ \gamma Y_{\ell_2}^{m_2}(y_j) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \gamma_{\ell_1,m_1} Y_{\ell_1}^{m_1}(y_j) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) \biggl\}\\
 \\
 &\text{By Bochner theorem, }\\
-&=\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_2=\kappa}^{\infty}  \sum_{m_2=-\ell_2}^{\ell_2} \int_{\mathbb{R}} e^{i \omega (t_i-t_j)} F_{\ell_2, m_2}(d\omega) \biggl\{ \delta \gamma^{\ell_2} Y_{\ell_2}^{m_2}(y_i) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \delta_{\ell_1,m_1} (\gamma_{\ell_1,m_1})^{\ell_2} Y_{\ell_1}^{m_1}(y_i) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})  \biggl \} \\
-&\quad \biggl\{ \delta \gamma^{\ell_2} Y_{\ell_2}^{m_2}(y_j) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \delta_{\ell_1,m_1} (\gamma_{\ell_1,m_1})^{\ell_2} Y_{\ell_1}^{m_1}(y_j) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) \biggl\}\\
+&=\sum_{i=1}^n \sum_{j=1}^n c_i \bar{c}_j \sum_{\ell_2=\kappa}^{\infty}  \sum_{m_2=-\ell_2}^{\ell_2} \int_{\mathbb{R}} e^{i \omega (t_i-t_j)} F_{\ell_2, m_2}(d\omega) \biggl\{ \gamma Y_{\ell_2}^{m_2}(y_i) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \gamma_{\ell_1,m_1} Y_{\ell_1}^{m_1}(y_i) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})  \biggl \} \\
+&\quad \biggl\{ \gamma Y_{\ell_2}^{m_2}(y_j) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \gamma_{\ell_1,m_1} Y_{\ell_1}^{m_1}(y_j) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) \biggl\}\\
 &\quad \text{where } h_{ij} = t_i-t_j, \text{ and } F_{\ell_2,m_2}(d\omega) \text{ is a non-negative measure.} \\
 \\
-&= \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} \int_{\mathbb{R}} F_{\ell_2,m_2}(d\omega) \sum_{i=1}^{n} c_i e^{-i \omega t_i} \biggl\{ \delta \gamma^{\ell_2} Y_{\ell_2}^{m_2}(y_i) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \delta_{\ell_1,m_1} (\gamma_{\ell_1,m_1})^{\ell_2} Y_{\ell_1}^{m_1}(y_i) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})  \biggl \}\\
-& \sum_{j=1}^{n} \bar{c}_j e^{-i \omega t_j} \biggl\{ \delta \gamma^{\ell_2} Y_{\ell_2}^{m_2}(y_j) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \delta_{\ell_1,m_1} (\gamma_{\ell_1,m_1})^{\ell_2} Y_{\ell_1}^{m_1}(y_j) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) \biggl\}\\
-&= \sum_{\ell=\kappa}^{\infty}  \sum_{m=-\ell}^{\ell} \int_{\mathbb{R}} F_{\ell_2,m_2}(d\omega) \biggl | \sum_{i=1}^{n} c_i e^{i \omega t_i} \biggl\{ \delta \gamma^{\ell_2} Y_{\ell_2}^{m_2}(y_i) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \delta_{\ell_1,m_1} (\gamma_{\ell_1,m_1})^{\ell_2} Y_{\ell_1}^{m_1}(y_i) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})  \biggl \} \biggl |^2 \ge 0\\
+&= \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} \int_{\mathbb{R}} F_{\ell_2,m_2}(d\omega) \sum_{i=1}^{n} c_i e^{-i \omega t_i} \biggl\{ \gamma Y_{\ell_2}^{m_2}(y_i) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \gamma_{\ell_1,m_1} Y_{\ell_1}^{m_1}(y_i) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})  \biggl \}\\
+& \sum_{j=1}^{n} \bar{c}_j e^{-i \omega t_j} \biggl\{ \gamma Y_{\ell_2}^{m_2}(y_j) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \gamma_{\ell_1,m_1} Y_{\ell_1}^{m_1}(y_j) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) \biggl\}\\
+&= \sum_{\ell=\kappa}^{\infty}  \sum_{m=-\ell}^{\ell} \int_{\mathbb{R}} F_{\ell_2,m_2}(d\omega) \biggl | \sum_{i=1}^{n} c_i e^{i \omega t_i} \biggl\{ \gamma Y_{\ell_2}^{m_2}(y_i) + \sum_{\ell_1=0}^{\kappa-1} \sum_{m_1=-\ell_1}^{\ell_1} \gamma_{\ell_1,m_1} Y_{\ell_1}^{m_1}(y_i) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})  \biggl \} \biggl |^2 \ge 0\\
 \end{align*}
 }
 \end{proof}
@@ -288,15 +290,16 @@ Therefore, $Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl)$ is positive-semi definite.\
 
 \pagebreak
 
+
 \item
-As it is shown, the suggested covariance function  $Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl)$ contains stationary time series $Z_{\ell,m}(t)$ such that:\\
+As it is shown, the suggested covariance function $Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl)$ contains stationary time series $Z_{\ell,m}(t)$ such that:\\
 \begin{align*}
 &b_{\ell_2,m_2}(h) := Cov\biggl( Z_{\ell_2,m_2}(t), Z_{\ell_2',m_2'}(s) \biggl) = a_{\ell_2}(h) I\{(\ell_2,m_2),(\ell'_2,m_2')\}\\
-&b_{\ell_1,m_1}^{\ell_1',m_1'}(h) := Cov\biggl( Z_{\ell_1,m_1}(t), Z_{\ell_1',m_1'}(s) \biggl) = \sum_{\ell_2=\kappa}^{\infty} \sum_{m=-\ell_2}^{\ell_2} a_{\ell_2}^{(\ell_1,m_1), (\ell_1',m_1')}(h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) Y_{\ell_2}^{m_2}(\tau_{\ell_1',m_1'})\\
+&b_{\ell_1,m_1}^{\ell_1',m_1'}(h) := Cov\biggl( Z_{\ell_1,m_1}(t), Z_{\ell_1',m_1'}(s) \biggl) = \sum_{\ell_2=\kappa}^{\infty} \sum_{m=-\ell_2}^{\ell_2} a_{\ell_2}(h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) Y_{\ell_2}^{m_2}(\tau_{\ell_1',m_1'})\\
 &b_{\ell_1,m_1}^{\ell_2,m_2}(h) := Cov\biggl( Z_{\ell_1,m_1}(t), Z_{\ell_2,m_2}(s) \biggl) = b_{\ell_2,m_2}^{\ell_1,m_1}(h) := Cov\biggl( Z_{\ell_2,m_2}(t), Z_{\ell_1,m_1}(s) \biggl) = a_{\ell_2}^{(\ell_1, m_1)}(h) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})\\
 \\
-&\quad \text{where } \quad \tau_{\ell_1,m_1}, \tau_{\ell_1',m_1'} \in \mathbb{S}^2, \quad a_{\ell_2}(h) = \gamma^{2 \ell_2} e^{-\beta \ell_2|h|}, \quad a_{\ell_2}^{(\ell_1,m_1), (\ell_1',m_1')}(h) = (\gamma_{\ell_1,m_1} \gamma_{\ell_1',m_1'})^{\ell_2} e^{-\beta \ell_2|h|},\\
-&\quad \quad a_{\ell_2}^{(\ell_1, m_1)}(h) = (\gamma \gamma_{\ell_1,m_1})^{\ell_2} e^{-\beta \ell_2|h|}, \quad 0<\gamma, \gamma_{\ell_1,m_1}, \gamma_{\ell_1',m_1'} < 1, \quad \beta >0, \quad \ell=0,1,2,... \\
+&\quad \text{where } \quad \tau_{\ell_1,m_1}, \tau_{\ell_1',m_1'} \in \mathbb{S}^2, \quad \ell_1, \ell_1', \ell_2=0,1,2,...\\  
+&{\color{red}\text{Assume } a_{\ell_2}(h) \text{ has a form of } (g(h))^{\ell_2} \text{ and positive definite.}}\\
 \end{align*}
 
 \item {\color{red} (Add brief introduction about multivariate time series here(Yaglom p308, Blackwell p234))}\\
@@ -339,39 +342,38 @@ $B(h)=B^t(-h)$ since these covariance functions are isotropic and $B_1(h)$ and $
 WTS:\\
 \begin{align*}
 &|b_{\ell_1,m_1}^{\ell_2,m_2}(h)| \le \{b_{\ell_1,m_1}(0) b_{\ell_2,m_2}(0)\}^\frac{1}{2}\\
-&\Rightarrow |a_{\ell_2}^{(\ell_1,m_1)}(h)| |Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})| \le \Biggl[ a_{\ell_2}(0) \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2}^{(\ell_1,m_1), (\ell_1,m_1)}(0) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) \biggl\} \Biggl]^\frac{1}{2}\\
-\\
-&\Rightarrow |(\gamma \gamma_{\ell_1,m_1})^{\ell_2} e^{-\beta \ell_2|h|}| |Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})|\\ 
-&\quad \le \Biggl[ \gamma^{2 \ell_2} e^{-\beta \ell_2|h|} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'}  (\gamma_{\ell_1,m_1})^{2 \ell_2} e^{-\beta \ell_2|0|} Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) \biggl\} \Biggl]^\frac{1}{2}\\
-\\
-&\Rightarrow |(\gamma_{\ell_1,m_1})^{2 \ell_2} e^{-2\beta \ell_2|h|}| |Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})|^2 \le \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} (\gamma_{\ell_1,m_1})^{2 \ell_2} Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1})\\
-&\text{This is true since } |e^{-2\beta \ell_2|h|}| \le 1 \text{ for any } h \in \mathbb{R} \text{ and}\\
-&\sum_{m_2'=-\ell_2'}^{\ell_2'} (\gamma_{\ell_1,m_1})^{2 \ell_2} Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) = (\gamma_{\ell_1,m_1})^{2 \ell_2} |Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})|^2 + \alpha \quad \text{where } \alpha \ge 0\\
+&\Rightarrow |a_{\ell_2}(h)| |Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})| \le \Biggl[ a_{\ell_2}(0) \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2'}(0) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) \biggl\} \Biggl]^\frac{1}{2}\\
+&\Rightarrow (a_{\ell_2}(h))^2 (Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}))^2 \le a_{\ell_2}(0) \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2'}(0) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) \biggl\}\\
+&\text{Let's see the right hand side. Then,}\\
+&a_{\ell_2}(0) \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2'}(0) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) \biggl\}\\
+&\text{Since $a_{\ell_2}(h)$ is {\color{red} positive} for every $h \ge 0$,}\\
+&=a_{\ell_2}(0) \cdot a_{\ell_2}(0) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) + \alpha \quad \text{where } \alpha \ge 0\\
+&= (a_{\ell_2}(0))^2 (Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}))^2 +  \alpha \quad \text{where } \alpha \ge 0\\
+&\text{Since $a_{\ell_2}(h)$ is decreasing w.r.t $h$,  $a_{\ell_2}(h) \le a_{\ell_2}(0)$; therefore, the required inequality holds.}\\
 \end{align*}
 
 (ii) For $B_2$,\\
 WTS:\\
 \begin{align*}
 &|b_{\ell_1,m_1}^{\ell_1',m_1'}(h)| \le \{b_{\ell_1,m_1}(0) b_{\ell_1',m_1'}(0)\}^\frac{1}{2}\\
-&\Rightarrow \biggl| \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2}^{(\ell_1,m_1), (\ell_1',m_1')}(h) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) \biggl|\\
-&\le \Biggl[ \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2}^{(\ell_1,m_1), (\ell_1,m_1)}(0) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) \biggl\}\\ 
-&\quad  \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2}^{(\ell_1',m_1'), (\ell_1',m_1')}(0) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1',m_1'}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1',m_1'}) \biggl\} \Biggl]^\frac{1}{2}\\
+&\Rightarrow \biggl| \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2}(h) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1',m_1'}) \biggl|\\
+&\le \Biggl[ \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2}(0) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) \biggl\} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2}(0) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1',m_1'}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1',m_1'}) \biggl\} \Biggl]^\frac{1}{2}\\
 &\text{by addition theorem, }\\
-&\biggl\{ \sum_{\ell_2=\kappa}^{\infty} \frac{2\ell_2 + 1}{4\pi} (\gamma_{\ell_1, m_1} \cdot \gamma_{\ell_1',m_1'})^{\ell_2} e^{-\beta \ell_2 |h|} P_{\ell_2}(\cos{\overrightarrow{\tau_{\ell_1,m_1} \tau_{\ell_1',m_1'}}}\biggl\}^2\\
-&\le \sum_{\ell_2=\kappa}^{\infty} \frac{2\ell_2 + 1}{4\pi} (\gamma_{\ell_1, m_1})^{2 \ell_2} e^{-\beta \ell_2 |0|} \cdot \sum_{\ell_2=\kappa}^{\infty} \frac{2\ell_2 + 1}{4\pi} (\gamma_{\ell_1', m_1'})^{2 \ell_2} e^{-\beta \ell_2 |0|}\\
-&= \sum_{\ell_2=\kappa}^{\infty} \frac{2\ell_2 + 1}{4\pi} (\gamma_{\ell_1, m_1} \cdot \gamma_{\ell_1', m_1'})^{2 \ell_2} + \alpha_2 \quad \text{where } \alpha_2 \ge 0\\
+&\biggl\{ \sum_{\ell_2=\kappa}^{\infty} \frac{2\ell_2 + 1}{4\pi} a_{\ell_2}(h) P_{\ell_2}(\cos{\overrightarrow{\tau_{\ell_1,m_1} \tau_{\ell_1',m_1'}}}\biggl\}^2 \le \biggl\{ \sum_{\ell_2=\kappa}^{\infty} \frac{2\ell_2 + 1}{4\pi} a_{\ell_2}(h) \biggl\}^2\\
 \end{align*}
-This is true since $|P_{\ell_2}(\cdot)| \le 1$.\\
+This is true since $|P_{\ell_2}(\cdot)| \le 1$ and $a_{\ell_2}(h) \le a_{\ell_2}(0)$.\\
 
 \item
 Need to check whether $b_{\ell_1,m_1}(h)$ and $b_{\ell_2,m_2}(h)$ are positive-semi definite.\\ 
-(It is true because $a_{\ell_2}(h)$ and $a_{\ell_2}^{(\ell_1,m_1),(\ell_1,m_1)}(h)$ are positive-semi definite.)\\
+(It is true because $a_{\ell_2}(h)$ is positive-semi definite.)\\
 \\
+Example: $a_{\ell}(h) = p_1^{-\ell} e^{p_2 \ell |h|}$\\
 Let $f_{\ell,m}(\omega)$ is a spectral density function of $b_{\ell,m}(h)$. According to Bochner Theorem, it suffices to show that $f_{\ell,m}(\omega)$ is non-negative to prove positive semi definiteness. We can find $f_{\ell,m}(\omega)$ by inversion of Fourier transformation if $b_{\ell,m}(h)$ is given. (Yaglom, p313)\\
 \begin{align*}
 f_{\ell,m}(\omega) &=  \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell,m}(h) dh \quad \text{ or } \quad f_{\ell,m}(\omega) =  \frac{1}{2\pi} \sum_{h=-\infty}^\infty e^{-i\omega h} b_{\ell,m}(h) 
 \end{align*}
 We assume  $f_{\ell,m}(\omega)$ exists. The spectral density function $f_{\ell,m}(\omega)$ exists if $\int_{-\infty}^\infty |b_{\ell,m}(h)|dh < \infty$ or $\sum_{h=-\infty}^\infty |b_{\ell,m}(h)|dh < \infty$. This means that $|b_{\ell,m}(h)|$ falls off rapidly as $|h| \rightarrow \infty$ (Yaglom, p104). Therefore, as long as our covariance functions exponentially decay, this assumption is reasonable.\\
+
 \begin{proof}
 i)\\
 \begin{align*}
@@ -392,11 +394,6 @@ f_{\ell_1,m_1}(\omega) &= \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_
 \end{align*}
 This is positive by the previous proof for $b_{\ell_2,m_2}(h)$. Therefore, $b_{\ell_1,m_1}(h)$ is positive-semi definite.\\
 \end{proof}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \item
 {\color{red}(For each (or fixed) $\ell$, $m$,)}\\
@@ -439,23 +436,27 @@ $$f_{\ell_1,m_1}(\omega) \ge 0, \quad f_{\ell_2,m_2}(\omega) \ge 0, \quad \text{
 We have already verified that the first two conditions are satisfied for condition 3; thus, only need to show the last one, which is:\\
 $$|f_{\ell_1,m_1}^{\ell_2, m_2}(\omega)|^2 \le f_{\ell_1,m_1}(\omega) f_{\ell_2,m_2}(\omega)$$
 
-This means that:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+This means that we need to show:\\
 \begin{align*}
 &\left\{ \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell_1,m_1}^{\ell_2,m_2}(h) dh \right\}^2 \quad \le \quad \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell_2,m_2}(h) dh \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell_1,m_1}(h) dh \\
 \\
-&\Rightarrow \left\{ \int_{-\infty}^\infty e^{-i\omega h} Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) a_{\ell_2}^{(\ell_1,m_1)}(h) dh \right\}^2\\ 
-&\quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} a_{\ell_2}(h) dh \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2'}^{(\ell_1,m_1)}(h) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) \biggl\} dh\\
-\\
-&\Rightarrow |Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})|^2 \biggl\{\int_{-\infty}^\infty e^{-i\omega h} (\gamma \cdot \gamma_{\ell_1,m_1})^{\ell_2} e^{-\beta \ell_2 |h|} dh \biggl\}^2\\
-& \quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} \gamma^{2\ell_2} e^{-\beta \ell_2 |h|}dh \quad \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} (\gamma_{\ell_1,m_1})^{2 \ell_2'} e^{-\beta \ell_2' |h|} |Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1})|^2\biggl\} dh\\
+&\Rightarrow \left\{ \int_{-\infty}^\infty e^{-i\omega h} Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1}) a_{\ell_2}(h) dh \right\}^2\\ 
+&\quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} a_{\ell_2}(h) dh \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2'}(h) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) \biggl\} dh\\
 \\
 &\text{{\color{red} By Fubini Theorem,????}}\\
-&\Rightarrow |Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})|^2 \biggl\{\int_{-\infty}^\infty e^{-i\omega h} (\gamma \cdot \gamma_{\ell_1,m_1})^{\ell_2} e^{-\beta \ell_2 |h|} dh \biggl\}^2\\
-& \quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} \gamma^{2\ell_2} e^{-\beta \ell_2 |h|}dh \quad \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ (\gamma_{\ell_1,m_1})^{2 \ell_2'} e^{-\beta \ell_2' |h|} |Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1})|^2\biggl\} dh\\
+&\Rightarrow |Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})|^2 \biggl\{\int_{-\infty}^\infty e^{-i\omega h} a_{\ell_2}(h) dh \biggl\}^2\\
+& \quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} a_{\ell_2}(h) dh \quad \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ a_{\ell_2'}(h) |Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1})|^2\biggl\} dh\\
 \\
-&\Rightarrow \biggl\{\int_{-\infty}^\infty e^{-i\omega h} (\gamma \cdot \gamma_{\ell_1,m_1})^{\ell_2} e^{-\beta \ell_2 |h|} dh \biggl\}^2\\
-& \quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} \gamma^{2\ell_2} e^{-\beta \ell_2 |h|}dh \quad \int_{-\infty}^\infty e^{-i\omega h} (\gamma_{\ell_1,m_1})^{2 \ell_2} e^{-\beta \ell_2 |h|} dh + \alpha_3 \quad \text{where } \alpha_3 \ge 0\\\\
-&\text{This is true since by Cauchy Schwarz inequality.}\\
+&\Rightarrow |Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})|^2 \int_{-\infty}^\infty e^{-i\omega h} a_{\ell_2}(h) dh \quad \le \quad \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ a_{\ell_2'}(h) |Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1})|^2\biggl\} dh\\
+&\text{This is true since } \\
+& \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ a_{\ell_2'}(h) |Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1})|^2\biggl\} dh\\
+&= |Y_{\ell_2}^{m_2}(\tau_{\ell_1,m_1})|^2 \int_{-\infty}^\infty e^{-i\omega h} a_{\ell_2}(h) dh  + \alpha_2 \quad \text{where } \alpha_2 \ge 0\\\
 \end{align*}
 
 For $B_2(h)$, we need to show that:\\
@@ -464,14 +465,11 @@ $$|f_{\ell_1,m_1}^{\ell_1', m_1'}(\omega)|^2 \le f_{\ell_1,m_1}(\omega) f_{\ell_
 \begin{align*}
 &\left\{ \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell_1,m_1}^{\ell_1',m_1'}(h) dh \right\}^2 \quad \le \quad \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell_1,m_1}(h) dh \frac{1}{2\pi} \int_{-\infty}^\infty e^{-i\omega h} b_{\ell_1',m_1'}(h) dh \\
 \\
-&\Rightarrow \biggl[ \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2'}^{(\ell_1,m_1)(\ell_1',m_1')}(h) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1',m_1'}) \biggl\} dh \biggl]^2\\ 
-&\quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2'}^{(\ell_1,m_1)}(h) |Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1})|^2 \biggl\} dh\\
-&\quad \quad \quad \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2'}^{(\ell_1',m_1')}(h) |Y_{\ell_2'}^{m_2'}(\tau_{\ell_1',m_1'})|^2 \biggl\} dh\\
+&\Rightarrow \biggl[ \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2'}(h) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1',m_1'}) \biggl\} dh \biggl]^2\\ 
+&\quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2'}(h) |Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1})|^2 \biggl\} dh\\
+&\quad \quad \quad \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} a_{\ell_2'}(h) |Y_{\ell_2'}^{m_2'}(\tau_{\ell_1',m_1'})|^2 \biggl\} dh\\
 \\
-&\Rightarrow \biggl[ \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} (\gamma_{\ell_1,m_1} \cdot \gamma_{\ell_1',m_1'})^{\ell_2} e^{-\beta \ell_2 |h|} Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1}) Y_{\ell_2'}^{m_2'}(\tau_{\ell_1',m_1'}) \biggl\} dh \biggl]^2\\ 
-&\quad \le \quad \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} (\gamma_{\ell_1,m_1})^{2 \ell_2} e^{-\beta \ell_2 |h|} |Y_{\ell_2'}^{m_2'}(\tau_{\ell_1,m_1})|^2 \biggl\} dh\\
-&\quad \quad \quad \int_{-\infty}^\infty e^{-i\omega h} \biggl\{ \sum_{\ell_2'=\kappa}^{\infty} \sum_{m_2'=-\ell_2'}^{\ell_2'} (\gamma_{\ell_1',m_1'})^{2 \ell_2} e^{-\beta \ell_2 |h|} |Y_{\ell_2'}^{m_2'}(\tau_{\ell_1',m_1'})|^2 \biggl\} dh\\
-&\text{This is true since by Cauchy Schwarz inequality.}\\
+&\text{This is true by Cauchy Schwarz inequality.}\\
 \end{align*}
 
 
