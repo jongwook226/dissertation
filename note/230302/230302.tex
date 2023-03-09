@@ -251,17 +251,17 @@ By addition theorem,\\
 
 \item
 \textbf{{\color{red} (If $\kappa=1$, doesn't it look weird to have the constant terms, $-\frac{1}{4\pi} - \frac{1}{16\pi^2} - \frac{1}{4\pi^\frac{3}{2}}$ in the covariance function? How can we explain or justify this?)}}\\ 
-\textbf{{\color{blue} This is cancelled if we use the RK form!!!! (This may be the reason why we need the minus signs for the 3rd and 4th compoents). This one happens since we have the form $a_\ell(h) = g(h)^\ell$. So, this form probably has a more important roll than we thought before. Then, we should use the same scale parameters.}}\\
-\textbf{{\color{blue} check the scale parameter $\gamma_\nu$.}}\\
-\textbf{{\color{blue} Also, it still has a constant term, "+1" from $\sum_{\nu=1}^{\kappa^2}q_{\nu}(P) q_{\nu}(Q)$. Is it to make the kernel strictly positive definite???}}\\
+\textbf{{\color{blue} 1. This is cancelled if we use the RK form!!!! (This may be the reason why we need the minus signs for the 3rd and 4th compoents).}}\\
+\\
+\textbf{{\color{blue} 2. This one happens since we have the form $a_\ell(h) = g(h)^\ell$. So, this form probably has a more important roll than we thought before.}}\\ 
+\\
+\textbf{{\color{blue} 3. Then, we should use the same scale parameters. Check the scale parameter $\gamma_\nu$.}}\\
+\\
+\textbf{{\color{blue} 4. Also, it still has a constant term, "+1" from $\sum_{\nu=1}^{\kappa^2}q_{\nu}(P) q_{\nu}(Q)$. Is it to make the kernel strictly positive definite???}}\\
 
 \item
 Now, we want to verify the positive definiteness of the covariance function. To prove the positive definiteness for this, we need to show:\\
 $$\sum_{i=1}^n \sum_{j=1}^n c_i Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl) \bar{c}_j  \ge 0 \quad \text{where} \quad y_i,y_j \in \mathbb{S}^2, \quad t_i,t_j \in \mathbb{R} \text{ or } \mathbb{Z} \quad c_i, c_j \in \mathbb{C}$$
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{proof}
 {\footnotesize
@@ -288,9 +288,8 @@ $$\sum_{i=1}^n \sum_{j=1}^n c_i Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl) \bar{c}_
  \omega t_i} \biggl\{ \gamma Y_{\ell}^{m}(y_i) + \sum_{\nu=1}^{\kappa^2} \gamma_{\nu} q_{\nu}(y_i) Y_{\ell}^{m}(\tau_{\nu}) \biggl \} \biggl |^2 + \sum_{\nu=1}^{\kappa^2} \biggl\{ \sum_{i=1}^n c_i \gamma_\nu q_{\nu}(y_i)\biggl\}^2 \ge 0\\
 \end{align*}
 }
-\end{proof}
-
 Therefore, $Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl)$ is positive-semi definite.\\
+\end{proof}
 
 \pagebreak
 
@@ -331,68 +330,81 @@ Therefore, $Cov\biggl(X(y_i,t_i), X(y_j,t_j)\biggl)$ is positive-semi definite.\
 
 \pagebreak
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \item Now, for the sake of simplicity, let consider IRF(1)/I(0), i.e, $\kappa=1$. Then, its covariance function is:\\
 {\footnotesize
 \begin{align*}
 Cov\biggl(X(P,t), X(Q,s)\biggl) &= Cov\biggl(Z_{0,0}(t)Y_0^0(P) + \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P), \quad Z_{0,0}(s)Y_0^0(Q) + \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q) \biggl)\\
+&=Cov\biggl(Z_{0}(t) q_1(t)(P) + \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P), \quad Z_{0}(s)q_1(Q) + \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q) \biggl)\\
 &= Cov\biggl(\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)\\
-&+ Cov\biggl(Z_0(t)Y_0^0(P),\quad Z_0(s) Y_0^0(Q)\biggl)\\
-&+ Cov\biggl(Z_0(t)Y_0^0(P),\quad \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)\\ 
-&+ Cov\biggl(\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad Z_{0}(s) Y_{0}^{0}(Q) \biggl)\\
+&+ Cov\biggl(Z_0(t) q_1(P),\quad Z_0(s) q_1(Q)\biggl)\\
+&+ Cov\biggl(Z_0(t)q_1(P),\quad \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(s) Y_{\ell}^{m}(Q)\biggl)\\ 
+&+ Cov\biggl(\sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Z_{\ell,m}(t) Y_{\ell}^{m}(P),\quad Z_{0}(s) q_1(Q) \biggl)\\
 \\
 &= \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} \sum_{\ell'=1}^{\infty} \sum_{m'=-\ell'}^{\ell'} Cov\biggl( Z_{\ell,m}(t), Z_{\ell',m'}(s) \biggl) Y_{\ell}^{m}(P) Y_{\ell'}^{m'}(Q)\\
-&+ Cov\biggl( Z_{0,0}(t), Z_{0,0}(s) \biggl) Y_0^0(P) Y_0^0(Q)\\
-&+ \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Cov\biggl( Z_{0,0}(t), Z_{\ell,m}(s) \biggl) Y_{0}^{0}(P) Y_{\ell}^{m}(Q)\\
-&+ \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Cov\biggl( Z_{\ell,m}(t), Z_{0,0}(s) \biggl) Y_{\ell}^{m}(P) Y_{0}^{0}(Q)\\
+&+ Cov\biggl( Z_{0}(t), Z_{0}(s) \biggl) q_1(P) q_1(Q)\\
+&+ \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Cov\biggl( Z_{0}(t), Z_{\ell,m}(s) \biggl) q_1(P) Y_{\ell}^{m}(Q)\\
+&+ \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} Cov\biggl( Z_{\ell,m}(t), Z_{0}(s) \biggl) Y_{\ell}^{m}(P) q_1(Q)\\
 \end{align*}
 }
 
 Let\\
 \begin{align*}
-&b_{\ell,m}(h) := Cov\biggl( Z_{\ell,m}(t), Z_{\ell',m'}(s) \biggl) = a_{\ell}(h) I\{(\ell,m),(\ell',m')\}\\
-&b_{0}(h) := Cov\biggl( Z_{0,0}(t), Z_{0,0}(s) \biggl) = \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} a_{\ell}^{(0,0)}(h) Y_{\ell}^{m}(\tau_{0}) Y_{\ell}^{m}(\tau_{0})\\
-&\text{\color{red} In fact, $b_0(h)$ is free from $\ell \ge \kappa$}\\
+&Cov\biggl( Z_{\ell,m}(t), Z_{\ell',m'}(s) \biggl) = a_{\ell}(h) I\{(\ell,m),(\ell',m')\}\\
+&Cov\biggl( Z_{0}(t), Z_{\ell,m}(s) \biggl) = Cov\biggl( Z_{\ell,m}(t), Z_{0}(s) \biggl) = -a_{\ell}(h) Y_{\ell}^{m}(\tau_{1}) \quad \text{where } \quad \tau_{1} \in \mathbb{S}^2\\
+&Cov\biggl( Z_{0}(t), Z_{0}(s) \biggl) = \sum_{\ell=\kappa}^{\infty} \sum_{m=-\ell}^{\ell} a_{\ell}(h) Y_{\ell}^{m}(\tau_{1}) Y_{\ell}^{m}(\tau_{1}) + 1\\
+&\quad \quad = 1 + \sum_{\ell=\kappa}^{\infty} \frac{2\ell +1}{4\pi} a_{\ell}(h)  P_{\ell}(\cos{0}) = 1 + \sum_{\ell=\kappa}^{\infty} \frac{2\ell +1}{4\pi} a_{\ell}(h)\\
+&\text{{\color{red} Let $a_{\ell}(h) \ge 0$ be positive definite and be expressed with a form of the $\ell$th power.}}\\
+&\text{{\color{red} That is, $a_{\ell}(h) = g^{\ell}(h)$. Then, }}\\
+& \quad \quad = I(\nu,\mu) + \frac{1-g(h)^2}{\biggl(1-2 g(h) + g^2(h)\biggl)^{3/2}}\\
+&\text{\color{red} In fact, this covariance function is free from $\ell$ if $a_{\ell}(h)$ has a form of $g(h)^{\ell}$}\\
 &\text{\color{red} (by addition theorem \& the generating function of Legendre Polynomial), }\\
-&\text{\color{red} and also free from $m$ which is $-\kappa \le \kappa \ge -\ell$ (by Shur's decomposition.)}\\
-\\
-&b_{0}^{\ell,m}(h) := Cov\biggl( Z_{0,0}(t), Z_{\ell,m}(s) \biggl) = b_{\ell,m}^{0}(h) := Cov\biggl( Z_{\ell,m}(t), Z_{0,0}(s) \biggl) = a_{\ell}^{0}(h) Y_{\ell}^{m}(\tau_{0})\\
-&\quad \text{where } \quad \tau_{0} \in \mathbb{S}^2, \quad a_{\ell}(h) = \gamma^{2 \ell} e^{-\beta \ell |h|}, \quad a_{\ell}^{(0,0)}(h) = \gamma_{0}^{2 \ell} e^{-\beta \ell |h|}, \quad a_{\ell}^{0}(h) = (\gamma \cdot \gamma_{0})^{\ell} e^{-\beta \ell |h|}\\
-&\quad \quad 0<\gamma, \gamma_{0} < 1, \quad \beta >0, \quad \ell=0,1,2,... \\
+&\text{\color{red} and also free from $m$ (by Shur's decomposition.) Does it make sense??????}\\
 \end{align*}
 
 Then, by Shur's decomposition (Roy 1969),\\
 \begin{align*}
-&Cov\biggl(X(P,t), X(Q,s)\biggl) = \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) + \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_{\ell}^{(0,0)}(h) Y_{\ell}^{m}(\tau_0) Y_{\ell}^{m}(\tau_0) Y_{0}^{0}(P) Y_{0}^{0}(Q)\\
-&+ Y_{0}^{0}(P) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}^0(h) Y_{\ell}^{m}(\tau_0) Y_{\ell}^{m}(Q) + Y_{0}^{0}(Q) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}^0(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(\tau_0)\\
+&Cov\biggl(X(P,t), X(Q,s)\biggl)\\
+&= \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(Q) + \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell} a_{\ell}(h) Y_{\ell}^{m}(\tau_1) Y_{\ell}^{m}(\tau_1) q_1(P) q_1(Q) + q_1(\tau_1) q_1(\tau_1)\\
+&- q_1(P) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(\tau_1) Y_{\ell}^{m}(Q) - q_1(Q) \sum_{\ell=1}^{\infty} \sum_{m=-\ell}^{\ell}  a_{\ell}(h) Y_{\ell}^{m}(P) Y_{\ell}^{m}(\tau_1)\\
 \end{align*}
 
 By addition theorem,\\
 \begin{align*}
-&= \left\{ \sum_{\ell=0}^\infty \frac{2\ell+1}{4\pi} a_\ell(h) P_\ell(\cos{\overrightarrow{PQ}}) - \frac{1}{4\pi} \right\} + Y_0^0(P)Y_0^0(Q) \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}^{(0,0)}(h) - \frac{1}{4\pi} \right\}\\
-&+ Y_0^0(P) \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}^{0}(h)  P_\ell(\cos{\overrightarrow{Q\tau}}) - \frac{1}{4\pi} \right\}\\ 
-&+ Y_0^0(Q) \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}^{0}(h)  P_\ell(\cos{\overrightarrow{P \tau}}) - \frac{1}{4\pi} \right\}\\
+&= \left\{ \sum_{\ell=0}^\infty \frac{2\ell+1}{4\pi} a_\ell(h) P_\ell(\cos{\overrightarrow{PQ}}) - \frac{1}{4\pi} \right\} + q_1(P) q_1(Q) \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h) - \frac{1}{4\pi} \right\} + q_1(\tau_1) q_1(\tau_1)\\
+&- q_1(P) \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{Q\tau_1}}) - \frac{1}{4\pi} \right\} - q_1(Q) \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{P \tau_1}}) - \frac{1}{4\pi} \right\}\\
 \\
-&= \left\{ \sum_{\ell=0}^\infty \frac{2\ell+1}{4\pi} a_\ell(h) P_\ell(\cos{\overrightarrow{PQ}}) - \frac{1}{4\pi} \right\} + \frac{1}{4\pi} \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)^{(0,0)} - \frac{1}{4\pi} \right\}\\
-&+ \frac{1}{2\sqrt{\pi}} \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)^0  P_\ell(\cos{\overrightarrow{Q\tau}}) - \frac{1}{4\pi} \right\}\\ 
-&+ \frac{1}{2\sqrt{\pi}} \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)^0  P_\ell(\cos{\overrightarrow{P \tau}}) - \frac{1}{4\pi} \right\}\\
+&= \left\{ \sum_{\ell=0}^\infty \frac{2\ell+1}{4\pi} a_\ell(h) P_\ell(\cos{\overrightarrow{PQ}}) - \frac{1}{4\pi} \right\} + \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h) - \frac{1}{4\pi} \right\} + 1\\
+&- \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{Q\tau}}) - \frac{1}{4\pi} \right\} - \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)  P_\ell(\cos{\overrightarrow{P \tau}}) - \frac{1}{4\pi} \right\}\\
 \\
-&= \phi_1(\overrightarrow{PQ},h) + Y_0^0(\tau) Y_0^0(\tau) \phi_1(0,h) +  Y_0^0(P) \phi_1(\overrightarrow{Q\tau},h)  + Y_0^0(Q) \phi_1(\overrightarrow{P\tau},h)\\
+&= \phi_1(\overrightarrow{PQ},h) + \phi_1(0,h) + 1 - \phi_1(\overrightarrow{Q\tau_1},h)  - \phi_1(\overrightarrow{P\tau_1},h)\\
 \\
 &\text{After adding the scale parameters, }\\
-&= \delta^2 \left\{ \sum_{\ell=0}^\infty \frac{2\ell+1}{4\pi} a_\ell(h) P_\ell(\cos{\overrightarrow{PQ}}) - \frac{1}{4\pi} \right\} + \frac{\delta_0^2}{4\pi} \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)^{(0,0)} - \frac{1}{4\pi} \right\}\\
-&+ \frac{\delta \cdot \delta_0}{2\sqrt{\pi}} \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)^0  P_\ell(\cos{\overrightarrow{Q\tau}}) - \frac{1}{4\pi} \right\}\\ 
-&+ \frac{\delta \cdot \delta_0}{2\sqrt{\pi}} \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h)^0  P_\ell(\cos{\overrightarrow{P \tau}}) - \frac{1}{4\pi} \right\}\\
+&= \gamma_0^2 \left\{ \sum_{\ell=0}^\infty \frac{2\ell+1}{4\pi} a_\ell(h) P_\ell(\cos{\overrightarrow{PQ}}) - \frac{1}{4\pi} \right\} + \gamma_1^2 \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h) - \frac{1}{4\pi} \right\} + \gamma_1^2\\
+&- (\gamma_0 \cdot \gamma_1) \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h) P_\ell(\cos{\overrightarrow{Q\tau}}) - \frac{1}{4\pi} \right\} - (\gamma_0 \cdot \gamma_1) \left\{ \sum_{\ell=0}^{\infty}  \frac{2\ell+1}{4\pi} a_{\ell}(h) P_\ell(\cos{\overrightarrow{P \tau}}) - \frac{1}{4\pi} \right\}\\
 \\
-&\Rightarrow \biggl\{ \frac{(1 - {\gamma}^4 e^{-2 \beta \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{PQ})} (\gamma^2 e^{-\beta \lvert h \lvert}) + {\gamma}^4 e^{-2 \beta \lvert h \lvert})^{3/2}} - \frac{1}{4\pi} \biggl\}\\
-&+ \biggl\{ \frac{1}{4\pi}\frac{(1 - {\gamma_0}^4 e^{-2 \beta \lvert h \lvert})}{(1-2 \gamma_0^2 e^{- \beta \lvert h \lvert} + {\gamma_0}^4 e^{-\beta \lvert h \lvert})^{3/2}}  - \frac{1}{16\pi^2} \biggl\}\\ 
-&+ \biggl\{ \frac{1}{2\sqrt{\pi}}\frac{(1 - {(\gamma \cdot \gamma_0)}^2 e^{-2 \beta \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{\tau Q})} (\gamma \cdot \gamma_0) e^{-\beta \lvert h \lvert} + {(\gamma \cdot \gamma_0)}^2 e^{-2p_2'' \lvert h \lvert})^{3/2}} - \frac{1}{8\pi^\frac{3}{2}} \biggl\}\\
-& + \biggl\{ \frac{1}{2\sqrt{\pi}} \frac{(1 - {p_1''}^2 e^{-2 \beta \lvert h \lvert})}{(1-2 \cos{(\overrightarrow{P \tau})} (\gamma \cdot \gamma_0) e^{-\beta \lvert h \lvert} + {(\gamma \cdot \gamma_0)}^2 e^{-2 \beta \lvert h \lvert})^{3/2}} - \frac{1}{8\pi^\frac{3}{2}} \biggl\}\\
+&\text{Since we can express $a_\ell(h) = g^{\ell}(h), \quad \ell=0,1,2, \dots$},\\
+&\Rightarrow \gamma_0^2 \biggl\{ \frac{1 - g(h)^2}{(1-2 \cos{(\overrightarrow{PQ})} g(h) + g(h)^2)^{3/2}} - \frac{1}{4\pi} \biggl\} + \gamma_1^2 \biggl\{ \frac{1 - g(h)^2}{(1-2 g(h) + g(h)^2)^{3/2}}  - \frac{1}{4\pi} \biggl\} + \gamma_1^2\\ 
+&- (\gamma_0 \cdot \gamma_1) \biggl\{ \frac{1 - g(h)^2}{1-2 \cos{(\overrightarrow{\tau_1 Q})} g(h) + g(h)^2)^{3/2}} - \frac{1}{4\pi} \biggl\} - (\gamma_0 \cdot \gamma_1) \biggl\{ \frac{1 - g(h)^2}{(1-2 \cos{(\overrightarrow{P \tau})} g(h) + g(h)^2)^{3/2}} - \frac{1}{4\pi} \biggl\}\\
+&\quad \text{where } \gamma_0, \gamma_{0}>0, \quad \tau_{1} \in \mathbb{S}^2 \\
 \\
-&\quad \text{where } \delta, \delta_{0}>0, \quad 0<\gamma, \gamma_{0} < 1, \quad \beta >0, \quad \tau_{0} \in \mathbb{S}^2 \\
+&\text{If $\gamma^{1/2} = \gamma_0 = \gamma_1 > 0$}, \\
+&\Rightarrow \gamma \Biggl\{ \frac{1 - g(h)^2}{(1-2 \cos{(\overrightarrow{PQ})} g(h) + g(h)^2)^{3/2}} - \frac{1 - g(h)^2}{1-2 \cos{(\overrightarrow{\tau_1 Q})} g(h) + g(h)^2)^{3/2}} - \frac{1 - g(h)^2}{(1-2 \cos{(\overrightarrow{P \tau})} g(h) + g(h)^2)^{3/2}}\\
+&\quad + \frac{1 - g(h)^2}{(1-2 g(h) + g(h)^2)^{3/2}} + 1 \Biggl\} \\
 \end{align*}
 
 \item
-\textbf{{\color{red} Doesn't it look weird to have the constant terms, $\frac{1}{4\pi} - \frac{1}{16\pi^2} - \frac{1}{4\pi^\frac{3}{2}}$ in the covariance function? How can we explain or justify this? This happens because our Nil space base is $Y_0^0(\cdot)=\sqrt(\frac{1}{4\pi})$, which is a constant. The same issue happens for Brownian motion for the circle.}}\\
+\textbf{{\color{red} (If $\kappa=1$, doesn't it look weird to have the constant terms, $-\frac{1}{4\pi} - \frac{1}{16\pi^2} - \frac{1}{4\pi^\frac{3}{2}}$ in the covariance function? How can we explain or justify this?)}}\\ 
+\textbf{{\color{blue} 1. This is cancelled if we use the RK form!!!! (This may be the reason why we need the minus signs for the 3rd and 4th compoents).}}\\
+\\
+\textbf{{\color{blue} 2. This one happens since we have the form $a_\ell(h) = g(h)^\ell$. So, this form probably has a more important roll than we thought before.}}\\ 
+\\
+\textbf{{\color{blue} 3. Then, we should use the same scale parameters. Check the scale parameter $\gamma_\nu$.}}\\
+\\
+\textbf{{\color{blue} 4. Also, it still has a constant term, "+1" from $\sum_{\nu=1}^{\kappa^2}q_{\nu}(P) q_{\nu}(Q)$. Is it to make the kernel strictly positive definite???}}\\
 
 \pagebreak
 
